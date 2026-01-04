@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 420">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <style>
+    .box{fill:#ffffff;stroke:#94a3b8;stroke-width:2;rx:16;ry:16}
+    .t{font-family:Arial,sans-serif;font-size:18px;fill:#0f172a}
+    .s{font-family:Arial,sans-serif;font-size:14px;fill:#334155}
+    .l{stroke:#94a3b8;stroke-width:2;marker-end:url(#arrow)}
+  </style>
+
+  <rect x="60" y="55" width="270" height="110" class="box"/>
+  <text x="92" y="92" class="t">GitOps / CI</text>
+  <text x="92" y="122" class="s">manifest validation</text>
+
+  <rect x="380" y="35" width="540" height="350" class="box"/>
+  <text x="410" y="72" class="t">Kubernetes Cluster (AKS/EKS-style)</text>
+
+  <rect x="420" y="105" width="230" height="105" class="box"/>
+  <text x="446" y="140" class="t">Ingress</text>
+  <text x="446" y="170" class="s">ingress-nginx (ref)</text>
+
+  <rect x="690" y="105" width="200" height="105" class="box"/>
+  <text x="716" y="140" class="t">Certs</text>
+  <text x="716" y="170" class="s">cert-manager (ref)</text>
+
+  <rect x="420" y="240" width="230" height="105" class="box"/>
+  <text x="446" y="275" class="t">Observability</text>
+  <text x="446" y="305" class="s">Prometheus + Grafana</text>
+
+  <rect x="690" y="240" width="200" height="105" class="box"/>
+  <text x="716" y="275" class="t">Apps</text>
+  <text x="716" y="305" class="s">demo workload</text>
+
+  <line x1="330" y1="110" x2="380" y2="110" class="l"/>
+</svg>
