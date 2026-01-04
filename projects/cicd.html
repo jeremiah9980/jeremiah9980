@@ -1,1 +1,185 @@
-<h1>Enterprise CI/CD Platform</h1><p>Platform-level CI/CD enablement emphasizing standards, governance, and developer velocity.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Enterprise CI/CD Platform | Jeremiah Cargill</title>
+  <link rel="stylesheet" href="../assets/styles.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <div class="container nav-inner">
+    <div class="brand">
+      <strong>Jeremiah Cargill</strong>
+      <span>Senior Infrastructure & Platform Engineer</span>
+    </div>
+    <div class="nav-links">
+      <a class="btn" href="../index.html">Home</a>
+      <a class="btn" href="../projects.html">Projects</a>
+      <a class="btn" href="../resume.html">Resume</a>
+      <a class="btn" href="../about.html">About</a>
+      <a class="btn" href="../contact.html">Contact</a>
+      <button id="themeToggle" class="btn" type="button">Light mode</button>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="section">
+  <div class="container">
+    <div class="fade-in">
+
+      <div class="h2">Enterprise CI/CD Platform</div>
+
+      <p class="meta">
+        Platform-level CI/CD enablement focused on standardization, governance,
+        reliability, and developer velocity across multiple teams and services.
+      </p>
+
+      <hr class="sep"/>
+
+      <!-- ARCHITECTURE -->
+      <h3>Architecture Overview</h3>
+
+      <div class="card arch-container" style="background:#0f172a">
+
+        <img
+          src="../assets/diagrams/cicd-platform.svg"
+          alt="Enterprise CI/CD Platform Architecture"
+          style="width:100%; max-height:420px; object-fit:contain; border-radius:12px;"
+        >
+
+        <button class="btn arch-legend-btn">Legend</button>
+
+        <div class="arch-legend">
+          <h5>Pipeline Stages</h5>
+          <ul>
+            <li><strong>Source</strong> – Versioned code & change history</li>
+            <li><strong>Build</strong> – Artifact compilation & packaging</li>
+            <li><strong>Test</strong> – Automated quality validation</li>
+            <li><strong>Policy Gates</strong> – Security & compliance checks</li>
+            <li><strong>Deploy</strong> – Controlled promotion & rollback</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p class="small">
+        Diagram is sanitized and production-inspired. It illustrates pipeline
+        flow, quality gates, and promotion stages without exposing proprietary
+        tooling or workflows.
+      </p>
+
+      <hr class="sep"/>
+
+      <!-- CONTEXT -->
+      <h3>Problem Context</h3>
+      <p>
+        As engineering organizations scale, CI/CD systems often become fragmented:
+        inconsistent pipelines, duplicated logic, manual approvals, and unclear
+        ownership slow delivery and increase risk.
+      </p>
+      <p>
+        This project represents a platform-oriented CI/CD model where pipelines
+        are treated as shared infrastructure — opinionated, secure, and easy
+        for application teams to consume.
+      </p>
+
+      <hr class="sep"/>
+
+      <!-- OBJECTIVES -->
+      <h3>Primary Objectives</h3>
+      <ul>
+        <li>Standardize CI/CD workflows across teams and services</li>
+        <li>Embed security and compliance checks early in delivery</li>
+        <li>Reduce manual toil and ad-hoc release processes</li>
+        <li>Improve deployment confidence and rollback safety</li>
+        <li>Increase developer velocity without sacrificing control</li>
+      </ul>
+
+      <hr class="sep"/>
+
+      <!-- APPROACH -->
+      <h3>Platform Approach</h3>
+
+      <h4>1. Pipeline Standardization</h4>
+      <ul>
+        <li>Reusable pipeline templates and shared stages</li>
+        <li>Clear separation between platform-owned and app-owned logic</li>
+      </ul>
+
+      <h4>2. Policy & Governance</h4>
+      <ul>
+        <li>Automated quality gates (tests, scans, approvals)</li>
+        <li>Consistent artifact versioning and promotion rules</li>
+      </ul>
+
+      <h4>3. Deployment Safety</h4>
+      <ul>
+        <li>Progressive delivery and environment promotion</li>
+        <li>Rollback and failure handling as first-class features</li>
+      </ul>
+
+      <h4>4. Developer Enablement</h4>
+      <ul>
+        <li>Self-service onboarding for new services</li>
+        <li>Clear documentation and operational visibility</li>
+      </ul>
+
+      <hr class="sep"/>
+
+      <!-- OUTCOMES -->
+      <h3>Outcomes & Impact</h3>
+      <ul>
+        <li>Reduced deployment friction and manual intervention</li>
+        <li>More consistent release quality across teams</li>
+        <li>Improved auditability and compliance posture</li>
+        <li>Faster recovery from failed releases</li>
+        <li>Clear ownership boundaries between platform and applications</li>
+      </ul>
+
+      <hr class="sep"/>
+
+      <!-- SKILLS -->
+      <h3>Skills & Concepts Demonstrated</h3>
+      <div class="tagrow">
+        <span class="tag">CI/CD Platforms</span>
+        <span class="tag">Pipeline Automation</span>
+        <span class="tag">Policy as Code</span>
+        <span class="tag">Artifact Management</span>
+        <span class="tag">Release Engineering</span>
+        <span class="tag">Developer Enablement</span>
+      </div>
+
+      <hr class="sep"/>
+
+      <p class="small">
+        This project is a reference architecture derived from real-world
+        enterprise experience. All descriptions are intentionally generalized
+        and do not reflect any specific employer or proprietary system.
+      </p>
+
+      <a class="btn" href="../projects.html">← Back to Projects</a>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="container">
+    <div>
+      © 2026 Jeremiah Cargill ·
+      <a href="https://github.com/jeremiah9980" target="_blank">GitHub</a>
+    </div>
+    <div class="small">
+      Platform engineering · CI/CD · delivery systems
+    </div>
+  </div>
+</div>
+
+<script src="../assets/script.js"></script>
+</body>
+</html>
