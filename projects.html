@@ -5,28 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Projects | Jeremiah Cargill</title>
   <link rel="stylesheet" href="assets/styles.css"/>
-  <style>
-    /* Local hardening so previews look consistent even if styles.css changes */
-    .arch-frame{
-      width:100%;
-      height:190px;               /* <- keeps cards uniform */
-      border-radius:12px;
-      background:#ffffff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-      margin-bottom:0.9rem;
-    }
-    .arch-frame img{
-      width:100%;
-      height:100%;
-      object-fit:contain;         /* <- prevents giant overflow */
-      display:block;
-      padding:10px;
-      box-sizing:border-box;
-    }
-  </style>
 </head>
 <body>
 
@@ -50,141 +28,139 @@
 
 <!-- CONTENT -->
 <div class="section">
-  <div class="container">
-    <div class="fade-in">
+  <div class="container fade-in">
 
-      <div class="h2">Platform Engineering Projects</div>
+    <div class="h2">Platform Engineering Projects</div>
 
-      <p class="meta">
-        These projects collectively represent an end-to-end platform lifecycle —
-        from foundational infrastructure and networking, through runtime platforms
-        and automation, to observability, reliability, and continuous improvement.
-      </p>
+    <p class="meta">
+      These projects represent an end-to-end platform lifecycle — from
+      foundational infrastructure and networking, through automation
+      and runtime platforms, to observability, reliability, and
+      continuous improvement.
+    </p>
 
-      <hr class="sep"/>
+    <hr class="sep"/>
 
-      <!-- 1. Foundations -->
-      <h3>1. Infrastructure & Platform Foundations</h3>
-      <div class="grid">
+    <!-- ================================================= -->
+    <!-- 1. FOUNDATIONAL INFRASTRUCTURE -->
+    <!-- ================================================= -->
+    <h3>1. Foundational Infrastructure</h3>
+    <div class="grid">
 
-        <!-- vCenter -->
-        <div class="card">
-          <div class="arch-frame">
-            <img
-              src="assets/diagrams/vcenter-modernization.svg"
-              alt="vCenter Platform Modernization Architecture"
-              loading="lazy"
-            />
-          </div>
-
-          <h4>VMware vCenter Platform Modernization</h4>
-          <p class="meta">
-            Enterprise-scale virtualization platform modernization focused on
-            risk reduction, validation, and operational continuity across
-            large multi-cluster environments.
-          </p>
-          <a class="btn" href="projects/vcenter.html">View Project</a>
+      <!-- vCenter -->
+      <div class="card">
+        <div class="arch-preview">
+          <img src="assets/diagrams/vcenter-modernization.svg"
+               alt="vCenter Platform Modernization">
         </div>
-
-        <!-- Cloud Migration -->
-        <div class="card">
-          <div class="arch-frame">
-            <img
-              src="assets/diagrams/cloud-network.svg"
-              alt="Cloud Migration & Network Architecture"
-              loading="lazy"
-            />
-          </div>
-
-          <h4>Cloud Migration & Network Architecture</h4>
-          <p class="meta">
-            Hybrid cloud migration reference emphasizing network design,
-            segmentation, phased workload transition, and security boundaries.
-          </p>
-          <a class="btn" href="projects/cloud-migration.html">View Project</a>
-        </div>
-
+        <h4>VMware vCenter Platform Modernization</h4>
+        <p class="meta">
+          Enterprise-scale virtualization modernization focused on risk
+          reduction, operational consistency, and lifecycle management.
+        </p>
+        <a class="btn" href="projects/vcenter.html">View Project</a>
       </div>
 
-      <hr class="sep"/>
-
-      <!-- 2. Runtime -->
-      <h3>2. Runtime Platforms & Automation</h3>
-      <div class="grid">
-
-        <!-- Kubernetes -->
-        <div class="card">
-          <div class="arch-frame">
-            <img
-              src="assets/diagrams/k8s-platform.svg"
-              alt="Kubernetes Platform Architecture"
-              loading="lazy"
-            />
-          </div>
-
-          <h4>Kubernetes Platform Automation</h4>
-          <p class="meta">
-            Kubernetes platform engineering with clear separation between
-            platform and application responsibilities, baseline services,
-            and governance controls.
-          </p>
-          <a class="btn" href="projects/kubernetes.html">View Project</a>
+      <!-- Cloud Migration -->
+      <div class="card">
+        <div class="arch-preview">
+          <img src="assets/diagrams/cloud-network.svg"
+               alt="Cloud Migration and Network Architecture">
         </div>
-
-        <!-- CI/CD -->
-        <div class="card">
-          <div class="arch-frame">
-            <img
-              src="assets/diagrams/cicd-platform.svg"
-              alt="Enterprise CI/CD Platform Architecture"
-              loading="lazy"
-            />
-          </div>
-
-          <h4>Enterprise CI/CD Platform</h4>
-          <p class="meta">
-            Platform-level CI/CD enablement focused on standardization,
-            quality gates, artifact promotion, and developer velocity at scale.
-          </p>
-          <a class="btn" href="projects/cicd.html">View Project</a>
-        </div>
-
+        <h4>Cloud Migration & Network Architecture</h4>
+        <p class="meta">
+          Hybrid cloud migration reference emphasizing network segmentation,
+          phased transitions, and secure connectivity.
+        </p>
+        <a class="btn" href="projects/cloud-migration.html">View Project</a>
       </div>
-
-      <hr class="sep"/>
-
-      <!-- 3. SRE -->
-      <h3>3. Observability, Reliability & Operations</h3>
-      <div class="grid">
-
-        <div class="card">
-          <div class="arch-frame">
-            <img
-              src="assets/diagrams/sre-loop.svg"
-              alt="Observability & Reliability Feedback Loop"
-              loading="lazy"
-            />
-          </div>
-
-          <h4>Observability & Reliability (SRE)</h4>
-          <p class="meta">
-            SRE reference implementation covering SLIs/SLOs, error budgets,
-            actionable alerting, incident response, and blameless postmortems.
-          </p>
-          <a class="btn" href="projects/sre.html">View Project</a>
-        </div>
-
-      </div>
-
-      <hr class="sep"/>
-
-      <p class="small">
-        All architecture diagrams are sanitized and production-inspired.
-        They illustrate system boundaries, control planes, and operational flow
-        without exposing proprietary environments or customer data.
-      </p>
 
     </div>
+
+    <hr class="sep"/>
+
+    <!-- ================================================= -->
+    <!-- 2. PLATFORM & AUTOMATION -->
+    <!-- ================================================= -->
+    <h3>2. Platform & Automation</h3>
+    <div class="grid">
+
+      <!-- Terraform -->
+      <div class="card">
+        <div class="arch-preview">
+          <img src="assets/diagrams/terraform-platform.svg"
+               alt="Terraform Platform Automation">
+        </div>
+        <h4>Terraform Platform Automation</h4>
+        <p class="meta">
+          Infrastructure-as-Code platform enabling consistent,
+          repeatable, and auditable provisioning across environments.
+        </p>
+        <a class="btn" href="projects/terraform.html">View Project</a>
+      </div>
+
+      <!-- Kubernetes -->
+      <div class="card">
+        <div class="arch-preview">
+          <img src="assets/diagrams/k8s-platform.svg"
+               alt="Kubernetes Platform Architecture">
+        </div>
+        <h4>Kubernetes Platform Automation</h4>
+        <p class="meta">
+          Kubernetes platform engineering with clear separation between
+          platform services and application workloads.
+        </p>
+        <a class="btn" href="projects/kubernetes.html">View Project</a>
+      </div>
+
+    </div>
+
+    <hr class="sep"/>
+
+    <!-- ================================================= -->
+    <!-- 3. DELIVERY & RELIABILITY -->
+    <!-- ================================================= -->
+    <h3>3. Delivery & Reliability</h3>
+    <div class="grid">
+
+      <!-- CI/CD -->
+      <div class="card">
+        <div class="arch-preview">
+          <img src="assets/diagrams/cicd-platform.svg"
+               alt="Enterprise CI/CD Platform">
+        </div>
+        <h4>Enterprise CI/CD Platform</h4>
+        <p class="meta">
+          Platform-level CI/CD enablement focused on standardization,
+          governance, and safe delivery at scale.
+        </p>
+        <a class="btn" href="projects/cicd.html">View Project</a>
+      </div>
+
+      <!-- SRE -->
+      <div class="card">
+        <div class="arch-preview">
+          <img src="assets/diagrams/sre-loop.svg"
+               alt="Observability and Reliability Engineering">
+        </div>
+        <h4>Observability & Reliability (SRE)</h4>
+        <p class="meta">
+          SRE practices covering SLIs/SLOs, error budgets, alerting,
+          incident response, and continuous learning.
+        </p>
+        <a class="btn" href="projects/sre.html">View Project</a>
+      </div>
+
+    </div>
+
+    <hr class="sep"/>
+
+    <p class="small">
+      All projects are reference architectures derived from real-world
+      enterprise experience. Diagrams and descriptions are intentionally
+      sanitized and generalized to avoid disclosure of proprietary systems.
+    </p>
+
   </div>
 </div>
 
@@ -196,7 +172,7 @@
       <a href="https://github.com/jeremiah9980" target="_blank">GitHub</a>
     </div>
     <div class="small">
-      Platform projects represent reference architectures only.
+      Platform engineering · infrastructure · automation · reliability
     </div>
   </div>
 </div>
@@ -204,3 +180,4 @@
 <script src="assets/script.js"></script>
 </body>
 </html>
+
