@@ -36,6 +36,12 @@ a:hover{text-decoration:underline}
   padding:3.8rem 0 2.5rem;
   background:radial-gradient(800px 400px at 50% 10%, rgba(56,189,248,.18), transparent);
 }
+.arch-preview {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  background: #ffffff;
+}
 .h1{font-size:2.6rem; line-height:1.12; margin:0 0 .5rem}
 .sub{color:var(--muted); margin:0 0 1.2rem; font-size:1.08rem}
 .kpis{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.9rem}
