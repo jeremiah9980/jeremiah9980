@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<!-- NAV -->
 <div class="nav">
   <div class="container nav-inner">
     <div class="brand">
@@ -25,38 +26,127 @@
   </div>
 </div>
 
+<!-- CONTENT -->
 <div class="section">
   <div class="container">
     <div class="fade-in">
-      <div class="h2">Projects</div>
-      <p class="meta">Deep dives include architecture diagrams, key patterns, and “what this demonstrates” notes aligned to Senior Infrastructure / Platform Engineer roles.</p>
+
+      <div class="h2">Platform Engineering Projects</div>
+
+      <p class="meta">
+        These projects collectively represent how modern infrastructure platforms
+        are designed, built, operated, and evolved in enterprise environments.
+        Each project is a sanitized, production-inspired reference focused on
+        architecture, decision-making, and operational maturity.
+      </p>
+
+      <hr class="sep"/>
+
+      <!-- STORY -->
+      <h3>An End-to-End Platform View</h3>
+      <p>
+        Rather than isolated implementations, these projects form a cohesive
+        platform lifecycle — from foundational infrastructure and networking,
+        through runtime platforms and automation, to observability, reliability,
+        and continuous improvement.
+      </p>
+
+      <hr class="sep"/>
+
+      <!-- FOUNDATION -->
+      <h3>1. Infrastructure & Platform Foundations</h3>
       <div class="grid">
+
         <div class="card">
-          <h3>Terraform Multi-Cloud Platform</h3>
-          <p class="meta">Reusable modules, multi-environment composition, CI patterns, and security-first IaC structure.</p>
-          <a href="projects/terraform.html">Open deep dive →</a>
+          <h4>VMware vCenter Platform Modernization</h4>
+          <p class="meta">
+            Enterprise-scale virtualization platform modernization focused on
+            risk reduction, validation, and operational continuity across
+            large multi-cluster environments.
+          </p>
+          <a class="btn" href="projects/vcenter.html">View Project</a>
         </div>
+
         <div class="card">
-          <h3>Kubernetes Platform Automation</h3>
-          <p class="meta">Platform baselines (ingress/observability), app separation, and operational readiness artifacts.</p>
-          <a href="projects/kubernetes.html">Open deep dive →</a>
+          <h4>Cloud Migration & Network Architecture</h4>
+          <p class="meta">
+            Hybrid cloud migration reference emphasizing network design,
+            segmentation, phased workload transition, and security boundaries.
+          </p>
+          <a class="btn" href="projects/cloud-migration.html">View Project</a>
         </div>
-        <div class="card">
-          <h3>Observability & Reliability (SRE)</h3>
-          <p class="meta">Dashboards, alerts, SLI/SLO guidance, incident runbooks, and postmortems.</p>
-          <a href="projects/sre.html">Open deep dive →</a>
-        </div>
+
       </div>
+
+      <hr class="sep"/>
+
+      <!-- RUNTIME -->
+      <h3>2. Runtime Platforms & Automation</h3>
+      <div class="grid">
+
+        <div class="card">
+          <h4>Kubernetes Platform Automation</h4>
+          <p class="meta">
+            Kubernetes platform engineering with clear separation between
+            platform and application responsibilities, baseline services,
+            and governance controls.
+          </p>
+          <a class="btn" href="projects/kubernetes.html">View Project</a>
+        </div>
+
+        <div class="card">
+          <h4>Enterprise CI/CD Platform</h4>
+          <p class="meta">
+            Platform-level CI/CD enablement focused on standardization,
+            quality gates, artifact promotion, and developer velocity at scale.
+          </p>
+          <a class="btn" href="projects/cicd.html">View Project</a>
+        </div>
+
+      </div>
+
+      <hr class="sep"/>
+
+      <!-- OPERATIONS -->
+      <h3>3. Observability, Reliability & Operations</h3>
+      <div class="grid">
+
+        <div class="card">
+          <h4>Observability & Reliability (SRE)</h4>
+          <p class="meta">
+            SRE reference implementation covering SLIs/SLOs, error budgets,
+            actionable alerting, incident response, and blameless postmortems.
+          </p>
+          <a class="btn" href="projects/sre.html">View Project</a>
+        </div>
+
+      </div>
+
+      <hr class="sep"/>
+
+      <!-- CLOSING -->
+      <p class="small">
+        All projects are intentionally sanitized and reference-only.
+        They demonstrate platform engineering principles, architectural tradeoffs,
+        and operational discipline without exposing proprietary systems,
+        configurations, or customer data.
+      </p>
+
     </div>
   </div>
 </div>
 
+<!-- FOOTER -->
 <div class="footer">
   <div class="container">
-    <div>© 2026 Jeremiah Cargill · <a href="https://github.com/jeremiah9980" target="_blank" rel="noreferrer">GitHub</a></div>
-    <div class="small">Sanitized reference implementations only. No proprietary systems or sensitive data.</div>
+    <div>© 2026 Jeremiah Cargill · <a href="https://github.com/jeremiah9980" target="_blank">GitHub</a></div>
+    <div class="small">
+      Platform projects represent production-inspired reference architectures.
+    </div>
   </div>
 </div>
+
 <script src="assets/script.js"></script>
 </body>
 </html>
+
