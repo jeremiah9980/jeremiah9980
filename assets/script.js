@@ -1,39 +1,64 @@
-(function(){
-  const STORAGE_KEY = "jc_theme";
+/* =========================================================
+   Global UI Script – Jeremiah Cargill Portfolio
+   Safe for GitHub Pages
+   ========================================================= */
+
+/* -------------------------------
+   Theme Toggle (Light / Dark)
+-------------------------------- */
+(function () {
+  const toggle = document.getElementById("themeToggle");
   const root = document.documentElement;
-  const btn = () => document.getElementById("themeToggle");
 
-  function setTheme(t){
-    root.setAttribute("data-theme", t);
-    localStorage.setItem(STORAGE_KEY, t);
-    const b = btn();
-    if(b) b.textContent = (t === "light") ? "Dark mode" : "Light mode";
+  if (!toggle) return;
+
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    root.setAttribute("data-theme", savedTheme);
+    toggle.textContent = savedTheme === "dark" ? "Light mode" : "Dark mode";
   }
 
-  function initTheme(){
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if(saved){ setTheme(saved); return; }
-    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-    setTheme(prefersLight ? "light" : "dark");
-  }
+  toggle.addEventListener("click", () => {
+    const current = root.getAttribute("data-theme") || "light";
+    const next = current === "dark" ? "light" : "dark";
 
-  function initAnimations(){
-    const els = document.querySelectorAll(".fade-in");
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("show"); io.unobserve(e.target); } });
-    }, {threshold: 0.1});
-    els.forEach(el=>io.observe(el));
-  }
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+    toggle.textContent = next === "dark" ? "Light mode" : "Dark mode";
+  });
+})();
 
-  window.addEventListener("DOMContentLoaded", ()=>{
-    initTheme();
-    initAnimations();
-    const b = btn();
-    if(b){
-      b.addEventListener("click", ()=>{
-        const cur = root.getAttribute("data-theme") || "dark";
-        setTheme(cur === "dark" ? "light" : "dark");
+/* -------------------------------
+   Fade-in on Scroll
+-------------------------------- */
+(function () {
+  const elements = document.querySelectorAll(".fade-in");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
       });
-    }
+    },
+    { threshold: 0.15 }
+  );
+
+  elements.forEach(el => observer.observe(el));
+})();
+
+/* -------------------------------
+   Architecture Legend Toggle
+-------------------------------- */
+(function () {
+  document.querySelectorAll("[data-legend-toggle]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const legendId = btn.getAttribute("data-legend-toggle");
+      const legend = document.getElementById(legendId);
+      if (!legend) return;
+      legend.classList.toggle("open");
+    });
   });
 })();
