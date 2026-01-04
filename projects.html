@@ -5,6 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Projects | Jeremiah Cargill</title>
   <link rel="stylesheet" href="assets/styles.css"/>
+  <style>
+    /* Local hardening so previews look consistent even if styles.css changes */
+    .arch-frame{
+      width:100%;
+      height:190px;               /* <- keeps cards uniform */
+      border-radius:12px;
+      background:#ffffff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      margin-bottom:0.9rem;
+    }
+    .arch-frame img{
+      width:100%;
+      height:100%;
+      object-fit:contain;         /* <- prevents giant overflow */
+      display:block;
+      padding:10px;
+      box-sizing:border-box;
+    }
+  </style>
 </head>
 <body>
 
@@ -41,19 +63,20 @@
 
       <hr class="sep"/>
 
-      <!-- ===================================================== -->
-      <!-- 1. INFRASTRUCTURE & PLATFORM FOUNDATIONS -->
-      <!-- ===================================================== -->
+      <!-- 1. Foundations -->
       <h3>1. Infrastructure & Platform Foundations</h3>
       <div class="grid">
 
-        <!-- VCENTER -->
+        <!-- vCenter -->
         <div class="card">
-          <img
-            src="assets/diagrams/vcenter-modernization.svg"
-            alt="vCenter Platform Modernization Architecture"
-            class="arch-preview"
-          >
+          <div class="arch-frame">
+            <img
+              src="assets/diagrams/vcenter-modernization.svg"
+              alt="vCenter Platform Modernization Architecture"
+              loading="lazy"
+            />
+          </div>
+
           <h4>VMware vCenter Platform Modernization</h4>
           <p class="meta">
             Enterprise-scale virtualization platform modernization focused on
@@ -63,13 +86,16 @@
           <a class="btn" href="projects/vcenter.html">View Project</a>
         </div>
 
-        <!-- CLOUD MIGRATION -->
+        <!-- Cloud Migration -->
         <div class="card">
-          <img
-            src="assets/diagrams/cloud-network.svg"
-            alt="Cloud Migration & Network Architecture"
-            class="arch-preview"
-          >
+          <div class="arch-frame">
+            <img
+              src="assets/diagrams/cloud-network.svg"
+              alt="Cloud Migration & Network Architecture"
+              loading="lazy"
+            />
+          </div>
+
           <h4>Cloud Migration & Network Architecture</h4>
           <p class="meta">
             Hybrid cloud migration reference emphasizing network design,
@@ -82,19 +108,20 @@
 
       <hr class="sep"/>
 
-      <!-- ===================================================== -->
-      <!-- 2. RUNTIME PLATFORMS & AUTOMATION -->
-      <!-- ===================================================== -->
+      <!-- 2. Runtime -->
       <h3>2. Runtime Platforms & Automation</h3>
       <div class="grid">
 
-        <!-- KUBERNETES -->
+        <!-- Kubernetes -->
         <div class="card">
-          <img
-            src="assets/diagrams/k8s-platform.svg"
-            alt="Kubernetes Platform Architecture"
-            class="arch-preview"
-          >
+          <div class="arch-frame">
+            <img
+              src="assets/diagrams/k8s-platform.svg"
+              alt="Kubernetes Platform Architecture"
+              loading="lazy"
+            />
+          </div>
+
           <h4>Kubernetes Platform Automation</h4>
           <p class="meta">
             Kubernetes platform engineering with clear separation between
@@ -106,11 +133,14 @@
 
         <!-- CI/CD -->
         <div class="card">
-          <img
-            src="assets/diagrams/cicd-platform.svg"
-            alt="Enterprise CI/CD Platform Architecture"
-            class="arch-preview"
-          >
+          <div class="arch-frame">
+            <img
+              src="assets/diagrams/cicd-platform.svg"
+              alt="Enterprise CI/CD Platform Architecture"
+              loading="lazy"
+            />
+          </div>
+
           <h4>Enterprise CI/CD Platform</h4>
           <p class="meta">
             Platform-level CI/CD enablement focused on standardization,
@@ -123,18 +153,19 @@
 
       <hr class="sep"/>
 
-      <!-- ===================================================== -->
-      <!-- 3. OBSERVABILITY, RELIABILITY & OPERATIONS -->
-      <!-- ===================================================== -->
+      <!-- 3. SRE -->
       <h3>3. Observability, Reliability & Operations</h3>
       <div class="grid">
 
         <div class="card">
-          <img
-            src="assets/diagrams/sre-loop.svg"
-            alt="Observability & Reliability Feedback Loop"
-            class="arch-preview"
-          >
+          <div class="arch-frame">
+            <img
+              src="assets/diagrams/sre-loop.svg"
+              alt="Observability & Reliability Feedback Loop"
+              loading="lazy"
+            />
+          </div>
+
           <h4>Observability & Reliability (SRE)</h4>
           <p class="meta">
             SRE reference implementation covering SLIs/SLOs, error budgets,
