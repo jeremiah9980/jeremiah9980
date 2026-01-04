@@ -1,1 +1,174 @@
-<h1>Cloud Migration & Networking</h1><p>Hybrid cloud migration with strong emphasis on network architecture and security boundaries.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Cloud Migration & Network Architecture | Jeremiah Cargill</title>
+  <link rel="stylesheet" href="../assets/styles.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <div class="container nav-inner">
+    <div class="brand">
+      <strong>Jeremiah Cargill</strong>
+      <span>Senior Infrastructure & Platform Engineer</span>
+    </div>
+    <div class="nav-links">
+      <a class="btn" href="../index.html">Home</a>
+      <a class="btn" href="../projects.html">Projects</a>
+      <a class="btn" href="../resume.html">Resume</a>
+      <a class="btn" href="../about.html">About</a>
+      <a class="btn" href="../contact.html">Contact</a>
+      <button id="themeToggle" class="btn" type="button">Light mode</button>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="section">
+  <div class="container">
+    <div class="fade-in">
+
+      <div class="h2">Cloud Migration & Network Architecture</div>
+
+      <p class="meta">
+        A reference project demonstrating how enterprise workloads are assessed,
+        migrated, and stabilized in cloud environments with a strong emphasis on
+        network design, security boundaries, and operational continuity.
+      </p>
+
+      <hr class="sep"/>
+
+      <!-- OVERVIEW -->
+      <h3>Overview</h3>
+      <p>
+        This project models a phased cloud migration approach where networking is treated
+        as a first-class reliability and security concern. Rather than focusing on tooling,
+        the emphasis is placed on sequencing, dependency awareness, blast-radius control,
+        and post-migration operability.
+      </p>
+      <p>
+        All examples are intentionally sanitized and represent production-inspired
+        decision-making patterns used in large enterprise environments.
+      </p>
+
+      <hr class="sep"/>
+
+      <!-- PROBLEM -->
+      <h3>Problem Space</h3>
+      <ul>
+        <li>Legacy on-prem workloads with undocumented dependencies</li>
+        <li>Mixed trust zones and flat network topologies</li>
+        <li>Need for hybrid connectivity during transition</li>
+        <li>High risk of outage during large-scale migration events</li>
+        <li>Operational teams needing continuity throughout the process</li>
+      </ul>
+
+      <hr class="sep"/>
+
+      <!-- APPROACH -->
+      <h3>Architecture & Migration Approach</h3>
+      <p>
+        Migration is approached as a controlled program rather than a single event.
+        Network architecture is established early to ensure that workloads can move
+        incrementally without expanding blast radius or weakening security posture.
+      </p>
+
+      <ul>
+        <li>Hub-and-spoke network topology</li>
+        <li>Explicit segmentation by trust zone and workload type</li>
+        <li>Hybrid connectivity (VPN / private link) during transition</li>
+        <li>Ingress and egress controls defined before workload movement</li>
+        <li>Identity and routing validated prior to application cutover</li>
+      </ul>
+
+      <div class="card" style="margin-top:1.2rem">
+        <strong>Key Principle:</strong>
+        <p class="meta">
+          Migrate capabilities, not just servers. Networking, identity, and security
+          must be operational before application traffic is introduced.
+        </p>
+      </div>
+
+      <hr class="sep"/>
+
+      <!-- PHASES -->
+      <h3>Migration Phases</h3>
+      <ol>
+        <li><strong>Discovery & Dependency Mapping</strong> – Understand traffic flows and coupling</li>
+        <li><strong>Network & Identity Baseline</strong> – Establish secure connectivity and segmentation</li>
+        <li><strong>Pilot Workloads</strong> – Validate assumptions with low-risk services</li>
+        <li><strong>Incremental Scale-Out</strong> – Migrate in controlled waves</li>
+        <li><strong>Optimization & Steady State</strong> – Cost, performance, and reliability tuning</li>
+      </ol>
+
+      <hr class="sep"/>
+
+      <!-- OPERATIONS -->
+      <h3>Operational Considerations</h3>
+      <ul>
+        <li>Monitoring and alerting validated before production cutover</li>
+        <li>Rollback paths defined for every migration phase</li>
+        <li>Change windows aligned with business risk tolerance</li>
+        <li>Runbooks updated as topology evolves</li>
+      </ul>
+
+      <hr class="sep"/>
+
+      <!-- OUTCOMES -->
+      <h3>Outcomes & Lessons Learned</h3>
+      <ul>
+        <li>Reduced outage risk through phased execution</li>
+        <li>Improved security posture via explicit segmentation</li>
+        <li>Faster troubleshooting due to cleaner network boundaries</li>
+        <li>Smoother handoff to operations teams post-migration</li>
+      </ul>
+
+      <p>
+        The primary lesson reinforced by this work is that cloud migration success is
+        determined less by tooling and more by sequencing, communication, and operational
+        discipline.
+      </p>
+
+      <hr class="sep"/>
+
+      <!-- REPO LINK -->
+      <div class="card">
+        <h3>Reference Repository</h3>
+        <p class="meta">
+          Sanitized documentation, architecture diagrams, and migration guidance
+          are available in the accompanying GitHub repository.
+        </p>
+        <a class="btn"
+           href="https://github.com/jeremiah9980/cloud-migration-network-reference"
+           target="_blank">
+          View GitHub Repository
+        </a>
+      </div>
+
+      <hr class="sep"/>
+
+      <p class="small">
+        This project is a reference implementation only. All details are generalized
+        and intentionally exclude proprietary systems, configurations, and customer data.
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="container">
+    <div>© 2026 Jeremiah Cargill · <a href="https://github.com/jeremiah9980" target="_blank">GitHub</a></div>
+    <div class="small">
+      Platform and architecture examples are reference-only.
+    </div>
+  </div>
+</div>
+
+<script src="../assets/script.js"></script>
+</body>
+</html>
