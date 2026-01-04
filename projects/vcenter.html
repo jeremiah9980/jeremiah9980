@@ -1,1 +1,178 @@
-<h1>VMware vCenter Platform Modernization</h1><p>Enterprise-scale vCenter modernization focused on risk reduction, validation, and operational continuity.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>VMware vCenter Platform Modernization | Jeremiah Cargill</title>
+  <link rel="stylesheet" href="../assets/styles.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <div class="container nav-inner">
+    <div class="brand">
+      <strong>Jeremiah Cargill</strong>
+      <span>Senior Infrastructure & Platform Engineer</span>
+    </div>
+    <div class="nav-links">
+      <a class="btn" href="../index.html">Home</a>
+      <a class="btn" href="../projects.html">Projects</a>
+      <a class="btn" href="../resume.html">Resume</a>
+      <a class="btn" href="../about.html">About</a>
+      <a class="btn" href="../contact.html">Contact</a>
+      <button id="themeToggle" class="btn" type="button">Light mode</button>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="section">
+  <div class="container">
+    <div class="fade-in">
+
+      <div class="h2">VMware vCenter Platform Modernization</div>
+
+      <p class="meta">
+        Enterprise-scale virtualization platform modernization focused on
+        reliability, risk reduction, and operational continuity across
+        multi-cluster VMware environments.
+      </p>
+
+      <hr class="sep"/>
+
+      <!-- ARCHITECTURE -->
+      <h3>Architecture Overview</h3>
+
+      <div class="card" style="background:#0f172a">
+        <img
+          src="../assets/diagrams/vcenter-modernization.svg"
+          alt="vCenter Platform Modernization Architecture"
+          style="width:100%; max-height:420px; object-fit:contain; background:#0f172a; border-radius:12px;"
+        >
+      </div>
+
+      <p class="small">
+        Diagram is sanitized and production-inspired. It illustrates control planes,
+        compute segmentation, storage domains, and network fabric boundaries without
+        exposing proprietary configurations or customer environments.
+      </p>
+
+      <hr class="sep"/>
+
+      <!-- CONTEXT -->
+      <h3>Problem Context</h3>
+      <p>
+        Large VMware environments tend to accumulate operational risk over time
+        due to organic growth, inconsistent standards, legacy design decisions,
+        and tooling drift.
+      </p>
+      <p>
+        This project represents a structured approach to modernizing a vCenter
+        platform while maintaining uptime, preserving blast-radius boundaries,
+        and avoiding disruptive “big bang” changes.
+      </p>
+
+      <hr class="sep"/>
+
+      <!-- OBJECTIVES -->
+      <h3>Primary Objectives</h3>
+      <ul>
+        <li>Reduce operational risk and configuration drift</li>
+        <li>Standardize cluster, network, and storage design patterns</li>
+        <li>Improve upgrade, patching, and lifecycle velocity</li>
+        <li>Clarify ownership and operational responsibilities</li>
+        <li>Prepare the platform for hybrid and cloud-adjacent integrations</li>
+      </ul>
+
+      <hr class="sep"/>
+
+      <!-- APPROACH -->
+      <h3>Modernization Approach</h3>
+
+      <h4>1. Platform Assessment & Baseline</h4>
+      <ul>
+        <li>Inventory of vCenter instances, clusters, and host profiles</li>
+        <li>Network and storage dependency mapping</li>
+        <li>Identification of drift, legacy configurations, and risk hotspots</li>
+      </ul>
+
+      <h4>2. Architecture Standardization</h4>
+      <ul>
+        <li>Consistent cluster and resource pool design</li>
+        <li>Defined network segmentation using vDS and VLAN boundaries</li>
+        <li>Policy-driven storage domain alignment</li>
+      </ul>
+
+      <h4>3. Controlled Execution</h4>
+      <ul>
+        <li>Incremental changes with validation checkpoints</li>
+        <li>Isolation of high-risk workloads</li>
+        <li>Rollback strategies for each major change</li>
+      </ul>
+
+      <h4>4. Operational Hardening</h4>
+      <ul>
+        <li>Improved monitoring and alerting coverage</li>
+        <li>Documented runbooks and ownership models</li>
+        <li>Reduced manual intervention through automation</li>
+      </ul>
+
+      <hr class="sep"/>
+
+      <!-- OUTCOMES -->
+      <h3>Outcomes & Impact</h3>
+      <ul>
+        <li>Improved platform stability and predictability</li>
+        <li>Reduced incident frequency related to configuration issues</li>
+        <li>Faster upgrade and maintenance windows</li>
+        <li>Clearer separation between management, compute, storage, and network planes</li>
+        <li>Stronger foundation for future platform evolution</li>
+      </ul>
+
+      <hr class="sep"/>
+
+      <!-- SKILLS -->
+      <h3>Skills & Concepts Demonstrated</h3>
+      <div class="tagrow">
+        <span class="tag">VMware vCenter</span>
+        <span class="tag">ESXi</span>
+        <span class="tag">vDS / Networking</span>
+        <span class="tag">Enterprise Storage</span>
+        <span class="tag">Platform Modernization</span>
+        <span class="tag">Risk Management</span>
+        <span class="tag">Operational Excellence</span>
+      </div>
+
+      <hr class="sep"/>
+
+      <!-- DISCLAIMER -->
+      <p class="small">
+        This project is a reference architecture and narrative summary based on
+        real-world enterprise experience. All diagrams, configurations, and
+        descriptions are intentionally generalized to avoid disclosure of
+        proprietary systems, customer data, or employer-specific implementations.
+      </p>
+
+      <a class="btn" href="../projects.html">← Back to Projects</a>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="container">
+    <div>
+      © 2026 Jeremiah Cargill ·
+      <a href="https://github.com/jeremiah9980" target="_blank">GitHub</a>
+    </div>
+    <div class="small">
+      Enterprise platform engineering · infrastructure modernization
+    </div>
+  </div>
+</div>
+
+<script src="../assets/script.js"></script>
+</body>
+</html>
