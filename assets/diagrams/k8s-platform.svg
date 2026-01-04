@@ -6,5 +6,5 @@
 <rect x="100" y="240" width="240" height="120" rx="10" fill="#dcfce7"/>
 <text x="220" y="305" text-anchor="middle">Worker Nodes</text>
 <rect x="560" y="240" width="240" height="120" rx="10" fill="#ede9fe"/>
-<text x="680" y="305" text-anchor="middle">Ingress & Services</text>
+<text x="680" y="305" text-anchor="middle">Ingress &amp; Services</text>
 </svg>
