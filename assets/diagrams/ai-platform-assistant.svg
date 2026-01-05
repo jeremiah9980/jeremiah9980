@@ -1,53 +1,73 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
-  <rect width="1200" height="520" fill="#ffffff"/>
-  <text x="600" y="36" text-anchor="middle" font-size="22" fill="#0f172a">AI Platform Assistant – Infrastructure Intelligence Flow</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760">
 
-  <rect x="80" y="90" width="1040" height="120" rx="18" fill="#f1f5f9" stroke="#cbd5e1"/>
-  <text x="100" y="120" fill="#475569" font-size="14">Platform Signals (Read-only)</text>
+  <defs>
+    <style>
+      .title { font: 600 24px system-ui, -apple-system, Segoe UI, Roboto; fill:#0f172a }
+      .section { font: 600 14px system-ui, -apple-system, Segoe UI, Roboto; fill:#334155 }
+      .label { font: 12px system-ui, -apple-system, Segoe UI, Roboto; fill:#0f172a }
+      .muted { font: 12px system-ui, -apple-system, Segoe UI, Roboto; fill:#475569 }
+      .box { fill:#ffffff; stroke:#cbd5e1; stroke-width:1.5 }
+      .group { fill:#f8fafc; stroke:#cbd5e1; stroke-width:1.5 }
+      .control { fill:#eef2ff; stroke:#6366f1; stroke-width:1.5 }
+      .ops { fill:#ecfeff; stroke:#0891b2; stroke-width:1.5 }
+      .signal { fill:#f0fdf4; stroke:#16a34a; stroke-width:1.5 }
+      .warn { fill:#fff7ed; stroke:#f97316; stroke-width:1.5 }
+      .arrow { stroke:#334155; stroke-width:2; fill:none; marker-end:url(#arrow) }
+      .dashed { stroke-dasharray:6 6; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#334155"/>
+    </marker>
+  </defs>
 
-  <g stroke="#0f172a" fill="none">
-    <ellipse cx="220" cy="155" rx="26" ry="14"/>
-    <ellipse cx="200" cy="158" rx="20" ry="12"/>
-    <ellipse cx="242" cy="160" rx="20" ry="12"/>
-    <text x="220" y="195" text-anchor="middle" font-size="12">Cloud/VPC</text>
+  <text x="700" y="36" text-anchor="middle" class="title">AI Platform Assistant (Infrastructure Copilot)</text>
 
-    <polygon points="380,140 400,128 420,140 420,166 400,178 380,166" />
-    <circle cx="400" cy="153" r="6"/>
-    <text x="400" y="195" text-anchor="middle" font-size="12">Kubernetes</text>
+  <!-- Inputs -->
+  <rect x="80" y="80" width="1240" height="170" rx="18" class="signal"/>
+  <text x="100" y="110" class="section">Read-Only Context Inputs</text>
 
-    <rect x="540" y="138" width="70" height="34" rx="8"/>
-    <line x1="552" y1="155" x2="598" y2="155"/>
-    <polyline points="592,149 598,155 592,161"/>
-    <text x="575" y="195" text-anchor="middle" font-size="12">CI/CD</text>
+  <rect x="160" y="140" width="260" height="60" rx="10" class="box"/>
+  <text x="290" y="168" text-anchor="middle" class="label">Terraform / IaC</text>
+  <text x="290" y="190" text-anchor="middle" class="muted">State • Plans • Drift</text>
 
-    <circle cx="740" cy="155" r="18"/>
-    <polyline points="728,158 736,150 744,162 752,148" />
-    <text x="740" y="195" text-anchor="middle" font-size="12">SLO/Alerts</text>
-  </g>
+  <rect x="460" y="140" width="260" height="60" rx="10" class="box"/>
+  <text x="590" y="168" text-anchor="middle" class="label">Kubernetes</text>
+  <text x="590" y="190" text-anchor="middle" class="muted">Metadata • Events</text>
 
-  <rect x="80" y="240" width="1040" height="130" rx="18" fill="#f8fafc" stroke="#cbd5e1"/>
-  <text x="100" y="270" fill="#475569" font-size="14">AI Control Plane</text>
+  <rect x="760" y="140" width="260" height="60" rx="10" class="box"/>
+  <text x="890" y="168" text-anchor="middle" class="label">CI/CD</text>
+  <text x="890" y="190" text-anchor="middle" class="muted">Pipelines • Releases</text>
 
-  <g stroke="#0f172a" fill="none">
-    <rect x="420" y="285" width="360" height="60" rx="12"/>
-    <text x="600" y="315" text-anchor="middle" font-size="14" fill="#0f172a">LLM Reasoning Layer</text>
-    <text x="600" y="337" text-anchor="middle" font-size="12" fill="#475569">Prompt router • Context builder • Response composer</text>
+  <rect x="1060" y="140" width="220" height="60" rx="10" class="box"/>
+  <text x="1170" y="168" text-anchor="middle" class="label">Observability</text>
+  <text x="1170" y="190" text-anchor="middle" class="muted">SLOs • Alerts</text>
 
-    <rect x="820" y="285" width="240" height="60" rx="12"/>
-    <text x="940" y="315" text-anchor="middle" font-size="14" fill="#0f172a">Policy Guardrails</text>
-    <text x="940" y="337" text-anchor="middle" font-size="12" fill="#475569">Read-only • Redaction • Audit trails</text>
-  </g>
+  <!-- Reasoning + Guardrails -->
+  <rect x="80" y="280" width="1240" height="260" rx="18" class="control"/>
+  <text x="100" y="310" class="section">AI Control Plane (Advisory)</text>
 
-  <rect x="80" y="400" width="1040" height="90" rx="18" fill="#f1f5f9" stroke="#cbd5e1"/>
-  <text x="100" y="430" fill="#475569" font-size="14">Human-led Outcomes</text>
-  <g stroke="#0f172a" fill="none">
-    <rect x="180" y="445" width="220" height="34" rx="10"/>
-    <text x="290" y="468" text-anchor="middle" font-size="12" fill="#0f172a">Recommendations</text>
+  <rect x="210" y="365" width="520" height="120" rx="16" class="box"/>
+  <text x="470" y="405" text-anchor="middle" class="label">Reasoning Layer</text>
+  <text x="470" y="430" text-anchor="middle" class="muted">Routing • Context Builder • Response Composer</text>
+  <text x="470" y="455" text-anchor="middle" class="muted">No execution • No secrets</text>
 
-    <rect x="460" y="445" width="220" height="34" rx="10"/>
-    <text x="570" y="468" text-anchor="middle" font-size="12" fill="#0f172a">Deployment Reviews</text>
+  <rect x="790" y="365" width="460" height="120" rx="16" class="warn"/>
+  <text x="1020" y="405" text-anchor="middle" class="label">Policy Guardrails</text>
+  <text x="1020" y="430" text-anchor="middle" class="muted">Redaction • RBAC • Audit Trails</text>
+  <text x="1020" y="455" text-anchor="middle" class="muted">Human approval required</text>
 
-    <rect x="740" y="445" width="260" height="34" rx="10"/>
-    <text x="870" y="468" text-anchor="middle" font-size="12" fill="#0f172a">Incident Guidance / Runbooks</text>
-  </g>
+  <line x1="730" y1="425" x2="790" y2="425" class="arrow"/>
+
+  <!-- Outputs -->
+  <rect x="80" y="580" width="1240" height="120" rx="18" class="ops"/>
+  <text x="100" y="610" class="section">Human-Led Outcomes</text>
+
+  <rect x="160" y="630" width="300" height="50" rx="10" class="box"/>
+  <text x="310" y="660" text-anchor="middle" class="label">Architecture Guidance</text>
+
+  <rect x="500" y="630" width="320" height="50" rx="10" class="box"/>
+  <text x="660" y="660" text-anchor="middle" class="label">Deployment Reviews</text>
+
+  <rect x="860" y="630" width="420" height="50" rx="10" class="box"/>
+  <text x="1070" y="660" text-anchor="middle" class="label">Incident Triage & Runbooks</text>
 </svg>

@@ -1,36 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 420">
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760">
+
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    <style>
+      .title { font: 600 24px system-ui, -apple-system, Segoe UI, Roboto; fill:#0f172a }
+      .section { font: 600 14px system-ui, -apple-system, Segoe UI, Roboto; fill:#334155 }
+      .label { font: 12px system-ui, -apple-system, Segoe UI, Roboto; fill:#0f172a }
+      .muted { font: 12px system-ui, -apple-system, Segoe UI, Roboto; fill:#475569 }
+      .box { fill:#ffffff; stroke:#cbd5e1; stroke-width:1.5 }
+      .group { fill:#f8fafc; stroke:#cbd5e1; stroke-width:1.5 }
+      .control { fill:#eef2ff; stroke:#6366f1; stroke-width:1.5 }
+      .ops { fill:#ecfeff; stroke:#0891b2; stroke-width:1.5 }
+      .signal { fill:#f0fdf4; stroke:#16a34a; stroke-width:1.5 }
+      .warn { fill:#fff7ed; stroke:#f97316; stroke-width:1.5 }
+      .arrow { stroke:#334155; stroke-width:2; fill:none; marker-end:url(#arrow) }
+      .dashed { stroke-dasharray:6 6; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#334155"/>
     </marker>
   </defs>
-  <style>
-    .box{fill:#ffffff;stroke:#94a3b8;stroke-width:2;rx:16;ry:16}
-    .t{font-family:Arial,sans-serif;font-size:18px;fill:#0f172a}
-    .s{font-family:Arial,sans-serif;font-size:14px;fill:#334155}
-    .l{stroke:#94a3b8;stroke-width:2;marker-end:url(#arrow)}
-  </style>
 
-  <rect x="60" y="60" width="260" height="120" class="box"/>
-  <text x="92" y="95" class="t">Signals</text>
-  <text x="92" y="125" class="s">metrics • logs • traces</text>
+  <text x="700" y="36" text-anchor="middle" class="title">Observability & Reliability Engineering (SRE)</text>
 
-  <rect x="370" y="40" width="260" height="160" class="box"/>
-  <text x="402" y="80" class="t">Observability</text>
-  <text x="402" y="112" class="s">dashboards</text>
-  <text x="402" y="140" class="s">alert rules</text>
+  <!-- Signals -->
+  <rect x="80" y="80" width="1240" height="170" rx="18" class="signal"/>
+  <text x="100" y="110" class="section">Signals</text>
 
-  <rect x="680" y="40" width="240" height="160" class="box"/>
-  <text x="712" y="80" class="t">SLOs</text>
-  <text x="712" y="112" class="s">SLIs • error budgets</text>
-  <text x="712" y="140" class="s">burn-rate alerts</text>
+  <rect x="160" y="140" width="260" height="60" rx="10" class="box"/>
+  <text x="290" y="168" text-anchor="middle" class="label">Metrics</text>
+  <text x="290" y="190" text-anchor="middle" class="muted">Golden Signals</text>
 
-  <rect x="370" y="240" width="550" height="130" class="box"/>
-  <text x="402" y="275" class="t">Incident Response Loop</text>
-  <text x="402" y="305" class="s">detect → mitigate → communicate → resolve → learn</text>
-  <text x="402" y="335" class="s">postmortems → action items → reliability improvements</text>
+  <rect x="460" y="140" width="260" height="60" rx="10" class="box"/>
+  <text x="590" y="168" text-anchor="middle" class="label">Logs</text>
+  <text x="590" y="190" text-anchor="middle" class="muted">Context & Forensics</text>
 
-  <line x1="320" y1="120" x2="370" y2="120" class="l"/>
-  <line x1="630" y1="120" x2="680" y2="120" class="l"/>
-  <line x1="800" y1="200" x2="650" y2="240" class="l"/>
+  <rect x="760" y="140" width="260" height="60" rx="10" class="box"/>
+  <text x="890" y="168" text-anchor="middle" class="label">Traces</text>
+  <text x="890" y="190" text-anchor="middle" class="muted">Latency Breakdown</text>
+
+  <rect x="1060" y="140" width="220" height="60" rx="10" class="box"/>
+  <text x="1170" y="168" text-anchor="middle" class="label">SLOs</text>
+  <text x="1170" y="190" text-anchor="middle" class="muted">Error Budgets</text>
+
+  <!-- Reliability Loop -->
+  <rect x="80" y="280" width="1240" height="260" rx="18" class="group"/>
+  <text x="100" y="310" class="section">Reliability Loop</text>
+
+  <rect x="170" y="380" width="240" height="90" rx="14" class="box"/>
+  <text x="290" y="415" text-anchor="middle" class="label">Detect</text>
+  <text x="290" y="438" text-anchor="middle" class="muted">Alert Quality</text>
+
+  <rect x="450" y="380" width="240" height="90" rx="14" class="box"/>
+  <text x="570" y="415" text-anchor="middle" class="label">Respond</text>
+  <text x="570" y="438" text-anchor="middle" class="muted">Runbooks • IC</text>
+
+  <rect x="730" y="380" width="240" height="90" rx="14" class="box"/>
+  <text x="850" y="415" text-anchor="middle" class="label">Recover</text>
+  <text x="850" y="438" text-anchor="middle" class="muted">Rollback • Mitigation</text>
+
+  <rect x="1010" y="380" width="240" height="90" rx="14" class="box"/>
+  <text x="1130" y="415" text-anchor="middle" class="label">Learn</text>
+  <text x="1130" y="438" text-anchor="middle" class="muted">Postmortems</text>
+
+  <line x1="410" y1="425" x2="450" y2="425" class="arrow"/>
+  <line x1="690" y1="425" x2="730" y2="425" class="arrow"/>
+  <line x1="970" y1="425" x2="1010" y2="425" class="arrow"/>
+  <path d="M 1250 425 C 1290 425, 1290 330, 1210 330" class="arrow"/>
+  <line x1="1210" y1="330" x2="210" y2="330" class="arrow"/>
+
+  <!-- Outcomes -->
+  <rect x="80" y="580" width="1240" height="120" rx="18" class="ops"/>
+  <text x="100" y="610" class="section">Operational Outcomes</text>
+  <text x="700" y="650" text-anchor="middle" class="label">
+    Fewer Paging Events • Faster MTTR • Better Change Safety • Continuous Improvement
+  </text>
+  <text x="700" y="675" text-anchor="middle" class="muted">
+    SLO-based alerting • Burn rates • High-signal runbooks • Blameless postmortems
+  </text>
 </svg>
