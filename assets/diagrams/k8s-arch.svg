@@ -1,38 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 420">
-  <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
-    </marker>
-  </defs>
-  <style>
-    .box{fill:#ffffff;stroke:#94a3b8;stroke-width:2;rx:16;ry:16}
-    .t{font-family:Arial,sans-serif;font-size:18px;fill:#0f172a}
-    .s{font-family:Arial,sans-serif;font-size:14px;fill:#334155}
-    .l{stroke:#94a3b8;stroke-width:2;marker-end:url(#arrow)}
-  </style>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+<rect width="1200" height="520" fill="#ffffff"/>
+<text x="600" y="40" text-anchor="middle" font-size="22" fill="#0f172a">Kubernetes Platform Architecture</text>
 
-  <rect x="60" y="55" width="270" height="110" class="box"/>
-  <text x="92" y="92" class="t">GitOps / CI</text>
-  <text x="92" y="122" class="s">manifest validation</text>
+<rect x="80" y="80" width="1040" height="120" rx="18" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="100" y="110" font-size="14" fill="#475569">Foundation</text>
 
-  <rect x="380" y="35" width="540" height="350" class="box"/>
-  <text x="410" y="72" class="t">Kubernetes Cluster (AKS/EKS-style)</text>
+<g stroke="#0f172a" fill="none">
+  <rect x="180" y="130" width="60" height="40" rx="6"/>
+  <rect x="260" y="130" width="60" height="40" rx="6"/>
+  <circle cx="380" cy="150" r="8"/>
+  <circle cx="420" cy="150" r="8"/>
+  <line x1="388" y1="150" x2="412" y2="150"/>
+</g>
 
-  <rect x="420" y="105" width="230" height="105" class="box"/>
-  <text x="446" y="140" class="t">Ingress</text>
-  <text x="446" y="170" class="s">ingress-nginx (ref)</text>
+<rect x="80" y="230" width="1040" height="120" rx="18" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="100" y="260" font-size="14" fill="#475569">Platform</text>
 
-  <rect x="690" y="105" width="200" height="105" class="box"/>
-  <text x="716" y="140" class="t">Certs</text>
-  <text x="716" y="170" class="s">cert-manager (ref)</text>
+<rect x="520" y="270" width="160" height="50" rx="10" fill="none" stroke="#0f172a"/>
+<text x="600" y="300" text-anchor="middle" fill="#0f172a">Control Plane</text>
 
-  <rect x="420" y="240" width="230" height="105" class="box"/>
-  <text x="446" y="275" class="t">Observability</text>
-  <text x="446" y="305" class="s">Prometheus + Grafana</text>
+<rect x="80" y="380" width="1040" height="100" rx="18" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="100" y="410" font-size="14" fill="#475569">Operations</text>
 
-  <rect x="690" y="240" width="200" height="105" class="box"/>
-  <text x="716" y="275" class="t">Apps</text>
-  <text x="716" y="305" class="s">demo workload</text>
-
-  <line x1="330" y1="110" x2="380" y2="110" class="l"/>
+<polyline points="560,430 580,410 600,430" stroke="#0f172a" fill="none"/>
+<polyline points="600,430 620,410 640,430" stroke="#0f172a" fill="none"/>
 </svg>
