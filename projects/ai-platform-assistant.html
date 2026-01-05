@@ -8,7 +8,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <div class="nav">
   <div class="container nav-inner">
     <div class="brand">
@@ -26,16 +25,13 @@
   </div>
 </div>
 
-<!-- CONTENT -->
 <div class="section">
   <div class="container fade-in">
 
     <div class="h2">AI Platform Assistant</div>
-
     <p class="meta">
-      A human-led, AI-assisted platform engineering system that accelerates
-      infrastructure analysis, deployment review, and operational decision-making
-      across cloud, Kubernetes, CI/CD, and SRE domains.
+      A human-led, AI-assisted platform engineering system that accelerates infrastructure analysis,
+      deployment reviews, and operational decision-making across cloud, Kubernetes, CI/CD, and SRE domains.
     </p>
 
     <div class="tagrow">
@@ -48,71 +44,53 @@
 
     <hr class="sep"/>
 
-    <h3>Problem Context</h3>
+    <h3>What this is</h3>
     <p>
-      Modern infrastructure teams operate complex platforms spanning cloud,
-      Kubernetes, CI/CD pipelines, and observability systems. Critical knowledge
-      is often fragmented across dashboards, configs, and runbooks — slowing
-      decision-making during deployments and incidents.
-    </p>
-
-    <p>
-      This project demonstrates how AI can be applied safely to infrastructure
-      environments as an **advisory system**, providing context-aware guidance
-      while preserving human ownership, change control, and risk management.
+      Platform teams rely on dispersed signals (Terraform state, Kubernetes metadata, CI/CD pipelines, SLOs, alerts,
+      runbooks). This project shows how to unify those signals into a safe, advisory AI layer that improves speed and clarity
+      without bypassing change control.
     </p>
 
     <hr class="sep"/>
 
-    <h3>Architecture Overview</h3>
-
+    <h3>Architecture</h3>
     <div class="card">
       <div class="arch-preview">
-        <img
-          src="../assets/diagrams/ai-platform-assistant.svg"
-          alt="AI Platform Assistant Architecture">
+        <img src="../assets/diagrams/ai-platform-assistant.svg" alt="AI Platform Assistant Architecture"/>
       </div>
     </div>
 
     <hr class="sep"/>
 
-    <h3>Core Capabilities</h3>
+    <h3>Core capabilities</h3>
     <ul>
-      <li><strong>Infrastructure Analysis</strong> — Reviews cloud, Terraform, and Kubernetes metadata to identify risks and inconsistencies</li>
-      <li><strong>Deployment Review</strong> — Evaluates CI/CD pipelines for readiness, safety gates, and rollout risk</li>
-      <li><strong>Incident Assistance</strong> — Guides responders through diagnostics using observability and SLO context</li>
-      <li><strong>Policy & Guardrails</strong> — Enforces read-only access, human-in-the-loop validation, and auditability</li>
+      <li><strong>Infrastructure analysis</strong>: summarize risk, drift, and dependencies using read-only platform metadata.</li>
+      <li><strong>Deployment readiness</strong>: review CI/CD pipelines for gates, rollbacks, and safe rollout patterns.</li>
+      <li><strong>Incident assistance</strong>: guide responders using observability context (SLIs/SLOs, alerts, timelines).</li>
+      <li><strong>Guardrails</strong>: policy-aware outputs, no destructive actions, human-in-the-loop validation.</li>
     </ul>
 
     <hr class="sep"/>
 
-    <h3>Safety & Design Principles</h3>
+    <h3>Safety & guardrails</h3>
     <ul>
-      <li>No destructive actions — advisory only</li>
+      <li>No destructive actions (advisory only)</li>
       <li>Read-only ingestion of platform metadata</li>
-      <li>Human validation required for all decisions</li>
-      <li>No secrets, credentials, or customer data</li>
-      <li>Fully sanitized reference architecture</li>
+      <li>Human approval required for changes</li>
+      <li>No secrets, credentials, customer data, or employer-confidential detail</li>
     </ul>
 
     <hr class="sep"/>
 
     <h3>Repository</h3>
-    <p>
-      The reference implementation and documentation live here:
-    </p>
-
-    <a class="btn"
-       href="https://github.com/jeremiah9980/ai-platform-assistant"
-       target="_blank">
-       View GitHub Repository
-    </a>
+    <p class="meta">Reference repo (publish-safe):</p>
+    <a class="btn" href="https://github.com/jeremiah9980/ai-platform-assistant" target="_blank">View on GitHub</a>
 
     <hr class="sep"/>
 
     <p class="small">
-      This project demonstrates how AI can be operationalized as infrastructure —
-      governed, observable, and aligned with enterprise engineering practices.
+      This page is production-inspired and intentionally sanitized. The goal is to demonstrate platform patterns,
+      operational thinking, and safe AI integration practices.
     </p>
 
     <a class="btn" href="../projects.html">← Back to Projects</a>
@@ -120,16 +98,10 @@
   </div>
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
   <div class="container">
-    <div>
-      © 2026 Jeremiah Cargill ·
-      <a href="https://github.com/jeremiah9980" target="_blank">GitHub</a>
-    </div>
-    <div class="small">
-      Platform engineering · AI-assisted systems · operational excellence
-    </div>
+    <div>© 2026 Jeremiah Cargill · <a href="https://github.com/jeremiah9980" target="_blank">GitHub</a></div>
+    <div class="small">Platform engineering · AI-assisted systems · operational excellence</div>
   </div>
 </div>
 
