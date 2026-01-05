@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520">
+  <rect x="0" y="0" width="1100" height="520" fill="#ffffff"/>
+
+  <text x="550" y="44" text-anchor="middle" font-family="Arial" font-size="22" fill="#0f172a">
+    AI-Assisted Platform Engineering Workflow
+  </text>
+  <text x="550" y="70" text-anchor="middle" font-family="Arial" font-size="14" fill="#334155">
+    Human-led judgment with AI-accelerated drafting and consistency
+  </text>
+
+  <!-- Column headers -->
+  <text x="170" y="120" text-anchor="middle" font-family="Arial" font-size="13" fill="#64748b">Input</text>
+  <text x="550" y="120" text-anchor="middle" font-family="Arial" font-size="13" fill="#64748b">AI Acceleration</text>
+  <text x="930" y="120" text-anchor="middle" font-family="Arial" font-size="13" fill="#64748b">Outputs</text>
+
+  <!-- Boxes -->
+  <rect x="70" y="150" width="300" height="80" rx="12" fill="#e0f2fe" stroke="#94a3b8"/>
+  <text x="220" y="182" text-anchor="middle" font-family="Arial" font-size="16" fill="#0f172a">Requirements &amp; Constraints</text>
+  <text x="220" y="205" text-anchor="middle" font-family="Arial" font-size="12" fill="#334155">Scope, risk boundaries, acceptance criteria</text>
+
+  <rect x="400" y="150" width="300" height="80" rx="12" fill="#dcfce7" stroke="#94a3b8"/>
+  <text x="550" y="182" text-anchor="middle" font-family="Arial" font-size="16" fill="#0f172a">Draft Generation</text>
+  <text x="550" y="205" text-anchor="middle" font-family="Arial" font-size="12" fill="#334155">Pages, READMEs, repo scaffolds, diagrams</text>
+
+  <rect x="730" y="150" width="300" height="80" rx="12" fill="#ede9fe" stroke="#94a3b8"/>
+  <text x="880" y="182" text-anchor="middle" font-family="Arial" font-size="16" fill="#0f172a">Published Artifacts</text>
+  <text x="880" y="205" text-anchor="middle" font-family="Arial" font-size="12" fill="#334155">Versioned and shareable portfolio deliverables</text>
+
+  <rect x="70" y="260" width="300" height="90" rx="12" fill="#fff7ed" stroke="#94a3b8"/>
+  <text x="220" y="292" text-anchor="middle" font-family="Arial" font-size="16" fill="#0f172a">Human Validation</text>
+  <text x="220" y="315" text-anchor="middle" font-family="Arial" font-size="12" fill="#334155">Correctness, tradeoffs, safety, tone</text>
+  <text x="220" y="336" text-anchor="middle" font-family="Arial" font-size="12" fill="#334155">Architectural ownership stays human-led</text>
+
+  <rect x="400" y="260" width="300" height="90" rx="12" fill="#ffe4e6" stroke="#94a3b8"/>
+  <text x="550" y="292" text-anchor="middle" font-family="Arial" font-size="16" fill="#0f172a">Sanitization Controls</text>
+  <text x="550" y="315" text-anchor="middle" font-family="Arial" font-size="12" fill="#334155">Remove proprietary details; keep patterns</text>
+  <text x="550" y="336" text-anchor="middle" font-family="Arial" font-size="12" fill="#334155">No customer data, secrets, internal topology</text>
+
+  <rect x="730" y="260" width="300" height="90" rx="12" fill="#e2e8f0" stroke="#94a3b8"/>
+  <text x="880" y="292" text-anchor="middle" font-family="Arial" font-size="16" fill="#0f172a">Iteration Loop</text>
+  <text x="880" y="315" text-anchor="middle" font-family="Arial" font-size="12" fill="#334155">Commit, review, refine, standardize</text>
+  <text x="880" y="336" text-anchor="middle" font-family="Arial" font-size="12" fill="#334155">Consistent quality across project suite</text>
+
+  <!-- Arrows -->
+  <line x1="370" y1="190" x2="400" y2="190" stroke="#0f172a" stroke-width="2"/>
+  <polygon points="400,190 392,185 392,195" fill="#0f172a"/>
+
+  <line x1="700" y1="190" x2="730" y2="190" stroke="#0f172a" stroke-width="2"/>
+  <polygon points="730,190 722,185 722,195" fill="#0f172a"/>
+
+  <line x1="220" y1="230" x2="220" y2="260" stroke="#0f172a" stroke-width="2"/>
+  <polygon points="220,260 215,252 225,252" fill="#0f172a"/>
+
+  <line x1="370" y1="305" x2="400" y2="305" stroke="#0f172a" stroke-width="2"/>
+  <polygon points="400,305 392,300 392,310" fill="#0f172a"/>
+
+  <line x1="700" y1="305" x2="730" y2="305" stroke="#0f172a" stroke-width="2"/>
+  <polygon points="730,305 722,300 722,310" fill="#0f172a"/>
+
+  <!-- Footer note -->
+  <text x="550" y="470" text-anchor="middle" font-family="Arial" font-size="12" fill="#64748b">
+    Principle: AI accelerates drafting and consistency; human judgment owns correctness, risk, and final decisions.
+  </text>
+</svg>
