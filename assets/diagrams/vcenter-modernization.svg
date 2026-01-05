@@ -1,1 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520"><rect width="1200" height="520" fill="#020617"/><text x="600" y="40" fill="#e5e7eb" text-anchor="middle" font-size="22">vCenter Platform Modernization</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+<rect width="1200" height="520" fill="#ffffff"/>
+<text x="600" y="40" text-anchor="middle" font-size="22" fill="#0f172a">VMware vCenter Platform Modernization</text>
+
+<rect x="80" y="80" width="1040" height="120" rx="18" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="100" y="110" font-size="14" fill="#475569">Foundation</text>
+
+<g stroke="#0f172a" fill="none">
+  <rect x="180" y="130" width="60" height="40" rx="6"/>
+  <rect x="260" y="130" width="60" height="40" rx="6"/>
+  <circle cx="380" cy="150" r="8"/>
+  <circle cx="420" cy="150" r="8"/>
+  <line x1="388" y1="150" x2="412" y2="150"/>
+</g>
+
+<rect x="80" y="230" width="1040" height="120" rx="18" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="100" y="260" font-size="14" fill="#475569">Platform</text>
+
+<rect x="520" y="270" width="160" height="50" rx="10" fill="none" stroke="#0f172a"/>
+<text x="600" y="300" text-anchor="middle" fill="#0f172a">Control Plane</text>
+
+<rect x="80" y="380" width="1040" height="100" rx="18" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="100" y="410" font-size="14" fill="#475569">Operations</text>
+
+<polyline points="560,430 580,410 600,430" stroke="#0f172a" fill="none"/>
+<polyline points="600,430 620,410 640,430" stroke="#0f172a" fill="none"/>
+</svg>
