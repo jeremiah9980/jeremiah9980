@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <rect width="1200" height="520" fill="#ffffff"/>
+  <text x="600" y="36" text-anchor="middle" font-size="22" fill="#0f172a">AI Platform Assistant – Infrastructure Intelligence Flow</text>
+
+  <rect x="80" y="90" width="1040" height="120" rx="18" fill="#f1f5f9" stroke="#cbd5e1"/>
+  <text x="100" y="120" fill="#475569" font-size="14">Platform Signals (Read-only)</text>
+
+  <g stroke="#0f172a" fill="none">
+    <ellipse cx="220" cy="155" rx="26" ry="14"/>
+    <ellipse cx="200" cy="158" rx="20" ry="12"/>
+    <ellipse cx="242" cy="160" rx="20" ry="12"/>
+    <text x="220" y="195" text-anchor="middle" font-size="12">Cloud/VPC</text>
+
+    <polygon points="380,140 400,128 420,140 420,166 400,178 380,166" />
+    <circle cx="400" cy="153" r="6"/>
+    <text x="400" y="195" text-anchor="middle" font-size="12">Kubernetes</text>
+
+    <rect x="540" y="138" width="70" height="34" rx="8"/>
+    <line x1="552" y1="155" x2="598" y2="155"/>
+    <polyline points="592,149 598,155 592,161"/>
+    <text x="575" y="195" text-anchor="middle" font-size="12">CI/CD</text>
+
+    <circle cx="740" cy="155" r="18"/>
+    <polyline points="728,158 736,150 744,162 752,148" />
+    <text x="740" y="195" text-anchor="middle" font-size="12">SLO/Alerts</text>
+  </g>
+
+  <rect x="80" y="240" width="1040" height="130" rx="18" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="100" y="270" fill="#475569" font-size="14">AI Control Plane</text>
+
+  <g stroke="#0f172a" fill="none">
+    <rect x="420" y="285" width="360" height="60" rx="12"/>
+    <text x="600" y="315" text-anchor="middle" font-size="14" fill="#0f172a">LLM Reasoning Layer</text>
+    <text x="600" y="337" text-anchor="middle" font-size="12" fill="#475569">Prompt router • Context builder • Response composer</text>
+
+    <rect x="820" y="285" width="240" height="60" rx="12"/>
+    <text x="940" y="315" text-anchor="middle" font-size="14" fill="#0f172a">Policy Guardrails</text>
+    <text x="940" y="337" text-anchor="middle" font-size="12" fill="#475569">Read-only • Redaction • Audit trails</text>
+  </g>
+
+  <rect x="80" y="400" width="1040" height="90" rx="18" fill="#f1f5f9" stroke="#cbd5e1"/>
+  <text x="100" y="430" fill="#475569" font-size="14">Human-led Outcomes</text>
+  <g stroke="#0f172a" fill="none">
+    <rect x="180" y="445" width="220" height="34" rx="10"/>
+    <text x="290" y="468" text-anchor="middle" font-size="12" fill="#0f172a">Recommendations</text>
+
+    <rect x="460" y="445" width="220" height="34" rx="10"/>
+    <text x="570" y="468" text-anchor="middle" font-size="12" fill="#0f172a">Deployment Reviews</text>
+
+    <rect x="740" y="445" width="260" height="34" rx="10"/>
+    <text x="870" y="468" text-anchor="middle" font-size="12" fill="#0f172a">Incident Guidance / Runbooks</text>
+  </g>
+</svg>
