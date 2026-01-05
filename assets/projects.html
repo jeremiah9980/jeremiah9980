@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Projects | Jeremiah Cargill</title>
+  <link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body>
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <strong>Jeremiah Cargill</strong>
+        <span>Senior Infrastructure & Platform Engineer</span>
+      </div>
+      <div class="nav-links">
+        <a class="btn" href="index.html">Home</a>
+        <a class="btn active" href="projects.html">Projects</a>
+        <a class="btn" href="resume.html">Resume</a>
+        <a class="btn" href="about.html">About</a>
+        <a class="btn" href="contact.html">Contact</a>
+        <button id="themeToggle" class="btn" type="button">Light mode</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="section">
+    <div class="container">
+      <div class="h2">Projects</div>
+      <p class="meta">A curated platform story across cloud, networking, Kubernetes, CI/CD, SRE, and Terraform automation. Each project includes an architecture preview and legend overlay.</p>
+    </div>
+  </header>
+
+  <section class="strip">
+    <div class="container strip-inner">
+      <div class="strip-title">Featured Projects</div>
+      <div class="strip-items" id="featuredStrip"></div>
+    </div>
+  </section>
+
+  <main class="section">
+    <div class="container">
+      <div class="grid projects-grid" id="projectsGrid">
+        <article class="card project" data-project-id="vcenter" data-featured="true">
+          <div class="card-media">
+            <img class="svg-preview" loading="lazy"
+                 src="assets/diagrams/vcenter-modernization.svg"
+                 data-fallback="assets/diagrams/vcenter-modernization.png"
+                 alt="vCenter modernization architecture"/>
+            <button class="legend-btn" data-legend="legend-vcenter">Legend</button>
+          </div>
+          <div class="card-body">
+            <h3>VMware vCenter Modernization</h3>
+            <p class="meta">Policy-driven, API-first operations with GitOps, backup hardening, and DR runbooks.</p>
+            <div class="tagrow"><span class="tag">VMware</span><span class="tag">GitOps</span><span class="tag">DR</span></div>
+            <div class="actions">
+              <a class="btn" href="projects/vcenter.html">Deep dive</a>
+              <a class="btn ghost" href="https://github.com/jeremiah9980" target="_blank">Repo</a>
+            </div>
+          </div>
+          <div id="legend-vcenter" class="legend-overlay" hidden>
+            <div class="legend">
+              <div class="legend-title">Legend — vCenter Modernization</div>
+              <ul>
+                <li><span class="swatch"></span>Mgmt Cluster</li>
+                <li><span class="swatch"></span>Prod Cluster</li>
+                <li><span class="swatch"></span>Backup/DR</li>
+                <li><span class="swatch"></span>GitOps Pipeline</li>
+              </ul>
+              <button class="btn small close-legend" type="button">Close</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project" data-project-id="cicd" data-featured="true">
+          <div class="card-media">
+            <img class="svg-preview" loading="lazy"
+                 src="assets/diagrams/cicd-platform.svg"
+                 data-fallback="assets/diagrams/cicd-platform.png"
+                 alt="Enterprise CI/CD platform architecture"/>
+            <button class="legend-btn" data-legend="legend-cicd">Legend</button>
+          </div>
+          <div class="card-body">
+            <h3>Enterprise CI/CD Platform</h3>
+            <p class="meta">Multi-tenant pipelines, policy gates, and provenance (SLSA) across Kubernetes with golden paths.</p>
+            <div class="tagrow"><span class="tag">Pipelines</span><span class="tag">SLSA</span><span class="tag">Kubernetes</span></div>
+            <div class="actions">
+              <a class="btn" href="projects/cicd.html">Deep dive</a>
+              <a class="btn ghost" href="https://github.com/jeremiah9980" target="_blank">Repo</a>
+            </div>
+          </div>
+          <div id="legend-cicd" class="legend-overlay" hidden>
+            <div class="legend">
+              <div class="legend-title">Legend — CI/CD Platform</div>
+              <ul>
+                <li><span class="swatch"></span>Source/PR</li>
+                <li><span class="swatch"></span>Build/Scan</li>
+                <li><span class="swatch"></span>Deploy</li>
+                <li><span class="swatch"></span>Observability</li>
+              </ul>
+              <button class="btn small close-legend" type="button">Close</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project" data-project-id="cloud-migration">
+          <div class="card-media">
+            <img class="svg-preview" loading="lazy"
+                 src="assets/diagrams/cloud-network.svg"
+                 data-fallback="assets/diagrams/cloud-network.png"
+                 alt="Cloud migration & network architecture"/>
+            <button class="legend-btn" data-legend="legend-cloud">Legend</button>
+          </div>
+          <div class="card-body">
+            <h3>Cloud Migration & Network Architecture</h3>
+            <p class="meta">Hub‑and‑spoke, transit, and zero‑trust segmentation with deterministic routing and IaC baselines.</p>
+            <div class="tagrow"><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Transit</span></div>
+            <div class="actions">
+              <a class="btn" href="projects/cloud-migration.html">Deep dive</a>
+              <a class="btn ghost" href="https://github.com/jeremiah9980" target="_blank">Repo</a>
+            </div>
+          </div>
+          <div id="legend-cloud" class="legend-overlay" hidden>
+            <div class="legend">
+              <div class="legend-title">Legend — Cloud Migration</div>
+              <ul>
+                <li><span class="swatch"></span>Spokes</li>
+                <li><span class="swatch"></span>Transit</li>
+                <li><span class="swatch"></span>On‑prem</li>
+                <li><span class="swatch"></span>Security Zones</li>
+              </ul>
+              <button class="btn small close-legend" type="button">Close</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project" data-project-id="kubernetes">
+          <div class="card-media">
+            <img class="svg-preview" loading="lazy"
+                 src="assets/diagrams/k8s-platform.svg"
+                 data-fallback="assets/diagrams/k8s-platform.png"
+                 alt="Kubernetes platform architecture"/>
+            <button class="legend-btn" data-legend="legend-k8s">Legend</button>
+          </div>
+          <div class="card-body">
+            <h3>Kubernetes Platform</h3>
+            <p class="meta">Multi‑cluster fleet with policy, tenancy, and golden add‑ons delivered via GitOps.</p>
+            <div class="tagrow"><span class="tag">Fleet</span><span class="tag">OPA</span><span class="tag">GitOps</span></div>
+            <div class="actions">
+              <a class="btn" href="projects/kubernetes.html">Deep dive</a>
+              <a class="btn ghost" href="https://github.com/jeremiah9980" target="_blank">Repo</a>
+            </div>
+          </div>
+          <div id="legend-k8s" class="legend-overlay" hidden>
+            <div class="legend">
+              <div class="legend-title">Legend — Kubernetes Platform</div>
+              <ul>
+                <li><span class="swatch"></span>Mgmt</li>
+                <li><span class="swatch"></span>Workload</li>
+                <li><span class="swatch"></span>Ingress</li>
+                <li><span class="swatch"></span>Data Svcs</li>
+              </ul>
+              <button class="btn small close-legend" type="button">Close</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project" data-project-id="sre">
+          <div class="card-media">
+            <img class="svg-preview" loading="lazy"
+                 src="assets/diagrams/sre-loop.svg"
+                 data-fallback="assets/diagrams/sre-loop.png"
+                 alt="SRE loop architecture"/>
+            <button class="legend-btn" data-legend="legend-sre">Legend</button>
+          </div>
+          <div class="card-body">
+            <h3>Observability & Reliability (SRE)</h3>
+            <p class="meta">SLI/SLO, burn‑rate alerts, incident runbooks, dashboards, and postmortems.</p>
+            <div class="tagrow"><span class="tag">SLI/SLO</span><span class="tag">Burn Rate</span><span class="tag">Runbooks</span></div>
+            <div class="actions">
+              <a class="btn" href="projects/sre.html">Deep dive</a>
+              <a class="btn ghost" href="https://github.com/jeremiah9980/observability-reliability-reference" target="_blank">Repo</a>
+            </div>
+          </div>
+          <div id="legend-sre" class="legend-overlay" hidden>
+            <div class="legend">
+              <div class="legend-title">Legend — SRE</div>
+              <ul>
+                <li><span class="swatch"></span>SLIs</li>
+                <li><span class="swatch"></span>SLOs</li>
+                <li><span class="swatch"></span>Alerts</li>
+                <li><span class="swatch"></span>Dashboards</li>
+              </ul>
+              <button class="btn small close-legend" type="button">Close</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project" data-project-id="terraform">
+          <div class="card-media">
+            <img class="svg-preview" loading="lazy"
+                 src="assets/diagrams/terraform-platform.svg"
+                 data-fallback="assets/diagrams/terraform-platform.png"
+                 alt="Terraform automation architecture"/>
+            <button class="legend-btn" data-legend="legend-tf">Legend</button>
+          </div>
+          <div class="card-body">
+            <h3>Terraform Platform Automation</h3>
+            <p class="meta">Opinionated modules, policy checks, PR envs, drift detection, and safe rollbacks.</p>
+            <div class="tagrow"><span class="tag">Terraform</span><span class="tag">OPA</span><span class="tag">Workspaces</span></div>
+            <div class="actions">
+              <a class="btn" href="projects/terraform.html">Deep dive</a>
+              <a class="btn ghost" href="https://github.com/jeremiah9980" target="_blank">Repo</a>
+            </div>
+          </div>
+          <div id="legend-tf" class="legend-overlay" hidden>
+            <div class="legend">
+              <div class="legend-title">Legend — Terraform</div>
+              <ul>
+                <li><span class="swatch"></span>Modules</li>
+                <li><span class="swatch"></span>Policies</li>
+                <li><span class="swatch"></span>Runtimes</li>
+                <li><span class="swatch"></span>States</li>
+              </ul>
+              <button class="btn small close-legend" type="button">Close</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <div class="footer">
+    <div class="container">
+      <div>© 2026 Jeremiah Cargill · <a href="https://github.com/jeremiah9980" target="_blank">GitHub</a></div>
+      <div class="small">Portfolio content is reference-only and intentionally generic.</div>
+    </div>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
