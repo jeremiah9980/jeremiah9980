@@ -33,6 +33,23 @@ body[data-theme="light"]{
   --brand-2:#38bdf8;
   --btn:#eef2f7;
 }
+.project-preview {
+  width: 100%;
+  height: 220px;              /* REQUIRED */
+  background: #0b1220;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.project-preview img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;        /* prevents cropping */
+  display: block;
+}
 
 /* Base */
 *{box-sizing:border-box}
