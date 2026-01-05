@@ -1,27 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
-<rect width="1200" height="520" fill="#ffffff"/>
-<text x="600" y="40" text-anchor="middle" font-size="22" fill="#0f172a">Terraform Platform Automation</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 380">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <style>
+    .box{fill:#ffffff;stroke:#94a3b8;stroke-width:2;rx:16;ry:16}
+    .t{font-family:Arial,sans-serif;font-size:18px;fill:#0f172a}
+    .s{font-family:Arial,sans-serif;font-size:14px;fill:#334155}
+    .l{stroke:#94a3b8;stroke-width:2;marker-end:url(#arrow)}
+  </style>
+  <rect x="35" y="60" width="270" height="110" class="box"/>
+  <text x="70" y="95" class="t">Developer / Platform Eng</text>
+  <text x="70" y="125" class="s">Pull request → CI</text>
 
-<rect x="80" y="80" width="1040" height="120" rx="18" fill="#f1f5f9" stroke="#cbd5e1"/>
-<text x="100" y="110" font-size="14" fill="#475569">Foundation</text>
+  <rect x="355" y="40" width="270" height="150" class="box"/>
+  <text x="392" y="80" class="t">GitHub Actions</text>
+  <text x="392" y="112" class="s">fmt • validate • plan</text>
+  <text x="392" y="140" class="s">policy gates (optional)</text>
 
-<g stroke="#0f172a" fill="none">
-  <rect x="180" y="130" width="60" height="40" rx="6"/>
-  <rect x="260" y="130" width="60" height="40" rx="6"/>
-  <circle cx="380" cy="150" r="8"/>
-  <circle cx="420" cy="150" r="8"/>
-  <line x1="388" y1="150" x2="412" y2="150"/>
-</g>
+  <rect x="675" y="40" width="270" height="150" class="box"/>
+  <text x="716" y="80" class="t">Terraform</text>
+  <text x="716" y="112" class="s">modules + environments</text>
+  <text x="716" y="140" class="s">remote state pattern</text>
 
-<rect x="80" y="230" width="1040" height="120" rx="18" fill="#f8fafc" stroke="#cbd5e1"/>
-<text x="100" y="260" font-size="14" fill="#475569">Platform</text>
+  <rect x="150" y="225" width="300" height="110" class="box"/>
+  <text x="182" y="260" class="t">AWS (Reference)</text>
+  <text x="182" y="290" class="s">VPC • IAM • tags</text>
 
-<rect x="520" y="270" width="160" height="50" rx="10" fill="none" stroke="#0f172a"/>
-<text x="600" y="300" text-anchor="middle" fill="#0f172a">Control Plane</text>
+  <rect x="530" y="225" width="300" height="110" class="box"/>
+  <text x="562" y="260" class="t">Azure (Reference)</text>
+  <text x="562" y="290" class="s">VNet • NSG • identity</text>
 
-<rect x="80" y="380" width="1040" height="100" rx="18" fill="#f1f5f9" stroke="#cbd5e1"/>
-<text x="100" y="410" font-size="14" fill="#475569">Operations</text>
-
-<polyline points="560,430 580,410 600,430" stroke="#0f172a" fill="none"/>
-<polyline points="600,430 620,410 640,430" stroke="#0f172a" fill="none"/>
+  <line x1="305" y1="115" x2="355" y2="115" class="l"/>
+  <line x1="625" y1="115" x2="675" y2="115" class="l"/>
+  <line x1="720" y1="190" x2="340" y2="225" class="l"/>
+  <line x1="805" y1="190" x2="680" y2="225" class="l"/>
 </svg>
