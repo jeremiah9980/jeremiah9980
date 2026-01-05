@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Resume | Jeremiah Cargill</title>
-  <link rel="stylesheet" href="assets/styles.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Jeremiah Cargill</title>
+
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
 
@@ -17,7 +18,7 @@
     </div>
     <div class="nav-links">
       <a class="btn" href="index.html">Home</a>
-      <a class="btn" href="projects.html">Projects</a>
+      <a class="btn active" href="projects.html">Projects</a>
       <a class="btn" href="resume.html">Resume</a>
       <a class="btn" href="about.html">About</a>
       <a class="btn" href="contact.html">Contact</a>
@@ -28,93 +29,170 @@
 
 <!-- CONTENT -->
 <div class="section">
-  <div class="container">
-    <div class="fade-in">
+  <div class="container fade-in">
 
-      <div class="h2">Resume</div>
+    <h1>Platform Engineering Projects</h1>
+    <p class="meta">
+      These projects represent an end-to-end platform lifecycle — from foundational
+      infrastructure and networking, through automation and runtime platforms,
+      to observability, reliability, and AI-assisted operational intelligence.
+    </p>
 
-      <p class="meta">
-        Senior Infrastructure & Platform Engineer with deep experience designing,
-        automating, and operating enterprise platforms across cloud, Kubernetes,
-        Infrastructure as Code, CI/CD, observability, and reliability engineering.
-      </p>
+    <hr class="sep" />
 
-      <div class="grid" style="margin-top:1.4rem">
+    <!-- ========================= -->
+    <!-- 1. Infrastructure & Architecture Foundations -->
+    <!-- ========================= -->
+    <h2>1. Infrastructure & Architecture Foundations</h2>
 
-        <!-- ENTERPRISE RESUME -->
-        <div class="card">
-          <h3>Enterprise Resume (Recommended)</h3>
-          <p class="meta">
-            Best for Senior / Staff / Principal infrastructure and platform engineering roles.
-            Focused on impact, ownership, scale, and modern platform practices.
-          </p>
-          <div class="tagrow">
-            <span class="tag">2 pages</span>
-            <span class="tag">Platform Engineering</span>
-            <span class="tag">Terraform</span>
-            <span class="tag">Kubernetes</span>
-            <span class="tag">SRE</span>
-          </div>
-        <!-- ENTERPRISE -->
-        <a class="btn" href="assets/resumes/Jeremiah_Cargill_Enterprise_2Page.docx" download>
-        Download Enterprise (DOCX)
-          </a>
+    <div class="project-grid">
+
+      <!-- vCenter -->
+      <div class="project-card">
+        <div class="project-preview">
+          <img src="assets/diagrams/vcenter-modernization.svg" alt="vCenter Platform Modernization" />
         </div>
-        
-        <!-- CONDENSED -->
-        <div class="card">
-          <h3>Condensed / Platform-Focused</h3>
+        <div class="project-body">
+          <h3>VMware vCenter Platform Modernization</h3>
           <p class="meta">
-            Optimized for recruiters, contract roles, and rapid screening.
-            Highlights core cloud, automation, and platform competencies.
+            Enterprise-scale virtualization modernization focused on reducing operational risk,
+            standardizing architecture, and improving lifecycle management across large VMware environments.
           </p>
-          <div class="tagrow">
-            <span class="tag">1–2 pages</span>
-            <span class="tag">Cloud</span>
-            <span class="tag">DevOps</span>
-            <span class="tag">CI/CD</span>
-          </div>
-          <hr class="sep"/>
-          <a class="btn" href="assets/resumes/Jeremiah_Cargill_Condensed.docx" download>
-          Download Condensed (DOCX)
-          </a>
-          <a class="btn"
-          href="assets/resumes/jeremiah-cargill-revamped-UPDATED.docx"download>
-          Download DOCX
-          </a>
-          </div>
-
-        <!-- FULL CAREER -->
-        <div class="card">
-          <h3>Extended / Architecture Depth</h3>
-          <p class="meta">
-            Full career history including leadership, architecture, MSP,
-            and enterprise-scale infrastructure initiatives.
-            Best for architecture-heavy or advisory roles.
-          </p>
-          <div class="tagrow">
-            <span class="tag">Full history</span>
-            <span class="tag">Architecture</span>
-            <span class="tag">Leadership</span>
-            <span class="tag">Hybrid Cloud</span>
-          </div>
-          <hr class="sep"/>
-          <a class="btn" href="assets/resumes/Jeremiah_Cargill_Extended.docx" download>
-           Download Extended (DOCX)
-          </a>
+          <a class="btn" href="projects/vcenter.html">View Project</a>
         </div>
       </div>
-      
-      <hr class="sep"/>
 
-      <p class="small">
-        All resumes align with the public project portfolio and demonstrate
-        production-inspired, sanitized engineering work.
-        No proprietary systems, customer data, or employer-confidential information
-        is included.
-      </p>
+      <!-- Cloud Migration -->
+      <div class="project-card">
+        <div class="project-preview">
+          <img src="assets/diagrams/cloud-network.svg" alt="Cloud Migration & Network Architecture" />
+        </div>
+        <div class="project-body">
+          <h3>Cloud Migration & Network Architecture</h3>
+          <p class="meta">
+            Hybrid cloud migration reference emphasizing network segmentation,
+            secure connectivity, phased workload transitions, and blast-radius control.
+          </p>
+          <a class="btn" href="projects/cloud-migration.html">View Project</a>
+        </div>
+      </div>
 
     </div>
+
+    <hr class="sep" />
+
+    <!-- ========================= -->
+    <!-- 2. Platform Engineering & Automation -->
+    <!-- ========================= -->
+    <h2>2. Platform Engineering & Automation</h2>
+
+    <div class="project-grid">
+
+      <!-- Terraform -->
+      <div class="project-card">
+        <div class="project-preview">
+          <img src="assets/diagrams/terraform-arch.svg" alt="Terraform Platform Automation" />
+        </div>
+        <div class="project-body">
+          <h3>Terraform Platform Automation</h3>
+          <p class="meta">
+            Infrastructure-as-Code platform enabling consistent, repeatable,
+            and auditable provisioning across environments and teams.
+          </p>
+          <a class="btn" href="projects/terraform.html">View Project</a>
+        </div>
+      </div>
+
+      <!-- Kubernetes -->
+      <div class="project-card">
+        <div class="project-preview">
+          <img src="assets/diagrams/k8s-platform.svg" alt="Kubernetes Platform Automation" />
+        </div>
+        <div class="project-body">
+          <h3>Kubernetes Platform Automation</h3>
+          <p class="meta">
+            Kubernetes platform engineering with clear separation between platform-owned services
+            and application workloads, emphasizing reliability and operational clarity.
+          </p>
+          <a class="btn" href="projects/kubernetes.html">View Project</a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="sep" />
+
+    <!-- ========================= -->
+    <!-- 3. Delivery, Observability & Reliability -->
+    <!-- ========================= -->
+    <h2>3. Delivery, Observability & Reliability</h2>
+
+    <div class="project-grid">
+
+      <!-- CI/CD -->
+      <div class="project-card">
+        <div class="project-preview">
+          <img src="assets/diagrams/cicd-platform.svg" alt="Enterprise CI/CD Platform" />
+        </div>
+        <div class="project-body">
+          <h3>Enterprise CI/CD Platform</h3>
+          <p class="meta">
+            Platform-level CI/CD enablement focused on standardization, governance,
+            deployment safety, and developer velocity at scale.
+          </p>
+          <a class="btn" href="projects/cicd.html">View Project</a>
+        </div>
+      </div>
+
+      <!-- SRE -->
+      <div class="project-card">
+        <div class="project-preview">
+          <img src="assets/diagrams/sre-loop.svg" alt="Observability & Reliability Engineering" />
+        </div>
+        <div class="project-body">
+          <h3>Observability & Reliability (SRE)</h3>
+          <p class="meta">
+            SRE reference implementation covering SLIs/SLOs, error budgets,
+            actionable alerting, incident response, and blameless postmortems.
+          </p>
+          <a class="btn" href="projects/sre.html">View Project</a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="sep" />
+
+    <!-- ========================= -->
+    <!-- 4. AI-Augmented Platform Operations -->
+    <!-- ========================= -->
+    <h2>4. AI-Augmented Platform Operations</h2>
+
+    <div class="project-grid">
+
+      <!-- AI Platform Assistant -->
+      <div class="project-card">
+        <div class="project-preview">
+          <img src="assets/diagrams/ai-platform-assistant.svg" alt="AI Platform Assistant" />
+        </div>
+        <div class="project-body">
+          <h3>AI Platform Assistant</h3>
+          <p class="meta">
+            Read-only, policy-guarded AI assistant providing infrastructure insights,
+            architecture guidance, and incident triage support without direct execution access.
+          </p>
+          <a class="btn" href="projects/ai-platform-assistant.html">View Project</a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="small" style="margin-top:2rem">
+      All architecture diagrams are sanitized and production-inspired.
+      They illustrate system boundaries, control planes, and operational flows
+      without exposing proprietary environments or customer data.
+    </p>
+
   </div>
 </div>
 
@@ -122,13 +200,10 @@
 <div class="footer">
   <div class="container">
     <div>© 2026 Jeremiah Cargill · <a href="https://github.com/jeremiah9980" target="_blank">GitHub</a></div>
-    <div class="small">
-      Portfolio content is reference-only and intentionally generic.
-    </div>
+    <div class="small">Platform projects represent reference architectures only.</div>
   </div>
 </div>
 
 <script src="assets/script.js"></script>
 </body>
 </html>
-
