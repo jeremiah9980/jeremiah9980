@@ -4,7 +4,7 @@
 Round Rock, TX · jeremiahcargill@gmail.com · GitHub: https://github.com/jeremiah9980
 
 ## Portfolio (GitHub Pages)
-📌 **Project space:** https://jeremiah9980.github.io
+📌 **Project space:** [https://jeremiah9980.github.io](https://jeremiah9980.github.io/jeremiah9980/)
 
 This portfolio contains **sanitized, production-inspired reference implementations** that demonstrate platform engineering patterns without exposing employer/client data, secrets, or internal environments.
 
