@@ -1,0 +1,875 @@
+✅ Final Command (recursive, all folders)
+For your jcx2 GitHub Pages project:
+
+###############################################################
+find . -type f -name "*.html" -exec sed -i '' 's|<head>
+<script src="/jcx2/assets/js/analytics.js"></script>|<head>\
+<script src="/jcx2/assets/js/analytics.js"></script>|' {} \;
+###############################################################
+
+🔒 Safer Version (prevents duplicates)
+If you run it more than once, you don’t want multiple inserts.
+###############################################################
+find . -type f -name "*.html" -exec grep -L 'analytics.js' {} \; | while read file; do
+  sed -i '' 's|<head>
+<script src="/jcx2/assets/js/analytics.js"></script>|<head>\
+<script src="/jcx2/assets/js/analytics.js"></script>|' "$file"
+###############################################################
+🔍 Verify across ALL folders
+grep -r "analytics.js" .
+
+🚀 Then push
+###############################################################
+git add .
+git commit -m "Add global analytics loader to all pages (recursive)"
+git push origin main
+###############################################################
+
+
+
+
+
+
+
+
+git clone https://github.com/jeremiah9980/AI-Investigation-Dashboard-Platform.git
+cd AI-Investigation-Dashboard-Platform
+
+
+jeremiah9980-main.zip
+Zip Archive
+add google analytics tag to this github page site
+
+I looked inside your ZIP and it’s a static GitHub Pages site with multiple .html files (like about.html, contact.html, etc.). The correct way to enable Google Analytics (GA4) is to place the GA tracking script in the <head>
+<script src="/jcx2/assets/js/analytics.js"></script> section of every HTML page.
+
+Below is the clean method that works reliably for GitHub Pages sites like yours.
+
+1️⃣ Create a Google Analytics Property
+If you haven't already:
+
+Go to https://analytics.google.com
+
+Create a GA4 property
+
+Add a Web Data Stream
+
+Copy your Measurement ID
+
+It will look like:
+
+G-XXXXXXXXXX
+2️⃣ Add the GA4 Script to Your Site
+Open each HTML page and place this inside the <head>
+<script src="/jcx2/assets/js/analytics.js"></script> tag.
+
+Example:
+
+<head>
+<script src="/jcx2/assets/js/analytics.js"></script>
+  <meta charset="UTF-8">
+  <title>Jeremiah Cargill</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+Replace:
+
+G-XXXXXXXXXX
+with your actual ID.
+
+3️⃣ Pages in Your Repo That Need It
+From your ZIP, the likely pages are:
+
+about.html
+contact.html
+index.html (if present)
+assets/about.html
+assets/contact.html
+assets/GITHUB_PROFILE_README.html
+Any page that loads in the browser should contain the script.
+
+4️⃣ Best Practice (Single Edit Instead of Every Page)
+Since your site already has a shared CSS folder, a better method is to create a shared header include.
+
+Create:
+
+/assets/js/analytics.js
+with:
+
+const GA_ID = "G-XXXXXXXXXX";
+
+var script = document.createElement("script");
+script.async = true;
+script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+document.head.appendChild(script);
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', GA_ID);
+Then add this line in each HTML <head>
+<script src="/jcx2/assets/js/analytics.js"></script>:
+
+<script src="assets/js/analytics.js"></script>
+Now if you ever change GA IDs, you only update one file.
+
+5️⃣ Verify It Works
+After deploying:
+
+Go to Google Analytics → Realtime
+
+Visit your GitHub page:
+
+https://jeremiah9980.github.io/
+You should see your visit within ~10 seconds.
+
+6️⃣ Extra Tracking (Highly Recommended)
+For your projects like CargillCoparenting datasets and dashboards, add event tracking:
+
+Example:
+
+gtag('event', 'dataset_download', {
+  dataset: 'messages_master.csv'
+});
+This lets you see:
+
+dataset downloads
+
+dashboard usage
+
+timeline interactions
+
+report views
+
+✅ If you'd like, I can also:
+
+• Modify your ZIP and return a cleaned version with GA installed
+• Add advanced analytics dashboards
+• Track dataset downloads + investigation dashboard usage
+• Add privacy-safe analytics (IP anonymization)
+• Turn the repo into a professional GitHub Pages analytics site
+
+Just tell me and I’ll generate the upgraded version.
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FH3CY8GLPJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FH3CY8GLPJ');
+</script>
+
+That snippet is correct for Google Analytics GA4. 👍
+To activate it on your GitHub Pages site, you just need to place it in the correct location on your HTML pages.
+
+Where to Put It
+Add the code inside the <head>
+<script src="/jcx2/assets/js/analytics.js"></script> section of each page.
+
+Example:
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="/jcx2/assets/js/analytics.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FH3CY8GLPJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FH3CY8GLPJ');
+</script>
+
+<title>Cargill Coparenting Project</title>
+
+</head>
+<body>
+Pages That Need It
+For your GitHub Pages project (like the CargillCoparenting site you’re building), make sure it appears in:
+
+index.html
+overview.html
+dataset.html
+analysis.html
+timeline.html
+reports.html
+Basically any page you want tracked.
+
+How to Confirm It Works
+Push changes to GitHub.
+
+Open your site (example):
+
+https://jeremiah9980.github.io/CargillCoparenting/
+Go to Google Analytics → Reports → Realtime
+
+Within ~10 seconds you should see 1 active user (you).
+
+Optional: Add Better Tracking
+Since you're building a dataset + investigation dashboard, you can track interactions too.
+
+Example — track dataset downloads:
+
+gtag('event', 'download_dataset', {
+  dataset: 'messages_master.csv'
+});
+Example — track dashboard usage:
+
+gtag('event', 'dashboard_view', {
+  page: 'AI_analysis_dashboard'
+});
+Pro Tip (Cleaner Setup)
+Instead of pasting this into every file, create:
+
+/js/analytics.js
+Then load it once from every page.
+
+This makes maintenance easier.
+
+If you'd like, I can also help you set up a more advanced analytics layer for the CargillCoparenting site, including:
+
+timeline interaction tracking
+
+dataset upload tracking
+
+AI analysis run tracking
+
+message network graph interactions
+
+investigation dashboard analytics
+
+It only takes a few extra lines and gives you much deeper insights.
+
+
+this if for https://github.com/jeremiah9980/jeremiah9980
+
+Since this is for your GitHub profile repository
+👉 https://github.com/jeremiah9980/jeremiah9980
+
+there’s an important detail:
+
+GitHub profile READMEs do not execute JavaScript, so the Google Analytics <script> tag will not run inside README.md. GitHub strips scripts for security.
+
+But there are two ways you can still track traffic.
+
+Option 1 — Create a GitHub Pages site (recommended)
+You can enable analytics by serving a page from the repo.
+
+Step 1
+Create this file in the repo:
+
+index.html
+Step 2
+Add your GA tag inside the <head>
+<script src="/jcx2/assets/js/analytics.js"></script>.
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="/jcx2/assets/js/analytics.js"></script>
+<title>Jeremiah Cargill</title>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FH3CY8GLPJ"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FH3CY8GLPJ');
+</script>
+
+</head>
+<body>
+
+<h1>Jeremiah Cargill</h1>
+<p>Welcome to my GitHub profile site.</p>
+
+</body>
+</html>
+Step 3
+Enable GitHub Pages:
+
+Repo Settings → Pages
+Source → Deploy from branch
+Branch → main
+Your site becomes:
+
+https://jeremiah9980.github.io/
+Analytics will work there.
+
+Option 2 — Track Profile Visits (README badge method)
+You can add a visitor counter to the README.
+
+Example:
+
+![Profile views](https://komarev.com/ghpvc/?username=jeremiah9980&color=blue)
+This works because it loads an image that counts views.
+
+Best Setup for Your Projects
+Since you’re already building:
+
+CargillCoparenting dashboard
+
+datasets
+
+AI analysis pages
+
+The best structure is:
+
+jeremiah9980.github.io/
+│
+├── index.html
+├── analytics.js
+├── projects/
+│   ├── cargillcoparenting/
+│   └── ai-analysis/
+Then GA will track:
+
+page visits
+
+dataset downloads
+
+dashboard usage
+
+investigation timeline views
+
+✅ If you want, I can also build you a clean GitHub Pages developer site for your profile with:
+
+analytics already installed
+
+project dashboard cards
+
+dataset explorer
+
+AI investigation tools
+
+dark-mode developer portfolio layout
+
+It will plug directly into jeremiah9980.github.io.
+
+
+how do I ADD GA KEY TO EVERY GITHUB PAGE?
+
+Good question—and this trips a lot of people up.
+
+There are 2 different “GitHub Pages” scenarios, and the answer depends on which one you mean:
+
+🔥 First — Key Truth
+There is NO global setting in GitHub Pages to inject a Google Analytics key across all pages automatically.
+
+You have to do it in your code—but you can make it feel global with the right structure.
+
+✅ BEST PRACTICE (What you want)
+Use ONE shared analytics file across all pages
+Step 1 — Create a global analytics file
+Create this file in your repo:
+
+/assets/js/analytics.js
+Paste your GA code into it:
+
+const GA_ID = "G-FH3CY8GLPJ";
+
+// Load GA script
+const script = document.createElement("script");
+script.async = true;
+script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+document.head.appendChild(script);
+
+// Init GA
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', GA_ID);
+Step 2 — Add ONE line to every page
+Inside <head>
+<script src="/jcx2/assets/js/analytics.js"></script> of every HTML file:
+
+<script src="/assets/js/analytics.js"></script>
+That’s it.
+
+Step 3 — Commit + Push
+git add .
+git commit -m "Add global Google Analytics"
+git push
+🧠 Why this is the best way
+Instead of copying this everywhere:
+
+<script>...long GA code...</script>
+You now have:
+
+✔ One central file
+✔ Easy updates later
+✔ Clean HTML pages
+✔ Works across ALL pages
+
+⚡ EVEN BETTER (If you want true global injection)
+Option A — Use a layout system (Jekyll)
+GitHub Pages supports Jekyll automatically.
+
+Create:
+
+/_layouts/default.html
+Then put GA in there:
+
+<head>
+<script src="/jcx2/assets/js/analytics.js"></script>
+  {{ content }}
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH3CY8GLPJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH3CY8GLPJ');
+  </script>
+</head>
+Then every page uses:
+
+---
+layout: default
+---
+Now it’s truly global.
+
+🚫 What DOESN’T work
+❌ Putting GA in README.md
+
+❌ Expecting GitHub settings to inject it
+
+❌ Adding it once in repo root (without loading it)
+
+🔍 Verify it's working
+After deploy:
+
+Open your site
+
+Go to GA → Realtime
+
+You should see yourself within ~10 seconds
+
+💡 For YOUR setup (recommended)
+Given everything you’re building:
+
+dashboards
+
+datasets
+
+investigation timelines
+
+I’d do:
+
+/assets/js/analytics.js   ✅ (global)
+/index.html              ✅
+/projects/...            ✅
+Then add event tracking later.
+
+If you want, I can:
+✔ Patch your repo structure
+✔ Add analytics across ALL pages automatically
+✔ Add event tracking (downloads, timeline clicks, etc.)
+✔ Turn it into a full analytics-driven investigation dashboard
+
+Just say the word and I’ll wire it up clean.
+
+
+how to best inject <script src="/assets/js/analytics.js"></script> into every page
+
+You’ve basically got 3 solid ways to inject that script into every page—ranked from quickest to most scalable.
+
+🥇 Best Long-Term: Use a Shared Layout (Jekyll – built into GitHub Pages)
+This is the cleanest “set it once, done forever” solution.
+
+Step 1 — Create layout file
+/_layouts/default.html
+<!DOCTYPE html>
+<html>
+<head>
+<script src="/jcx2/assets/js/analytics.js"></script>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+
+  <!-- Global Analytics -->
+  <script src="/assets/js/analytics.js"></script>
+</head>
+<body>
+
+{{ content }}
+
+</body>
+</html>
+Step 2 — Add layout to every page
+At the top of each .html file:
+
+---
+layout: default
+title: Home
+---
+Now every page automatically gets analytics injected.
+
+Why this is 🔥
+One file controls everything
+
+Zero duplication
+
+Future-proof
+
+Native to GitHub Pages
+
+🥈 Fast + Practical: Bulk Inject into Existing Files
+If you already have a bunch of static .html pages, do a one-time injection.
+
+Mac / Linux (your setup 👇)
+Run this in your repo:
+
+find . -name "*.html" -exec sed -i '' 's|<head>
+<script src="/jcx2/assets/js/analytics.js"></script>|<head>\n<script src="/assets/js/analytics.js"></script>|' {} \;
+What this does:
+Finds all .html files
+
+Inserts your script right after <head>
+<script src="/jcx2/assets/js/analytics.js"></script>
+
+Then commit:
+git add .
+git commit -m "Inject analytics globally"
+git push
+🥉 Hybrid Approach (Good for growing projects)
+Use a partial include pattern without full Jekyll:
+
+Create:
+/partials/analytics.html
+<script src="/assets/js/analytics.js"></script>
+Then manually include:
+
+<!--#include file="/partials/analytics.html" -->
+⚠️ Only works if you later move to a build system (not native GitHub Pages)
+
+🚫 What NOT to do
+❌ Copy/paste script into every file manually (maintenance nightmare)
+
+❌ Try to inject via GitHub settings (doesn’t exist)
+
+❌ Use README.md (scripts won’t run)
+
+💡 My Recommendation for YOU
+Given your projects (dashboards, datasets, investigation tools):
+
+👉 Do this combo:
+
+Run the bulk inject command (now)
+
+Then migrate to Jekyll layout (clean future state)
+
+⚡ Bonus: Verify it’s everywhere
+Open DevTools → Console:
+
+typeof gtag
+If you see:
+
+function
+✅ Analytics is loaded
+
+If you want, I can:
+
+Convert your repo to Jekyll layout automatically
+
+Add global header/footer system
+
+Wire in advanced GA event tracking (downloads, timeline clicks, etc.)
+
+Turn your repo into a full analytics-driven investigation dashboard
+
+Just say the word and I’ll structure it clean for you.
+
+
+give me git commands to pull repo down.
+add the script needed into every page. 
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FP3814PJVM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FP3814PJVM');
+</script>
+
+Got you—here’s a clean, copy/paste-ready workflow to:
+
+Pull your repo
+
+Inject your GA script into every HTML page
+
+Push it back up
+
+🚀 1. Clone Your Repo
+git clone https://github.com/jeremiah9980/jeremiah9980.git
+cd jeremiah9980
+📦 2. Inject Google Analytics into Every Page
+Your GA script (we’ll insert this automatically):
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FP3814PJVM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FP3814PJVM');
+</script>
+🛠 Option A — One-line auto inject (Mac)
+This inserts the script right after <head>
+<script src="/jcx2/assets/js/analytics.js"></script> in all .html files:
+
+find . -name "*.html" -exec sed -i '' 's|<head>
+<script src="/jcx2/assets/js/analytics.js"></script>|<head>\
+<!-- Google tag (gtag.js) -->\
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FP3814PJVM"></script>\
+<script>\
+window.dataLayer = window.dataLayer || [];\
+function gtag(){dataLayer.push(arguments);}\
+gtag("js", new Date());\
+gtag("config", "G-FP3814PJVM");\
+</script>|' {} \;
+🧪 Optional: Verify it worked
+grep -r "G-FP3814PJVM" .
+You should see it in all your HTML files.
+
+📤 3. Commit + Push
+git add .
+git commit -m "Add Google Analytics to all pages"
+git push origin main
+✅ 4. Confirm It’s Live
+Open your GitHub Pages site
+
+Go to Google Analytics → Realtime
+
+You should see yourself within seconds
+
+⚠️ Important Note (for YOUR repo)
+If this is your profile repo (jeremiah9980):
+
+README.md → ❌ won’t run scripts
+
+Only .html pages served via GitHub Pages will track
+
+💡 Upgrade (recommended after this)
+Instead of injecting everywhere, move to:
+
+/assets/js/analytics.js
+Then just:
+
+<script src="/assets/js/analytics.js"></script>
+Much cleaner long-term.
+
+If you want next step, I can:
+✔ Convert your repo to a global layout system (true one-time GA injection)
+✔ Add event tracking (downloads, clicks, dashboards)
+✔ Turn your repo into a full analytics-enabled portfolio + investigation site
+
+Just tell me 👍
+
+
+neecded for jcx2 repo
+
+Got it—this is for your jcx2 repo, so here’s a clean, no-BS workflow to pull it down, inject GA into every page, and push it back up.
+
+🚀 1. Clone the jcx2 Repo
+git clone https://github.com/jeremiah9980/jcx2.git
+cd jcx2
+🛠 2. Inject Google Analytics Into Every HTML Page
+We’ll automatically insert your GA script right after <head>
+<script src="/jcx2/assets/js/analytics.js"></script> in all .html files.
+
+✅ Run this (Mac / your environment):
+find . -name "*.html" -exec sed -i '' 's|<head>
+<script src="/jcx2/assets/js/analytics.js"></script>|<head>\
+<!-- Google tag (gtag.js) -->\
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FP3814PJVM"></script>\
+<script>\
+window.dataLayer = window.dataLayer || [];\
+function gtag(){dataLayer.push(arguments);}\
+gtag("js", new Date());\
+gtag("config", "G-FP3814PJVM");\
+</script>|' {} \;
+🔍 3. Verify Injection
+grep -r "G-FP3814PJVM" .
+You should see it show up across your pages.
+
+📤 4. Commit + Push
+git add .
+git commit -m "Add Google Analytics to all pages"
+git push origin main
+🌐 5. If jcx2 Uses GitHub Pages
+Make sure Pages is enabled:
+
+Repo → Settings → Pages → Deploy from branch → main
+Then visit:
+
+https://jeremiah9980.github.io/jcx2/
+✅ 6. Confirm Tracking
+Open site in browser
+
+Go to Google Analytics → Realtime
+
+You should see yourself within ~10 seconds
+
+⚠️ Watch for These Edge Cases
+If any pages use <HEAD> (uppercase), the script won’t inject
+
+If pages don’t have <head>
+<script src="/jcx2/assets/js/analytics.js"></script> at all → need manual fix
+
+If using React/Vite/etc → this method won’t apply (different setup)
+
+💡 Recommended Next Step (Cleaner)
+After this works, upgrade to:
+
+<script src="/assets/js/analytics.js"></script>
+So you never have to mass-edit again.
+
+If you want, I can:
+
+Scan your jcx2 repo structure and optimize GA placement
+
+Add event tracking (downloads, clicks, dashboards)
+
+Convert it to a true global injection (layout-based)
+
+Just say the word 👍
+
+
+should i use find . -name "*.html" -exec sed -i '' 's|<head>
+<script src="/jcx2/assets/js/analytics.js"></script>|<head>\
+<!-- Google tag (gtag.js) -->\
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FP3814PJVM"></script>\
+<script>\
+window.dataLayer = window.dataLayer || [];\
+function gtag(){dataLayer.push(arguments);}\
+gtag("js", new Date());\
+gtag("config", "G-FP3814PJVM");\
+</script>|' {} \;
+or should i add the global analytics file
+
+Use the global analytics file.
+
+The find ... sed ... approach is fine for a one-time bulk patch, but it is not the best long-term setup.
+
+Best choice
+Create:
+
+/assets/js/analytics.js
+Put this in it:
+
+// Google Analytics 4
+(function () {
+  const GA_ID = "G-FP3814PJVM";
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () {
+    dataLayer.push(arguments);
+  };
+
+  gtag("js", new Date());
+  gtag("config", GA_ID);
+})();
+Then add this to every page inside <head>
+<script src="/jcx2/assets/js/analytics.js"></script>:
+
+<script src="/assets/js/analytics.js"></script>
+If your repo is a project site like jeremiah9980.github.io/jcx2/, use this instead so the path works reliably:
+
+<script src="./assets/js/analytics.js"></script>
+If pages live in subfolders, absolute path is usually safer if your Pages site is at the domain root. For a project repo, the safest reusable version is often:
+
+<script src="/jcx2/assets/js/analytics.js"></script>
+Why this is better
+one file to maintain
+
+easy to swap GA IDs later
+
+cleaner HTML
+
+less risk of mangling pages with sed
+
+easier to debug
+
+When to use the find ... sed ... command
+Use it only if:
+
+you already have a lot of pages
+
+you want a fast bulk insert
+
+you do not want to restructure right now
+
+But even then, I’d still use bulk editing only to insert the single script tag, not the full GA block.
+
+Example:
+
+find . -name "*.html" -exec sed -i '' 's|<head>
+<script src="/jcx2/assets/js/analytics.js"></script>|<head>\
+<script src="/jcx2/assets/js/analytics.js"></script>|' {} \;
+My recommendation for jcx2
+Do this:
+
+create assets/js/analytics.js
+
+bulk insert only the <script src="..."> line into all pages
+
+commit and push
+
+That gives you speed now and clean maintenance later.
+
+Suggested commands
+git clone https://github.com/jeremiah9980/jcx2.git
+cd jcx2
+mkdir -p assets/js
+Create the file:
+
+cat > assets/js/analytics.js <<'EOF'
+// Google Analytics 4
+(function () {
+  const GA_ID = "G-FP3814PJVM";
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () {
+    dataLayer.push(arguments);
+  };
+
+  gtag("js", new Date());
+  gtag("config", GA_ID);
+})();
+EOF
+Then inject the loader line into every page:
+
+find . -name "*.html" -exec sed -i '' 's|<head>
+<script src="/jcx2/assets/js/analytics.js"></script>|<head>\
+<script src="/jcx2/assets/js/analytics.js"></script>|' {} \;
+Then push:
+
+git add .
+git commit -m "Add global Google Analytics loader"
+git push origin main
