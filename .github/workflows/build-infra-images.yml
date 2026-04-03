@@ -1,0 +1,59 @@
+name: Build Infrastructure Images & Publish Pages
+
+on:
+  push:
+    paths:
+      - 'source-diagrams/**'
+      - '.github/workflows/build-infra-images.yml'
+  workflow_dispatch:
+
+jobs:
+  build-images:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install poppler-utils
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+
+      - name: Create output directory
+        run: |
+          mkdir -p assets/infra
+
+      - name: Convert PDFs to PNG
+        run: |
+          # CMTX network map pages
+          pdftoppm -png -f 1 -l 1 "source-diagrams/CMTX201 Network Map.pdf" assets/infra/cmtx-multisite
+          pdftoppm -png -f 2 -l 2 "source-diagrams/CMTX201 Network Map.pdf" assets/infra/cmtx-datacenter
+          pdftoppm -png -f 3 -l 3 "source-diagrams/CMTX201 Network Map.pdf" assets/infra/access-control
+
+          # Harbor Health
+          pdftoppm -png -f 1 -l 1 "source-diagrams/Harbor Health.pdf" assets/infra/harbor-health-sites
+          pdftoppm -png -f 2 -l 2 "source-diagrams/Harbor Health.pdf" assets/infra/harbor-clinic-standard
+
+          # EC workflow
+          pdftoppm -png -f 1 -l 1 "source-diagrams/EC_WORKFLOW.pdf" assets/infra/ec-workflow
+
+          # MFA print
+          pdftoppm -png -f 1 -l 1 "source-diagrams/mfa print environment.pdf" assets/infra/mfa-print-workflow
+
+          # Support diagram
+          pdftoppm -png -f 1 -l 1 "source-diagrams/CMM Support.pdf" assets/infra/cmm-support-cloud
+
+      - name: Rename outputs to .png
+        run: |
+          for f in assets/infra/*-1.png; do
+            mv "$f" "${f%-1.png}.png"
+          done
+
+      - name: Commit generated images
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add assets/infra/*.png || true
+          git commit -m "Auto-generate infrastructure images from PDFs" || echo "No changes"
+          git push
