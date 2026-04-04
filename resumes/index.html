@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeremiah Cargill | Resume Versions</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #121a2b;
+      --text: #eaf1ff;
+      --muted: #a9b7d0;
+      --accent: #60a5fa;
+      --line: #24324d;
+      --shadow: 0 16px 40px rgba(0,0,0,.25);
+      --maxw: 1120px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, #09101d 0%, #0b1220 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    .wrap { width: min(var(--maxw), calc(100% - 30px)); margin: 0 auto; }
+    header { padding: 72px 0 34px; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .eyebrow {
+      display: inline-block; padding: 6px 12px; border-radius: 999px;
+      background: rgba(96,165,250,.08); border: 1px solid rgba(96,165,250,.24); color: #bfdbfe;
+      font-size: 13px; margin-bottom: 14px;
+    }
+    h1 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.04; margin: 0 0 14px; }
+    .lead { color: var(--muted); max-width: 860px; font-size: 1.05rem; }
+    section { padding: 32px 0 54px; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+    .card {
+      grid-column: span 4; background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border: 1px solid var(--line); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow);
+    }
+    .card-body { padding: 22px; }
+    .meta {
+      display: inline-block; font-size: 12px; padding: 5px 10px; border-radius: 999px;
+      background: rgba(96,165,250,.08); border: 1px solid rgba(96,165,250,.24); color: #bfdbfe; margin-bottom: 10px;
+    }
+    h2 { margin: 0 0 10px; font-size: 1.2rem; }
+    p { color: var(--muted); }
+    ul { color: var(--muted); margin: 10px 0 18px 18px; padding: 0; }
+    li { margin: 6px 0; }
+    .btn {
+      display: inline-flex; padding: 11px 14px; border-radius: 12px; border: 1px solid var(--line);
+      background: var(--panel); color: var(--text);
+    }
+    footer { padding: 28px 0 48px; border-top: 1px solid rgba(255,255,255,.06); color: var(--muted); }
+    @media (max-width: 980px) { .card { grid-column: span 12; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">Resume Center</div>
+      <h1>Choose the version that fits the role.</h1>
+      <p class="lead">
+        Three clean resume versions built for different conversations: broad enterprise infrastructure, identity and Okta-focused architecture,
+        and a modern cloud and platform engineering profile. Each opens as a clean standalone page for sharing.
+      </p>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <div class="grid">
+        <article class="card">
+          <div class="card-body">
+            <div class="meta">Version 1</div>
+            <h2>Enterprise Infrastructure Architect</h2>
+            <p>Best for senior systems engineering, infrastructure leadership, architecture, virtualization, networking, and enterprise operations roles.</p>
+            <ul>
+              <li>Infrastructure and network depth</li>
+              <li>Enterprise systems architecture</li>
+              <li>Virtualization and operational leadership</li>
+            </ul>
+            <a class="btn" href="/jeremiah9980/resumes/enterprise-infrastructure-architect.html">Open clean version</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <div class="meta">Version 2</div>
+            <h2>Global Identity Architect / Okta SME</h2>
+            <p>Best for identity architecture, Okta, Azure identity, SSO/MFA, lifecycle automation, and access management opportunities.</p>
+            <ul>
+              <li>Okta-centered positioning</li>
+              <li>Workflow and automation language</li>
+              <li>Azure identity alignment</li>
+            </ul>
+            <a class="btn" href="/jeremiah9980/resumes/okta-global-identity-architect.html">Open clean version</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <div class="meta">Version 3</div>
+            <h2>Cloud Platform & DevOps Architect</h2>
+            <p>Best for platform engineering, cloud infrastructure, automation, DevOps, and modern enterprise delivery roles.</p>
+            <ul>
+              <li>Cloud and automation emphasis</li>
+              <li>Terraform and platform language</li>
+              <li>Modern engineering profile</li>
+            </ul>
+            <a class="btn" href="/jeremiah9980/resumes/cloud-platform-devops-architect.html">Open clean version</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      Jeremiah Cargill · Resume versions for targeted opportunities
+    </div>
+  </footer>
+</body>
+</html>
