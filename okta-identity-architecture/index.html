@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Okta SME & Global Identity Architecture | Jeremiah Cargill</title>
+  <style>
+    :root {
+      --bg: #08101d;
+      --panel: #101a2c;
+      --panel2: #14213a;
+      --text: #edf3ff;
+      --muted: #a8b8d6;
+      --accent: #60a5fa;
+      --line: #24324a;
+      --shadow: 0 16px 40px rgba(0,0,0,.28);
+      --maxw: 1220px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, #08101d 0%, #0b1323 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    .wrap { width: min(var(--maxw), calc(100% - 32px)); margin: 0 auto; }
+    header.hero {
+      padding: 70px 0 42px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      background: radial-gradient(circle at top right, rgba(96,165,250,.15), transparent 28%);
+    }
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(96,165,250,.08);
+      border: 1px solid rgba(96,165,250,.24);
+      color: #bfdbfe;
+      margin-bottom: 14px;
+      font-size: 13px;
+    }
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4.6rem);
+      line-height: 1.03;
+      margin: 0 0 14px;
+      max-width: 980px;
+    }
+    .lead {
+      color: var(--muted);
+      max-width: 920px;
+      font-size: 1.08rem;
+      margin-bottom: 22px;
+    }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 16px; border-radius: 12px;
+      border: 1px solid var(--line); background: var(--panel); color: var(--text);
+      box-shadow: var(--shadow);
+    }
+    .btn.primary { background: linear-gradient(180deg, #2563eb, #1d4ed8); }
+    section { padding: 34px 0; }
+    .section-title { font-size: 1.8rem; margin: 0 0 10px; }
+    .section-copy { color: var(--muted); max-width: 920px; margin-bottom: 22px; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+    .card {
+      grid-column: span 12;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .card-body { padding: 22px; }
+    .span-3 { grid-column: span 3; }
+    .span-4 { grid-column: span 4; }
+    .span-5 { grid-column: span 5; }
+    .span-6 { grid-column: span 6; }
+    .span-7 { grid-column: span 7; }
+    .span-8 { grid-column: span 8; }
+    .span-12 { grid-column: span 12; }
+    .meta {
+      display: inline-block;
+      font-size: 12px;
+      color: #bfdbfe;
+      background: rgba(96,165,250,.08);
+      border: 1px solid rgba(96,165,250,.24);
+      border-radius: 999px;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+    }
+    .stat { padding: 18px; border-radius: 16px; border: 1px solid var(--line); background: var(--panel); }
+    .stat strong { display: block; font-size: 1.45rem; margin-bottom: 4px; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .pill {
+      padding: 8px 12px; border-radius: 999px; font-size: 13px;
+      color: #bfdbfe; background: rgba(96,165,250,.08); border: 1px solid rgba(96,165,250,.22);
+    }
+    ul { margin: 10px 0 0 18px; padding: 0; color: var(--muted); }
+    li { margin: 6px 0; }
+    footer { padding: 36px 0 60px; border-top: 1px solid rgba(255,255,255,.06); color: var(--muted); margin-top: 24px; }
+    @media (max-width: 980px) {
+      .span-3, .span-4, .span-5, .span-6, .span-7, .span-8 { grid-column: span 12; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Okta SME · Global Identity Architecture · Azure Identity Automation</div>
+      <h1>Identity architecture built for scale, security, and enterprise operations.</h1>
+      <p class="lead">
+        I design and implement modern identity platforms with deep focus on Okta, Azure-integrated identity workflows,
+        lifecycle automation, federation, application onboarding, and enterprise-grade governance. My approach blends
+        architecture strategy with hands-on execution across SSO, MFA, provisioning, workflow automation, and scripting.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="#capabilities">View identity capabilities</a>
+        <a class="btn" href="/jeremiah9980/">Back to homepage</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Why this aligns with a Global Identity Architect role</h2>
+        <p class="section-copy">
+          This page is built to present the exact blend expected of an identity architect role: Okta subject matter depth,
+          automation mindset, Azure identity understanding, federation experience, policy design, lifecycle orchestration,
+          and the ability to turn identity requirements into enterprise-operational reality.
+        </p>
+        <div class="grid">
+          <div class="stat span-3"><strong>Okta SME</strong><span>SSO, MFA, policy, app integration, lifecycle automation</span></div>
+          <div class="stat span-3"><strong>Identity Architecture</strong><span>Federation design, access flows, governance alignment</span></div>
+          <div class="stat span-3"><strong>Azure Identity</strong><span>Hybrid identity integration and automation patterns</span></div>
+          <div class="stat span-3"><strong>Scripting & Automation</strong><span>Workflow-driven execution and operational scale</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="capabilities">
+      <div class="wrap">
+        <h2 class="section-title">Identity architecture capabilities</h2>
+        <div class="grid">
+          <article class="card span-4"><div class="card-body"><div class="meta">Okta</div><h3>Okta design and administration</h3><p>Enterprise SSO, adaptive MFA, policy structure, application onboarding, sign-on experience, and administrative governance.</p></div></article>
+          <article class="card span-4"><div class="card-body"><div class="meta">Automation</div><h3>Okta Workflows and criteria-based automations</h3><p>Workflow-driven identity actions for user lifecycle, access changes, event-driven controls, and operational efficiency.</p></div></article>
+          <article class="card span-4"><div class="card-body"><div class="meta">Azure</div><h3>Azure-integrated identity strategy</h3><p>Identity patterns spanning Azure-connected services, hybrid environments, and directory-driven access models.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Representative solution areas</h2>
+        <div class="grid">
+          <article class="card span-6">
+            <div class="card-body">
+              <div class="meta">Federation & Access</div>
+              <h3>Enterprise SSO and federation architecture</h3>
+              <ul>
+                <li>SAML and OIDC application integrations</li>
+                <li>Okta-driven authentication patterns across enterprise apps</li>
+                <li>Policy alignment for secure sign-in and access enforcement</li>
+                <li>Improved user experience without weakening controls</li>
+              </ul>
+            </div>
+          </article>
+          <article class="card span-6">
+            <div class="card-body">
+              <div class="meta">Lifecycle Automation</div>
+              <h3>Identity automation and provisioning strategy</h3>
+              <ul>
+                <li>Automated onboarding, change, and offboarding flows</li>
+                <li>Role and group-driven access logic</li>
+                <li>Conditional workflow automation based on identity criteria</li>
+                <li>Reduced manual administration and cleaner operational control</li>
+              </ul>
+            </div>
+          </article>
+          <article class="card span-7">
+            <div class="card-body">
+              <div class="meta">Architecture Leadership</div>
+              <h3>Global identity platform thinking</h3>
+              <p>
+                The strongest identity architecture is not just about connecting one app. It is about building a consistent model for
+                trust, access, automation, governance, and user experience across the enterprise. I approach identity with that broader lens.
+              </p>
+              <div class="pill-row" style="margin-top:14px;">
+                <span class="pill">Okta policy design</span>
+                <span class="pill">MFA strategy</span>
+                <span class="pill">SAML / OIDC</span>
+                <span class="pill">Provisioning logic</span>
+                <span class="pill">Workflow orchestration</span>
+                <span class="pill">Azure alignment</span>
+                <span class="pill">Scripting</span>
+                <span class="pill">Operational governance</span>
+              </div>
+            </div>
+          </article>
+          <article class="card span-5">
+            <div class="card-body">
+              <div class="meta">Best-fit role</div>
+              <h3>Target role profile</h3>
+              <ul>
+                <li>Global Identity Architect</li>
+                <li>Okta SME</li>
+                <li>Identity Platform Architect</li>
+                <li>Access Management Architect</li>
+                <li>Cloud Identity Engineer / Architect</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p><strong>Jeremiah Cargill</strong> — Okta-focused identity architecture, workflow automation, Azure-aligned identity strategy, and enterprise platform engineering.</p>
+    </div>
+  </footer>
+</body>
+</html>
