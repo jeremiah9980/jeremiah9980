@@ -5,60 +5,140 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jeremiah Cargill | Enterprise Infrastructure Architect Resume</title>
   <style>
-    body { font-family: Arial, Helvetica, sans-serif; margin: 40px auto; max-width: 920px; color: #111827; line-height: 1.55; }
-    h1 { margin-bottom: 4px; }
-    h2 { margin-top: 26px; border-bottom: 1px solid #e5e7eb; padding-bottom: 6px; }
-    p { margin: 8px 0; }
-    ul { margin: 8px 0 0 20px; }
-    li { margin: 6px 0; }
-    .muted { color: #4b5563; }
+    :root {
+      --text:#111827;
+      --muted:#4b5563;
+      --line:#d1d5db;
+      --bg:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);margin:0;padding:28px}
+    .page{max-width:980px;margin:0 auto}
+    h1{font-size:34px;letter-spacing:.02em;margin:0 0 4px}
+    .title{font-size:20px;font-weight:700;margin:0 0 6px}
+    .contact{color:var(--muted);font-size:15px;margin:0 0 22px}
+    h2{font-size:18px;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--line);padding-bottom:6px;margin:26px 0 12px}
+    p{margin:0 0 10px;line-height:1.5}
+    ul{margin:8px 0 0 18px;padding:0}
+    li{margin:6px 0;line-height:1.45}
+    .twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .job{margin:0 0 16px}
+    .jobhead{display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap}
+    .jobtitle{font-weight:700}
+    .company{font-weight:700}
+    .date{color:var(--muted);font-size:14px}
+    .small{font-size:14px}
+    @media print { body{padding:0} .page{max-width:none} }
+    @media (max-width:720px){ .twocol{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
+<div class="page">
   <h1>Jeremiah Cargill</h1>
-  <p class="muted">Enterprise Infrastructure Architect | Senior Systems Engineer | Network & Platform Architecture</p>
-  <p>Georgetown, TX · Phone: (add your number) · jeremiahcargill@gmail.com</p>
+  <p class="title">Enterprise Infrastructure Architect</p>
+  <p class="contact">Georgetown, TX | 512-676-0060 | jeremiahcargill@gmail.com | GitHub: jeremiah9980</p>
 
   <h2>Professional Summary</h2>
-  <p>Enterprise infrastructure and systems architect with 20+ years of experience designing, implementing, and supporting complex platforms across networking, virtualization, storage, cloud-aligned infrastructure, automation, and enterprise operations. Known for building stable, scalable environments that align technical decisions with business outcomes.</p>
+  <p>Results-driven enterprise infrastructure architect and senior systems engineer with 20+ years of experience designing, deploying, administering, and modernizing enterprise-wide networking, virtualization, storage, cloud-aligned infrastructure, and operational platforms. Known for translating complex business and technical requirements into practical, scalable solutions that improve reliability, performance, resilience, and long-term operational efficiency.</p>
 
   <h2>Core Competencies</h2>
-  <ul>
-    <li>Enterprise Infrastructure Architecture</li>
-    <li>Network Systems Engineering</li>
-    <li>VMware / Virtualization Platforms</li>
-    <li>Storage, Backup, and Resilience</li>
-    <li>Cloud and Hybrid Infrastructure</li>
-    <li>Automation and Operational Engineering</li>
-    <li>Systems Integration and Technical Leadership</li>
-  </ul>
+  <div class="twocol small">
+    <div>
+      <p><strong>Enterprise Infrastructure Architecture</strong> - Multi-site systems, datacenter design, virtualization strategy, hybrid operating models, and enterprise platform planning.</p>
+      <p><strong>Networking & Systems Engineering</strong> - Core infrastructure, firewalls, segmentation, connectivity, server platforms, and operational support.</p>
+      <p><strong>VMware & Virtual Platforms</strong> - VMware vSphere, vCenter, ESXi, lifecycle management, performance optimization, and availability-focused design.</p>
+      <p><strong>Automation & Infrastructure as Code</strong> - PowerShell, Python, Terraform, pipeline-aligned infrastructure operations, and repeatable engineering practices.</p>
+    </div>
+    <div>
+      <p><strong>Cloud & Hybrid Infrastructure</strong> - Azure, AWS, cloud-connected systems, migration alignment, and hybrid enterprise support models.</p>
+      <p><strong>Storage, Backup & DR</strong> - SAN platforms, replication, resilience planning, disaster recovery design, and business continuity enablement.</p>
+      <p><strong>Operational Leadership</strong> - Documentation, standards, cross-functional planning, technical mentoring, and architecture governance.</p>
+      <p><strong>Business Alignment</strong> - Connecting technology decisions to stability, scale, security, and measurable business outcomes.</p>
+    </div>
+  </div>
+
+  <h2>Technical & Functional Skills</h2>
+  <p class="small"><strong>Infrastructure & Virtualization:</strong> VMware vSphere, vCenter, ESXi, Windows Server, Linux, Active Directory, DNS, high availability, load balancing</p>
+  <p class="small"><strong>Cloud & Automation:</strong> Azure, AWS, Terraform, Azure DevOps, GitHub Actions, PowerShell, Python, REST API integration</p>
+  <p class="small"><strong>Storage, Backup & DR:</strong> SAN platforms, replication, Veeam, Commvault, SRM, disaster recovery architecture, business continuity planning</p>
+  <p class="small"><strong>Networking & Security:</strong> Cisco, Meraki, Palo Alto, Fortinet, firewalls, VPNs, VLANs, QoS, enterprise segmentation, secure connectivity</p>
+  <p class="small"><strong>Monitoring & Operations:</strong> Prometheus, Grafana, SolarWinds, PRTG, Splunk, Wireshark, documentation, standards, supportability</p>
 
   <h2>Professional Experience</h2>
-  <p><strong>Senior Systems Engineer</strong> — Texas Mutual Insurance</p>
+  <div class="job">
+    <div class="jobhead">
+      <div><span class="jobtitle">Senior Systems Engineer</span> | <span class="company">Texas Mutual Insurance</span></div>
+      <div class="date">2025 - Present</div>
+    </div>
+    <ul>
+      <li>Design, implement, and support Windows and Linux infrastructure across VMware and hybrid cloud environments with focus on performance, reliability, and scalability.</li>
+      <li>Serve as VMware and vCenter SME for an environment supporting 700+ virtual machines across the enterprise.</li>
+      <li>Develop and maintain Terraform-based infrastructure workflows and Azure DevOps pipelines for automated provisioning and operational consistency.</li>
+      <li>Support enterprise identity-aligned infrastructure through Active Directory, DNS, Okta, Adaxes, Secret Server, and certificate lifecycle integrations.</li>
+      <li>Document infrastructure standards, automation workflows, and integration patterns to improve audit readiness and team effectiveness.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="jobhead">
+      <div><span class="jobtitle">Senior Systems Administrator</span> | <span class="company">SAM - Surveying and Mapping</span></div>
+      <div class="date">2024 - 2025</div>
+    </div>
+    <ul>
+      <li>Operated and optimized large-scale server and storage environments with focus on reliability, capacity planning, and long-term operational health.</li>
+      <li>Provided expert support and consultation across technical teams, vendors, and business stakeholders.</li>
+      <li>Contributed to project delivery, SLA reporting, systems tuning, and technical mentoring in a national enterprise environment.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="jobhead">
+      <div><span class="jobtitle">Senior Network Systems Engineer / Technical Director</span> | <span class="company">Riverfront Technology Consulting Group</span></div>
+      <div class="date">2019 - 2024</div>
+    </div>
+    <ul>
+      <li>Provided architecture and consulting leadership across cloud migrations, infrastructure improvements, virtualization, networking, and client modernization projects.</li>
+      <li>Embedded directly with enterprise client technical teams, including long-term strategic engagement environments.</li>
+      <li>Translated business requirements into technical scopes, project plans, and practical delivery strategies.</li>
+      <li>Mentored engineering and service delivery teams while contributing to senior leadership decisions around growth, hiring, and service capability.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="jobhead">
+      <div><span class="jobtitle">DevOps Engineer</span> | <span class="company">Apex Systems / TRS</span></div>
+      <div class="date">2018 - 2019</div>
+    </div>
+    <ul>
+      <li>Supported enterprise application platforms and infrastructure with emphasis on automation, deployment consistency, monitoring, and supportability.</li>
+      <li>Worked across Microsoft and Red Hat ecosystems, partnering with developers, DBAs, QA, and operations teams to improve delivery quality.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="jobhead">
+      <div><span class="jobtitle">IT Architect / IT Director / CIS Manager</span> | <span class="company">Charta Group / Austin Foam Plastics</span></div>
+      <div class="date">2002 - 2019</div>
+    </div>
+    <ul>
+      <li>Led enterprise architecture, infrastructure buildout, server consolidation, disaster recovery planning, and operational strategy across manufacturing and business platforms.</li>
+      <li>Deployed VMware, SAN, Windows Server, Cisco networking, firewalls, and DR infrastructure across multi-site environments.</li>
+      <li>Directed budgets, vendor management, standards, process improvement, and technical staff development while remaining hands-on in critical engineering efforts.</li>
+    </ul>
+  </div>
+
+  <h2>Selected Project Highlights</h2>
   <ul>
-    <li>Support and design enterprise infrastructure solutions across systems, access, automation, and platform operations.</li>
-    <li>Contribute architecture thinking to secure, scalable, supportable enterprise platforms.</li>
-    <li>Develop scripting and workflow-driven improvements that reduce manual effort and improve consistency.</li>
+    <li><strong>Disaster Recovery & Resiliency:</strong> Designed and implemented DR-capable enterprise platforms with replication, VMware clusters, SAN architecture, and secure failover connectivity.</li>
+    <li><strong>Infrastructure Modernization:</strong> Led virtualization and storage modernization efforts that improved scalability, utilization, reliability, and supportability.</li>
+    <li><strong>Cloud & Hybrid Enablement:</strong> Supported migrations and hybrid integration patterns spanning Azure, AWS, Office 365, and on-prem infrastructure.</li>
+    <li><strong>Automation & Operational Engineering:</strong> Built infrastructure automation, pipeline-driven deployment patterns, and standards-based workflows that reduced manual effort.</li>
+    <li><strong>Network & Voice Systems:</strong> Implemented enterprise networking, firewall, VPN, QoS, and VoIP improvements across distributed business environments.</li>
   </ul>
 
-  <p><strong>Senior Network Systems Engineer / Technical Director</strong> — Riverfront Technology Consulting Group</p>
-  <ul>
-    <li>Architected enterprise environments spanning infrastructure, application platforms, cloud-connected services, and operational workflows.</li>
-    <li>Worked directly with stakeholders to translate complex business and technical requirements into practical solutions.</li>
-    <li>Led delivery across network, systems, security, and virtualization domains.</li>
-  </ul>
-
-  <p><strong>Senior DevOps Engineer</strong> — Teachers Retirement System of Texas</p>
-  <ul>
-    <li>Built automation-driven enterprise platforms with focus on reliability, consistency, and operational control.</li>
-  </ul>
-
-  <p><strong>IT Systems Architect / Director</strong> — CM Management / Austin Foam Plastics</p>
-  <ul>
-    <li>Designed and managed enterprise systems, networks, operational platforms, and automation supporting business-critical environments.</li>
-  </ul>
-
-  <h2>Technology Stack</h2>
-  <p>VMware, Networking, Storage, AWS, Azure, PowerShell, Python, Terraform, Windows Server, Linux, Active Directory, Enterprise Security, Systems Architecture</p>
+  <h2>Education & Professional Development</h2>
+  <p class="small"><strong>Associate Degree</strong>, IT Network Administration - Micro-Computer Technical Institute</p>
+  <p class="small"><strong>Certifications / Training:</strong> CompTIA A+, CompTIA Network+, VMware training, Azure / AWS / GCP training, Meraki, O365, backup and monitoring platforms</p>
+</div>
 </body>
 </html>
