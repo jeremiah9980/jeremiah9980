@@ -112,3 +112,48 @@ a:hover{text-decoration:underline}
 
 /* Footer */
 .footer{border-top:1px solid var(--line);padding:18px 0;background:var(--card)}
+/* HERO WITH IMAGE */
+.hero{
+  padding:48px 0 32px;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap:32px;
+  align-items:center;
+}
+
+.hero-content .h2{
+  font-size:34px;
+  line-height:1.25;
+}
+
+.hero-image{
+  display:flex;
+  justify-content:flex-end;
+}
+
+.hero-image img{
+  width:100%;
+  max-width:420px;
+  border-radius:16px;
+  box-shadow:0 20px 50px rgba(0,0,0,.4);
+  border:1px solid var(--line);
+}
+
+/* MOBILE */
+@media (max-width: 900px){
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-image{
+    justify-content:center;
+    margin-top:20px;
+  }
+
+  .hero-image img{
+    max-width:320px;
+  }
+}
