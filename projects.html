@@ -1,226 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Projects | Jeremiah Cargill</title>
-  <link rel="stylesheet" href="assets/styles.css"/>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FH3CY8GLPJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeremiah Cargill | Projects</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:#121a2b;
+      --panel2:#17233a;
+      --text:#eaf1ff;
+      --muted:#a9b7d0;
+      --accent:#60a5fa;
+      --line:#24324d;
+      --shadow:0 16px 40px rgba(0,0,0,.25);
+      --maxw:1180px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      background:linear-gradient(180deg,#09101d 0%,#0b1220 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{width:min(var(--maxw),calc(100% - 30px));margin:0 auto}
 
-  gtag('config', 'G-FH3CY8GLPJ');
-</script>
+    .nav{
+      border-bottom:1px solid rgba(255,255,255,.06);
+      background:rgba(11,18,32,.92);
+      position:sticky;
+      top:0;
+      z-index:10;
+      backdrop-filter:blur(10px);
+    }
+    .nav-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 0;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    .brand strong{display:block}
+    .brand span{color:var(--muted);font-size:14px}
+    .nav-links{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 14px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:var(--panel);
+      color:var(--text);
+    }
+
+    header{
+      padding:72px 0 34px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .eyebrow{
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      background:rgba(96,165,250,.08);
+      border:1px solid rgba(96,165,250,.24);
+      color:#bfdbfe;
+      font-size:13px;
+      margin-bottom:14px;
+    }
+    h1{
+      font-size:clamp(2.2rem,5vw,4.2rem);
+      line-height:1.04;
+      margin:0 0 12px;
+    }
+    .lead{
+      max-width:900px;
+      color:var(--muted);
+      font-size:1.05rem;
+    }
+
+    section{padding:32px 0}
+    .section-title{font-size:1.7rem;margin:0 0 8px}
+    .section-copy{color:var(--muted);margin:0 0 22px;max-width:900px}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:18px;
+    }
+    .card{
+      grid-column:span 4;
+      background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));
+      border:1px solid var(--line);
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .card-body{padding:22px}
+    .meta{
+      display:inline-block;
+      font-size:12px;
+      padding:5px 10px;
+      border-radius:999px;
+      background:rgba(96,165,250,.08);
+      border:1px solid rgba(96,165,250,.24);
+      color:#bfdbfe;
+      margin-bottom:10px;
+    }
+    h2,h3{letter-spacing:-.02em}
+    h3{margin:0 0 10px;font-size:1.2rem}
+    p{margin:0 0 10px}
+    .muted{color:var(--muted)}
+    .tagrow{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px}
+    .tag{
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      border:1px solid rgba(255,255,255,.08);
+      background:var(--panel2);
+      color:#dbeafe;
+    }
+
+    footer{
+      padding:28px 0 44px;
+      border-top:1px solid rgba(255,255,255,.06);
+      color:var(--muted);
+      margin-top:18px;
+    }
+
+    @media (max-width:980px){.card{grid-column:span 6}}
+    @media (max-width:720px){.card{grid-column:span 12}}
+  </style>
 </head>
 <body>
-
-<!-- NAV -->
-<div class="nav">
-  <div class="container nav-inner">
-    <div class="brand">
-      <strong>Jeremiah Cargill</strong>
-      <span>Senior Infrastructure & Platform Engineer</span>
-    </div>
-    <div class="nav-links">
-      <a class="btn" href="index.html">Home</a>
-      <a class="btn" href="projects.html">Projects</a>
-      <a class="btn" href="resume.html">Resume</a>
-      <a class="btn" href="about.html">About</a>
-      <a class="btn" href="contact.html">Contact</a>
-      <button id="themeToggle" class="btn" type="button">Light mode</button>
+  <div class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">
+        <strong>Jeremiah Cargill</strong>
+        <span>Enterprise Architect · Identity · Infrastructure · Platform Engineering</span>
+      </div>
+      <div class="nav-links">
+        <a class="btn" href="/jeremiah9980/">Home</a>
+        <a class="btn" href="/jeremiah9980/okta-identity-architecture/">Identity</a>
+        <a class="btn" href="/jeremiah9980/enterprise-infrastructure/">Infrastructure</a>
+        <a class="btn" href="/jeremiah9980/projects/cloud-migration.html">Cloud</a>
+        <a class="btn" href="/jeremiah9980/projects/cicd.html">DevOps</a>
+        <a class="btn" href="/jeremiah9980/resumes/">Resumes</a>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- CONTENT -->
-<div class="section">
-  <div class="container fade-in">
-
-    <div class="h2">Platform Engineering Projects</div>
-
-    <p class="meta">
-      These projects represent an end-to-end platform lifecycle — from
-      foundational infrastructure and networking, through automation and
-      runtime platforms, to observability, reliability, and AI-assisted
-      operational intelligence.
-    </p>
-
-    <hr class="sep"/>
-
-    <!-- ================================================= -->
-    <!-- 1. FOUNDATIONAL INFRASTRUCTURE -->
-    <!-- ================================================= -->
-    <h3>1. Infrastructure & Architecture Foundations</h3>
-    <div class="grid">
-
-      <!-- vCenter -->
-      <div class="card">
-        <div class="arch-preview">
-          <img src="assets/diagrams/vcenter-modernization.svg"
-               alt="vCenter Platform Modernization Architecture">
-        </div>
-        <h4>VMware vCenter Platform Modernization</h4>
-        <p class="meta">
-          Enterprise-scale virtualization modernization focused on reducing
-          operational risk, standardizing architecture, and improving lifecycle
-          management across large VMware environments.
-        </p>
-        <a class="btn" href="projects/vcenter.html">View Project</a>
-      </div>
-
-      <!-- Cloud Migration -->
-      <div class="card">
-        <div class="arch-preview">
-          <img src="assets/diagrams/cloud-network.svg"
-               alt="Cloud Migration and Network Architecture">
-        </div>
-        <h4>Cloud Migration & Network Architecture</h4>
-        <p class="meta">
-          Hybrid cloud migration reference emphasizing network segmentation,
-          secure connectivity, phased workload transitions, and blast-radius
-          control.
-        </p>
-        <a class="btn" href="projects/cloud-migration.html">View Project</a>
-      </div>
-
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">Project Portfolio</div>
+      <h1>Modern architecture and engineering work, presented clearly.</h1>
+      <p class="lead">
+        A curated set of projects spanning CI/CD, Kubernetes, cloud migration, SRE, Terraform, VMware modernization, and applied AI. Each page is meant to feel more like an architecture case study than a generic repo listing.
+      </p>
     </div>
+  </header>
 
-    <hr class="sep"/>
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Featured projects</h2>
+      <p class="section-copy">
+        These projects reflect the way I think about systems: practical, scalable, supportable, and grounded in operational reality.
+      </p>
 
-    <!-- ================================================= -->
-    <!-- 2. PLATFORM & AUTOMATION -->
-    <!-- ================================================= -->
-    <h3>2. Platform Engineering & Automation</h3>
-    <div class="grid">
+      <div class="grid">
+        <article class="card">
+          <div class="card-body">
+            <div class="meta">CI/CD Platform</div>
+            <h3>Enterprise CI/CD</h3>
+            <p class="muted">Release automation, governance controls, deployment patterns, and delivery architecture built for enterprise teams.</p>
+            <div class="tagrow">
+              <span class="tag">Azure DevOps</span>
+              <span class="tag">Jenkins</span>
+              <span class="tag">Automation</span>
+            </div>
+            <a class="btn" href="/jeremiah9980/projects/cicd.html">Open project</a>
+          </div>
+        </article>
 
-      <!-- Terraform -->
-      <div class="card">
-        <div class="arch-preview">
-          <img src="assets/diagrams/terraform-platform.svg"
-               alt="Terraform Platform Automation Architecture">
-        </div>
-        <h4>Terraform Platform Automation</h4>
-        <p class="meta">
-          Infrastructure-as-Code platform enabling consistent, repeatable,
-          and auditable provisioning across environments and teams.
-        </p>
-        <a class="btn" href="projects/terraform.html">View Project</a>
+        <article class="card">
+          <div class="card-body">
+            <div class="meta">Cloud / Migration</div>
+            <h3>Cloud Migration Architecture</h3>
+            <p class="muted">Migration strategy, hybrid connectivity, phased modernization, and architecture planning designed to reduce risk.</p>
+            <div class="tagrow">
+              <span class="tag">Azure</span>
+              <span class="tag">AWS</span>
+              <span class="tag">Hybrid</span>
+            </div>
+            <a class="btn" href="/jeremiah9980/projects/cloud-migration.html">Open project</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <div class="meta">Kubernetes Platform</div>
+            <h3>Kubernetes Architecture</h3>
+            <p class="muted">Platform foundations for scalable container operations, deployment consistency, and operational supportability.</p>
+            <div class="tagrow">
+              <span class="tag">Kubernetes</span>
+              <span class="tag">Containers</span>
+              <span class="tag">Platform</span>
+            </div>
+            <a class="btn" href="/jeremiah9980/projects/kubernetes.html">Open project</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <div class="meta">Reliability Engineering</div>
+            <h3>SRE / Observability</h3>
+            <p class="muted">Monitoring, alerting, operational visibility, and reliability-minded practices that make platforms sustainable.</p>
+            <div class="tagrow">
+              <span class="tag">SRE</span>
+              <span class="tag">Observability</span>
+              <span class="tag">Runbooks</span>
+            </div>
+            <a class="btn" href="/jeremiah9980/projects/sre.html">Open project</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <div class="meta">Infrastructure as Code</div>
+            <h3>Terraform Platform Automation</h3>
+            <p class="muted">Repeatable provisioning, policy-aware infrastructure delivery, and modular platform engineering patterns.</p>
+            <div class="tagrow">
+              <span class="tag">Terraform</span>
+              <span class="tag">IaC</span>
+              <span class="tag">Automation</span>
+            </div>
+            <a class="btn" href="/jeremiah9980/projects/terraform.html">Open project</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <div class="meta">VMware Modernization</div>
+            <h3>vCenter Platform Modernization</h3>
+            <p class="muted">Virtual platform improvement, lifecycle modernization, operational standards, and enterprise VMware engineering.</p>
+            <div class="tagrow">
+              <span class="tag">VMware</span>
+              <span class="tag">vCenter</span>
+              <span class="tag">Virtualization</span>
+            </div>
+            <a class="btn" href="/jeremiah9980/projects/vcenter.html">Open project</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <div class="meta">Applied AI</div>
+            <h3>AI Platform Assistant</h3>
+            <p class="muted">Architecture thinking around AI-enabled workflows, platform integration, and operational usefulness.</p>
+            <div class="tagrow">
+              <span class="tag">AI</span>
+              <span class="tag">Workflow</span>
+              <span class="tag">Platform</span>
+            </div>
+            <a class="btn" href="/jeremiah9980/projects/ai-platform-assistant.html">Open project</a>
+          </div>
+        </article>
       </div>
-
-      <!-- Kubernetes -->
-      <div class="card">
-        <div class="arch-preview">
-          <img src="assets/diagrams/k8s-platform.svg"
-               alt="Kubernetes Platform Architecture">
-        </div>
-        <h4>Kubernetes Platform Automation</h4>
-        <p class="meta">
-          Kubernetes platform engineering with clear separation between
-          platform-owned services and application workloads, emphasizing
-          reliability and operational clarity.
-        </p>
-        <a class="btn" href="projects/kubernetes.html">View Project</a>
-      </div>
-
     </div>
+  </section>
 
-    <hr class="sep"/>
-
-    <!-- ================================================= -->
-    <!-- 3. DELIVERY & RELIABILITY -->
-    <!-- ================================================= -->
-    <h3>3. Delivery, Observability & Reliability</h3>
-    <div class="grid">
-
-      <!-- CI/CD -->
-      <div class="card">
-        <div class="arch-preview">
-          <img src="assets/diagrams/cicd-platform.svg"
-               alt="Enterprise CI/CD Platform Architecture">
-        </div>
-        <h4>Enterprise CI/CD Platform</h4>
-        <p class="meta">
-          Platform-level CI/CD enablement focused on standardization,
-          governance, deployment safety, and developer velocity at scale.
-        </p>
-        <a class="btn" href="projects/cicd.html">View Project</a>
-      </div>
-
-      <!-- SRE -->
-      <div class="card">
-        <div class="arch-preview">
-          <img src="assets/diagrams/sre-loop.svg"
-               alt="Observability and Reliability Engineering">
-        </div>
-        <h4>Observability & Reliability (SRE)</h4>
-        <p class="meta">
-          SRE practices covering SLIs/SLOs, error budgets, alerting,
-          incident response, and continuous improvement loops.
-        </p>
-        <a class="btn" href="projects/sre.html">View Project</a>
-      </div>
-
+  <footer>
+    <div class="wrap">
+      Jeremiah Cargill · Project portfolio for enterprise architecture, platform engineering, and modernization work
     </div>
-
-    <hr class="sep"/>
-
-    <!-- ================================================= -->
-    <!-- 4. AI-DRIVEN PLATFORM INTELLIGENCE -->
-    <!-- ================================================= -->
-    <h3>4. AI-Driven Platform Intelligence</h3>
-    <div class="grid">
-
-      <!-- AI Platform Assistant -->
-      <div class="card">
-        <div class="arch-preview">
-          <img src="assets/diagrams/ai-platform-assistant.svg"
-               alt="AI Platform Assistant Architecture">
-        </div>
-        <h4>AI Platform Assistant</h4>
-        <p class="meta">
-          Human-led, AI-assisted platform intelligence providing deployment
-          reviews, infrastructure analysis, and incident guidance across
-          cloud, Kubernetes, CI/CD, and SRE systems.
-        </p>
-        <a class="btn" href="projects/ai-platform-assistant.html">View Project</a>
-        <a class="btn" href="https://github.com/jeremiah9980/ai-platform-assistant"
-           target="_blank">GitHub</a>
-      </div>
-
-    </div>
-
-    <hr class="sep"/>
-
-    <p class="small">
-      All projects are reference architectures derived from real-world
-      enterprise experience. Diagrams and descriptions are intentionally
-      sanitized to avoid disclosure of proprietary systems or customer data.
-    </p>
-
-  </div>
-</div>
-
-<!-- FOOTER -->
-<div class="footer">
-  <div class="container">
-    <div>
-      © 2026 Jeremiah Cargill ·
-      <a href="https://github.com/jeremiah9980" target="_blank">GitHub</a>
-    </div>
-    <div class="small">
-      Platform engineering · infrastructure · automation · reliability · AI
-    </div>
-  </div>
-</div>
-
-<script src="assets/script.js"></script>
+  </footer>
 </body>
 </html>
-
-<script src="assets/script.js"></script>
-</body>
-</html>
-
