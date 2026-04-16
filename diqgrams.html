@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jeremiah Cargill | Lucid Portfolio Showcase</title>
+<style>
+:root{
+--bg:#07101d;--panel:#101a31;--panel2:#182544;--text:#eef3ff;--muted:#b7c3ea;--line:#2a3866;--accent:#83a8ff;--accent2:#8fdcff;--shadow:0 18px 50px rgba(0,0,0,.28);--radius:20px;
+}
+*{box-sizing:border-box}
+body{
+margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);
+background:radial-gradient(circle at top left, rgba(131,168,255,.18), transparent 28%),linear-gradient(180deg,#09101c 0%,#07101d 100%);
+line-height:1.5;
+}
+.container{width:min(1180px,92vw);margin:0 auto}
+header{padding:68px 0 28px}
+.hero{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:28px;box-shadow:var(--shadow);padding:34px}
+.kicker{display:inline-block;color:var(--accent2);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;margin-bottom:10px}
+h1{font-size:clamp(2rem,4vw,3.5rem);line-height:1.05;margin:0 0 12px}
+.lead{color:var(--muted);font-size:1.06rem;max-width:920px;margin:0}
+.summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:26px}
+.stat{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px 18px}
+.stat strong{display:block;font-size:1.4rem}
+.stat span{color:var(--muted);font-size:.95rem}
+main{padding:16px 0 72px}
+.section-title{margin:26px 0 18px;font-size:1.08rem;color:var(--accent2);text-transform:uppercase;letter-spacing:.08em}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);margin:0 0 24px}
+.card-header{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:10px}
+.eyebrow{color:var(--accent2);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:6px}
+h2{margin:0;font-size:1.3rem}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{text-decoration:none;color:#08111f;background:linear-gradient(180deg,#c0d2ff,#83a8ff);padding:10px 14px;border-radius:12px;font-weight:700;font-size:.95rem;white-space:nowrap}
+.btn-secondary{background:transparent;color:var(--text);border:1px solid var(--line)}
+.why{color:var(--muted);margin:0 0 14px}
+.embed-wrap{position:relative;width:100%;min-height:560px;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#0d1428}
+iframe{width:100%;height:560px;border:0;background:white}
+.meta{margin-top:10px;color:var(--muted);font-size:.92rem}
+code{color:#dbe6ff;background:rgba(255,255,255,.06);padding:2px 6px;border-radius:8px}
+footer{padding:0 0 40px;color:var(--muted)}
+@media (max-width:900px){
+.summary{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card-header{flex-direction:column}
+.embed-wrap,iframe{min-height:420px;height:420px}
+}
+@media (max-width:560px){
+.summary{grid-template-columns:1fr}
+.hero{padding:22px}
+.card{padding:18px}
+.embed-wrap,iframe{min-height:340px;height:340px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="hero">
+      <div class="kicker">Portfolio Showcase</div>
+      <h1>Lucidchart Work Showcase</h1>
+      <p class="lead">A curated set of 20 diagrams selected to showcase range across cloud architecture, hybrid infrastructure, network mapping, security process design, operational workflows, data flow modeling, physical security systems, and support UX.</p>
+      <div class="summary">
+        <div class="stat"><strong>20</strong><span>Curated diagrams</span></div>
+        <div class="stat"><strong>Cloud + Network</strong><span>Architecture, topology, hybrid environments</span></div>
+        <div class="stat"><strong>Security + Ops</strong><span>MFA, access control, workflows, support</span></div>
+        <div class="stat"><strong>Portfolio Ready</strong><span>Built for a public-facing showcase page</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="container">
+  <div class="section-title">Featured Lucid Documents</div>
+  
+    <section class="card" id="doc-1">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Cloud / Hybrid Infrastructure</div>
+          <h2>1. Hybrid Cloud Architecture</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/ac92607c-569d-49d7-b261-d7338d6982d5/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/ac92607c-569d-49d7-b261-d7338d6982d5" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">Blends datacenter, AWS, and enterprise connectivity in one polished architecture view.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/ac92607c-569d-49d7-b261-d7338d6982d5" title="Hybrid Cloud Architecture" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>ac92607c-569d-49d7-b261-d7338d6982d5</code></div>
+    </section>
+    
+    <section class="card" id="doc-2">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Cloud Networking</div>
+          <h2>2. AWS Network Architecture Diagram</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/8aa6063a-229f-428a-b95b-9ce5986c4db6/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/8aa6063a-229f-428a-b95b-9ce5986c4db6" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">A clean cloud-networking visual that showcases infrastructure architecture fundamentals.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/8aa6063a-229f-428a-b95b-9ce5986c4db6" title="AWS Network Architecture Diagram" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>8aa6063a-229f-428a-b95b-9ce5986c4db6</code></div>
+    </section>
+    
+    <section class="card" id="doc-3">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">AWS / Enterprise Design</div>
+          <h2>3. ECD AWS Network Diagram</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/25f022fc-1d4a-40aa-b9fd-169c5b5bdaad/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/25f022fc-1d4a-40aa-b9fd-169c5b5bdaad" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">Shows applied AWS design work beyond starter templates.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/25f022fc-1d4a-40aa-b9fd-169c5b5bdaad" title="ECD AWS Network Diagram" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>25f022fc-1d4a-40aa-b9fd-169c5b5bdaad</code></div>
+    </section>
+    
+    <section class="card" id="doc-4">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Migration / Data Flow</div>
+          <h2>4. User Migration and DATAFLOW</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/c0e31ba6-1709-4c4f-b4fb-197032a3bc89/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/c0e31ba6-1709-4c4f-b4fb-197032a3bc89" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">Strong example of systems thinking, dependencies, and flow across environments.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/c0e31ba6-1709-4c4f-b4fb-197032a3bc89" title="User Migration and DATAFLOW" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>c0e31ba6-1709-4c4f-b4fb-197032a3bc89</code></div>
+    </section>
+    
+    <section class="card" id="doc-5">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Data Modeling</div>
+          <h2>5. ERD &amp; Data Flow</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/b4dde082-3518-4443-82f7-8d8b7fdd01f6/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/b4dde082-3518-4443-82f7-8d8b7fdd01f6" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">Adds backend architecture depth and data-relationship mapping to the portfolio.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/b4dde082-3518-4443-82f7-8d8b7fdd01f6" title="ERD &amp; Data Flow" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>b4dde082-3518-4443-82f7-8d8b7fdd01f6</code></div>
+    </section>
+    
+    <section class="card" id="doc-6">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Security / IAM Process</div>
+          <h2>6. MFA Process improvement</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/921a4976-8fcd-4a1e-b328-ba653f91c228/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/921a4976-8fcd-4a1e-b328-ba653f91c228" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">Highlights process redesign and improvement within a security-focused domain.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/921a4976-8fcd-4a1e-b328-ba653f91c228" title="MFA Process improvement" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>921a4976-8fcd-4a1e-b328-ba653f91c228</code></div>
+    </section>
+    
+    <section class="card" id="doc-7">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Security Workflow</div>
+          <h2>7. MFA FLOW CHART</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/ff8a1c67-f789-4611-9faf-daa503b7e024/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/ff8a1c67-f789-4611-9faf-daa503b7e024" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">Supports the IAM story with a more explicit authentication or access workflow diagram.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/ff8a1c67-f789-4611-9faf-daa503b7e024" title="MFA FLOW CHART" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>ff8a1c67-f789-4611-9faf-daa503b7e024</code></div>
+    </section>
+    
+    <section class="card" id="doc-8">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">IAM Workflow</div>
+          <h2>8. MFA Workflow</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/d1461765-7a6e-4d26-a373-e7f9820c0d5f/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/d1461765-7a6e-4d26-a373-e7f9820c0d5f" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">A good companion piece that reinforces process clarity and security operations thinking.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/d1461765-7a6e-4d26-a373-e7f9820c0d5f" title="MFA Workflow" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>d1461765-7a6e-4d26-a373-e7f9820c0d5f</code></div>
+    </section>
+    
+    <section class="card" id="doc-9">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Security Planning</div>
+          <h2>9. MFA Resource and Workflow plan</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/7dfe8353-7ddb-401e-a162-a5ad04f69099/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/7dfe8353-7ddb-401e-a162-a5ad04f69099" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">Shows not just flow mapping, but planning and operational design around MFA rollout.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/7dfe8353-7ddb-401e-a162-a5ad04f69099" title="MFA Resource and Workflow plan" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>7dfe8353-7ddb-401e-a162-a5ad04f69099</code></div>
+    </section>
+    
+    <section class="card" id="doc-10">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Operations / Service Delivery</div>
+          <h2>10. Support Process</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/e17b81c8-35d1-46c3-95c2-bc174b0efc0b/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/e17b81c8-35d1-46c3-95c2-bc174b0efc0b" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">Demonstrates structured support flow design and operational maturity.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/e17b81c8-35d1-46c3-95c2-bc174b0efc0b" title="Support Process" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>e17b81c8-35d1-46c3-95c2-bc174b0efc0b</code></div>
+    </section>
+    
+    <section class="card" id="doc-11">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Business Process</div>
+          <h2>11. Staff Work Flow</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/c6e7dead-f2cf-47d6-9b3f-d18d0ff5c2f3/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/c6e7dead-f2cf-47d6-9b3f-d18d0ff5c2f3" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">Shows ability to map people-centric workflows, not only technical infrastructure.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/c6e7dead-f2cf-47d6-9b3f-d18d0ff5c2f3" title="Staff Work Flow" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>c6e7dead-f2cf-47d6-9b3f-d18d0ff5c2f3</code></div>
+    </section>
+    
+    <section class="card" id="doc-12">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Process Improvement</div>
+          <h2>12. ECD SYSTEMS/PROCESS IMPROVEMENTS</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/7881357f-d3de-4c06-ab84-9b2e2503ad0d/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/7881357f-d3de-4c06-ab84-9b2e2503ad0d" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">A strong business-systems document that broadens the portfolio beyond architecture alone.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/7881357f-d3de-4c06-ab84-9b2e2503ad0d" title="ECD SYSTEMS/PROCESS IMPROVEMENTS" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>7881357f-d3de-4c06-ab84-9b2e2503ad0d</code></div>
+    </section>
+    
+    <section class="card" id="doc-13">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Operational Excellence</div>
+          <h2>13. Value Stream Mapping</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/93047b43-8de4-47b6-834a-e9e32abf4175/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/93047b43-8de4-47b6-834a-e9e32abf4175" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">Great showcase item for process optimization and enterprise analysis skills.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/93047b43-8de4-47b6-834a-e9e32abf4175" title="Value Stream Mapping" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>93047b43-8de4-47b6-834a-e9e32abf4175</code></div>
+    </section>
+    
+    <section class="card" id="doc-14">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Network Mapping</div>
+          <h2>14. CMM Network Maps</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/57a9f348-93ee-4476-a3d3-44eed09d6bca/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/57a9f348-93ee-4476-a3d3-44eed09d6bca" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">Demonstrates topology documentation and network-environment visualization.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/57a9f348-93ee-4476-a3d3-44eed09d6bca" title="CMM Network Maps" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>57a9f348-93ee-4476-a3d3-44eed09d6bca</code></div>
+    </section>
+    
+    <section class="card" id="doc-15">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Network Architecture</div>
+          <h2>15. CMM Network</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/292a89c2-954d-4be2-adc5-ffa7630a99f7/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/292a89c2-954d-4be2-adc5-ffa7630a99f7" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">Adds a second environment-level network representation with a more infrastructure-heavy angle.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/292a89c2-954d-4be2-adc5-ffa7630a99f7" title="CMM Network" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>292a89c2-954d-4be2-adc5-ffa7630a99f7</code></div>
+    </section>
+    
+    <section class="card" id="doc-16">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Enterprise Network</div>
+          <h2>16. Full Network</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/fd3ab16c-e8ab-441b-bc4b-81c8dbe66430/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/fd3ab16c-e8ab-441b-bc4b-81c8dbe66430" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">A strong portfolio item if you want to emphasize broad environment visibility and connectivity.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/fd3ab16c-e8ab-441b-bc4b-81c8dbe66430" title="Full Network" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>fd3ab16c-e8ab-441b-bc4b-81c8dbe66430</code></div>
+    </section>
+    
+    <section class="card" id="doc-17">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Site Network Mapping</div>
+          <h2>17. CMTX201 Network Map</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/ad842216-470e-4570-b033-3fbcc9576daa/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/ad842216-470e-4570-b033-3fbcc9576daa" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">Useful for showing site-level documentation and real-world infrastructure mapping.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/ad842216-470e-4570-b033-3fbcc9576daa" title="CMTX201 Network Map" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>ad842216-470e-4570-b033-3fbcc9576daa</code></div>
+    </section>
+    
+    <section class="card" id="doc-18">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Physical Security Systems</div>
+          <h2>18. Access and Cameras</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/11636188-dfe1-45fc-9c67-90a58cbc801c/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/11636188-dfe1-45fc-9c67-90a58cbc801c" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">Adds a physical systems/security layer to the portfolio and makes the collection more distinctive.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/11636188-dfe1-45fc-9c67-90a58cbc801c" title="Access and Cameras" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>11636188-dfe1-45fc-9c67-90a58cbc801c</code></div>
+    </section>
+    
+    <section class="card" id="doc-19">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Access Control</div>
+          <h2>19. TX301 Access Control and Cameras</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/a80a71dd-65a3-44dd-b1f0-1ced0b211cae/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/a80a71dd-65a3-44dd-b1f0-1ced0b211cae" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">Shows applied security design with cameras and access-control mapping.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/a80a71dd-65a3-44dd-b1f0-1ced0b211cae" title="TX301 Access Control and Cameras" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>a80a71dd-65a3-44dd-b1f0-1ced0b211cae</code></div>
+    </section>
+    
+    <section class="card" id="doc-20">
+      <div class="card-header">
+        <div>
+          <div class="eyebrow">Product / Support UX</div>
+          <h2>20. Zendesk Support Wireframe</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://lucid.app/lucidchart/85e9e14b-8149-453a-8b62-7637f36ef423/edit" target="_blank" rel="noopener">Open in Lucid</a>
+          <a class="btn btn-secondary" href="https://lucid.app/lucidchart/85e9e14b-8149-453a-8b62-7637f36ef423" target="_blank" rel="noopener">Viewer Link</a>
+        </div>
+      </div>
+      <p class="why">Brings in UX and service-design flavor so the showcase feels multidimensional.</p>
+      <div class="embed-wrap">
+        <iframe loading="lazy" src="https://lucid.app/lucidchart/85e9e14b-8149-453a-8b62-7637f36ef423" title="Zendesk Support Wireframe" referrerpolicy="no-referrer"></iframe>
+      </div>
+      <div class="meta">Document ID: <code>85e9e14b-8149-453a-8b62-7637f36ef423</code></div>
+    </section>
+    
+</main>
+<footer class="container">
+Built as a clean HTML portfolio page. Some Lucid embeds may require public/shareable viewer permissions to render for outside visitors.
+</footer>
+</body>
+</html>
