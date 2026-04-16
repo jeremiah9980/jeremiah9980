@@ -27,6 +27,9 @@ h1{font-size:clamp(2rem,4vw,3.5rem);line-height:1.05;margin:0 0 12px}
 .stat span{color:var(--muted);font-size:.95rem}
 main{padding:16px 0 72px}
 .toolbar{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:0 0 18px}
+.filters{display:flex;gap:10px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);padding:10px 12px;border-radius:999px;cursor:pointer;font-weight:600}
+.chip.active{background:linear-gradient(180deg,#c0d2ff,#83a8ff);color:#08111f;border-color:transparent}
 .section-title{margin:0;font-size:1.08rem;color:var(--accent2);text-transform:uppercase;letter-spacing:.08em}
 .search{display:flex;gap:10px;align-items:center}
 .search input{width:min(420px,80vw);background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--text);padding:12px 14px;border-radius:12px;outline:none}
@@ -34,9 +37,12 @@ main{padding:16px 0 72px}
 .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
 .card-header{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:12px}
 .eyebrow{color:var(--accent2);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:6px}
-h2{margin:0;font-size:1.12rem;line-height:1.25}
+h2{margin:0 0 6px;font-size:1.12rem;line-height:1.25}
 .filename{color:var(--muted);font-size:.92rem;word-break:break-word}
-.preview-wrap{border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;background:#fff}
+.desc{color:var(--muted);margin:10px 0 0;font-size:.98rem}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.tag{font-size:.8rem;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:var(--accent2)}
+.preview-wrap{border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;background:#fff;margin-top:14px}
 .preview-wrap img{display:block;width:100%;height:auto;background:#fff}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
 .btn{text-decoration:none;color:#08111f;background:linear-gradient(180deg,#c0d2ff,#83a8ff);padding:10px 14px;border-radius:12px;font-weight:700;font-size:.95rem;white-space:nowrap;border:none;cursor:pointer}
@@ -66,11 +72,11 @@ footer{padding:0 0 40px;color:var(--muted)}
     <div class="hero">
       <div class="kicker">Portfolio Showcase</div>
       <h1>Diagram Gallery</h1>
-      <p class="lead">A single-page gallery of exported PNG diagrams stored locally in <code>assets/diagrams/</code>. This version avoids iframe issues and presents each architecture, workflow, and mapping diagram directly on the page.</p>
+      <p class="lead">A single-page gallery of exported PNG diagrams stored locally in <code>assets/diagrams/</code>. Each diagram is now auto-categorized and given a human-readable title plus a concise portfolio description.</p>
       <div class="summary">
-        <div class="stat"><strong>32</strong><span>Diagram image files indexed</span></div>
-        <div class="stat"><strong>Local Assets</strong><span>No Lucid embedding required</span></div>
-        <div class="stat"><strong>Searchable</strong><span>Filter by filename instantly</span></div>
+        <div class="stat"><strong>35</strong><span>Diagram image files indexed</span></div>
+        <div class="stat"><strong>6 Categories</strong><span>Architecture, workflow, access, infra, data, operations</span></div>
+        <div class="stat"><strong>Search + Filter</strong><span>Browse by filename, title, or category</span></div>
         <div class="stat"><strong>Portfolio Ready</strong><span>Optimized for GitHub Pages</span></div>
       </div>
     </div>
@@ -80,11 +86,13 @@ footer{padding:0 0 40px;color:var(--muted)}
   <div class="toolbar">
     <div class="section-title">Exported Diagrams</div>
     <div class="search">
-      <input id="searchInput" type="search" placeholder="Search diagrams by filename..." aria-label="Search diagrams by filename">
+      <input id="searchInput" type="search" placeholder="Search diagrams by filename, title, or category..." aria-label="Search diagrams">
     </div>
   </div>
+  <div id="filters" class="filters"></div>
+  <div style="height:16px"></div>
   <div id="diagramGrid" class="grid"></div>
-  <div id="emptyState" class="empty" hidden>No diagrams match your search.</div>
+  <div id="emptyState" class="empty" hidden>No diagrams match your search or selected category.</div>
 </main>
 <footer class="container">
 Built from the exported image assets in <code>assets/diagrams/</code> for fast, reliable display on GitHub Pages.
@@ -97,45 +105,44 @@ Built from the exported image assets in <code>assets/diagrams/</code> for fast, 
 </div>
 <script>
 const diagrams = [
-  { file: 'access1.png' },
-  { file: 'access2.png' },
-  { file: 'access3.png' },
-  { file: 'access4.png' },
-  { file: 'Admin.erincondren.com-Local Performance.png' },
-  { file: 'AWS Network Architecture Diagram.png' },
-  { file: 'Backup-Digital Asset Workspace.png' },
-  { file: 'CMEC SITE.png' },
-  { file: 'CMM.png' },
-  { file: 'CMTX Admin Upstairs1.png' },
-  { file: 'CMTX Datacenter.png' },
-  { file: 'CMTX Operations Floor.png' },
-  { file: 'Dataflow.png' },
-  { file: 'Dev Ops Bridge Process Improvement Teams.png' },
-  { file: 'Diagram.png' },
-  { file: 'Directory.png' },
-  { file: 'Downstairs Admin.png' },
-  { file: 'EC-ADMIN-PANEL.png' },
-  { file: 'ECD AWS-site and admin site.png' },
-  { file: 'ECFLOW-PICK2light.png' },
-  { file: 'EC-Production-Processing to Print-Resources.png' },
-  { file: 'ECTXBATCH-Shares.png' },
-  { file: 'ECTX-Dyesub-VPS8-Info.png' },
-  { file: 'EC-Workflow-Script-Info.png' },
-  { file: 'FILEFLOW-Dropbox.png' },
-  { file: 'FILEFLOW-Storage Gateway.png' },
-  { file: 'Final Solution.jpeg' },
-  { file: 'HP-Production-Pro-Resources.png' },
-  { file: 'Hybrid Cloud Architecture.png' },
-  { file: 'PH Server2 Info.png' },
-  { file: 'Process overview.png' },
-  { file: 'Process.png' },
-  { file: 'TRIAGE DEV ISSUES via Form Submissions.png' },
-  { file: 'Upstairs.png' },
-  { file: 'Virtual Migration Plan.png' }
+  { file: 'access1.png', category: 'Access Control', title: 'Access Control Layout 1', description: 'Site access-control diagram showing device placement, entry coverage, or control-point relationships for a physical security environment.' },
+  { file: 'access2.png', category: 'Access Control', title: 'Access Control Layout 2', description: 'Follow-on access-control diagram documenting an alternate floor, zone, or device grouping within the same security footprint.' },
+  { file: 'access3.png', category: 'Access Control', title: 'Access Control Layout 3', description: 'Physical access and control map highlighting another portion of the secured environment and how devices are distributed.' },
+  { file: 'access4.png', category: 'Access Control', title: 'Access Control Layout 4', description: 'Additional access-control view that rounds out the site-level physical security documentation set.' },
+  { file: 'Admin.erincondren.com-Local Performance.png', category: 'Application Performance', title: 'Admin Portal Local Performance', description: 'Performance-focused application diagram related to the admin portal, likely used to analyze local system behavior, bottlenecks, or flow dependencies.' },
+  { file: 'AWS Network Architecture Diagram.png', category: 'Cloud Architecture', title: 'AWS Network Architecture Diagram', description: 'Cloud network architecture view showing core AWS connectivity, traffic paths, and infrastructure relationships.' },
+  { file: 'Backup-Digital Asset Workspace.png', category: 'Operations Workflow', title: 'Backup Digital Asset Workspace', description: 'Operational workflow or workspace map for digital asset backup, organization, and storage continuity.' },
+  { file: 'CMEC SITE.png', category: 'Site Infrastructure', title: 'CMEC Site Overview', description: 'Site-level infrastructure diagram documenting a physical environment, likely including rooms, equipment placement, or major technology zones.' },
+  { file: 'CMM.png', category: 'Network Architecture', title: 'CMM Network Overview', description: 'Network or systems map for the CMM environment, useful as a general environment-level reference architecture.' },
+  { file: 'CMTX Admin Upstairs1.png', category: 'Site Infrastructure', title: 'CMTX Admin Upstairs', description: 'Upstairs administrative area diagram documenting physical layout, workstation placement, or local site technology footprint.' },
+  { file: 'CMTX Datacenter.png', category: 'Datacenter Infrastructure', title: 'CMTX Datacenter', description: 'Datacenter-focused diagram covering server, storage, network, or rack-level relationships for the CMTX environment.' },
+  { file: 'CMTX Operations Floor.png', category: 'Site Infrastructure', title: 'CMTX Operations Floor', description: 'Operations-floor diagram capturing user space, workstation distribution, or floor-level technology layout.' },
+  { file: 'Dataflow.png', category: 'Data Flow', title: 'Data Flow Overview', description: 'General-purpose data-flow diagram showing how information moves across systems, applications, or processing stages.' },
+  { file: 'Dev Ops Bridge Process Improvement Teams.png', category: 'Process Improvement', title: 'DevOps Bridge Process Improvement Teams', description: 'Process-improvement diagram focused on team coordination, handoffs, and DevOps operating model alignment.' },
+  { file: 'Diagram.png', category: 'General Architecture', title: 'General Architecture Diagram', description: 'General systems or process diagram kept as a broad reference artifact within the portfolio collection.' },
+  { file: 'Directory.png', category: 'Identity & Directory', title: 'Directory Services Overview', description: 'Diagram related to directory structure, identity flow, or platform organization across managed systems.' },
+  { file: 'Downstairs Admin.png', category: 'Site Infrastructure', title: 'Downstairs Administration Layout', description: 'Administrative floor layout documenting workstation areas, operational flow, or technology placement downstairs.' },
+  { file: 'EC-ADMIN-PANEL.png', category: 'Application Workflow', title: 'EC Admin Panel', description: 'Application or administrative interface flow related to the EC environment and its management surface.' },
+  { file: 'ECD AWS-site and admin site.png', category: 'Cloud Architecture', title: 'ECD AWS Site and Admin Site', description: 'Hybrid or AWS-connected site architecture showing production/admin separation and supporting infrastructure relationships.' },
+  { file: 'ECFLOW-PICK2light.png', category: 'Operations Workflow', title: 'EC Flow Pick-to-Light', description: 'Operational flow diagram for pick-to-light or fulfillment-style processing in a production environment.' },
+  { file: 'EC-Production-Processing to Print-Resources.png', category: 'Operations Workflow', title: 'EC Production Processing to Print Resources', description: 'Workflow mapping production processing steps into downstream print-resource dependencies and execution stages.' },
+  { file: 'ECTXBATCH-Shares.png', category: 'File Services', title: 'ECTX Batch Shares', description: 'File-share or batch-processing diagram documenting storage-share structure and operational dependencies.' },
+  { file: 'ECTX-Dyesub-VPS8-Info.png', category: 'Production Systems', title: 'ECTX Dyesub VPS8 Information', description: 'Production-systems reference diagram for dyesub or VPS-related processing infrastructure.' },
+  { file: 'EC-Workflow-Script-Info.png', category: 'Application Workflow', title: 'EC Workflow Script Information', description: 'Workflow and script relationship diagram that documents automation steps, logic flow, or operational dependencies.' },
+  { file: 'FILEFLOW-Dropbox.png', category: 'File Services', title: 'File Flow Dropbox', description: 'File-ingestion or dropbox flow showing how files enter, move through, or are staged within an operational process.' },
+  { file: 'FILEFLOW-Storage Gateway.png', category: 'File Services', title: 'File Flow Storage Gateway', description: 'Storage-gateway flow diagram showing file movement between local process stages and downstream storage endpoints.' },
+  { file: 'Final Solution.jpeg', category: 'Solution Design', title: 'Final Solution', description: 'End-state solution architecture or finalized process design representing the completed implementation concept.' },
+  { file: 'HP-Production-Pro-Resources.png', category: 'Production Systems', title: 'HP Production Pro Resources', description: 'Production-resource architecture likely tied to print or operational throughput systems and their supporting components.' },
+  { file: 'Hybrid Cloud Architecture.png', category: 'Cloud Architecture', title: 'Hybrid Cloud Architecture', description: 'Hybrid infrastructure architecture showing interplay between cloud resources, datacenter systems, and network paths.' },
+  { file: 'PH Server2 Info.png', category: 'Server Infrastructure', title: 'PH Server 2 Information', description: 'Server-level infrastructure reference diagram describing an individual system, supporting services, or application role.' },
+  { file: 'Process overview.png', category: 'Process Improvement', title: 'Process Overview', description: 'High-level process overview diagram summarizing stages, decision points, and workflow movement across a business or technical process.' },
+  { file: 'Process.png', category: 'Process Improvement', title: 'Process Flow', description: 'Detailed process diagram documenting execution steps, dependencies, and operational flow.' },
+  { file: 'TRIAGE DEV ISSUES via Form Submissions.png', category: 'Application Workflow', title: 'Triage Dev Issues via Form Submissions', description: 'Workflow diagram for issue intake and triage, showing how development requests are submitted, routed, and processed.' },
+  { file: 'Upstairs.png', category: 'Site Infrastructure', title: 'Upstairs Layout', description: 'Physical upstairs layout diagram for a site, office, or production area with technology or functional zone mapping.' },
+  { file: 'Virtual Migration Plan.png', category: 'Migration Planning', title: 'Virtual Migration Plan', description: 'Migration-planning diagram outlining sequencing, dependencies, or target-state architecture for a virtualized move.' }
 ].map(d => ({
   ...d,
-  src: `assets/diagrams/${encodeURIComponent(d.file).replace(/%2F/g, '/')}`,
-  title: d.file.replace(/\.[^.]+$/, '')
+  src: `assets/diagrams/${encodeURIComponent(d.file).replace(/%2F/g, '/')}`
 }));
 
 const grid = document.getElementById('diagramGrid');
@@ -144,8 +151,47 @@ const emptyState = document.getElementById('emptyState');
 const lightbox = document.getElementById('lightbox');
 const lightboxImage = document.getElementById('lightboxImage');
 const lightboxClose = document.getElementById('lightboxClose');
+const filters = document.getElementById('filters');
+let activeCategory = 'All';
 
-function render(items) {
+const categories = ['All', ...Array.from(new Set(diagrams.map(d => d.category))).sort()];
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
+function renderFilters() {
+  filters.innerHTML = '';
+  categories.forEach(category => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = `chip${category === activeCategory ? ' active' : ''}`;
+    btn.textContent = category;
+    btn.addEventListener('click', () => {
+      activeCategory = category;
+      renderFilters();
+      render();
+    });
+    filters.appendChild(btn);
+  });
+}
+
+function getFilteredItems() {
+  const q = searchInput.value.trim().toLowerCase();
+  return diagrams.filter(d => {
+    const categoryMatch = activeCategory === 'All' || d.category === activeCategory;
+    const searchMatch = !q || [d.file, d.title, d.category, d.description].some(v => v.toLowerCase().includes(q));
+    return categoryMatch && searchMatch;
+  });
+}
+
+function render() {
+  const items = getFilteredItems();
   grid.innerHTML = '';
   emptyState.hidden = items.length !== 0;
   items.forEach((item, index) => {
@@ -154,9 +200,11 @@ function render(items) {
     card.innerHTML = `
       <div class="card-header">
         <div>
-          <div class="eyebrow">Diagram ${index + 1}</div>
+          <div class="eyebrow">${escapeHtml(item.category)}</div>
           <h2>${escapeHtml(item.title)}</h2>
           <div class="filename">${escapeHtml(item.file)}</div>
+          <p class="desc">${escapeHtml(item.description)}</p>
+          <div class="tags"><span class="tag">${escapeHtml(item.category)}</span></div>
         </div>
       </div>
       <div class="preview-wrap">
@@ -180,42 +228,19 @@ function render(items) {
   });
 }
 
-function escapeHtml(value) {
-  return value
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#39;');
-}
+searchInput.addEventListener('input', render);
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox(); });
 
-searchInput.addEventListener('input', () => {
-  const q = searchInput.value.trim().toLowerCase();
-  const filtered = !q ? diagrams : diagrams.filter(d => d.file.toLowerCase().includes(q) || d.title.toLowerCase().includes(q));
-  render(filtered);
-});
-
-lightboxClose.addEventListener('click', () => {
+function closeLightbox() {
   lightbox.classList.remove('open');
   lightbox.setAttribute('aria-hidden', 'true');
   lightboxImage.src = '';
-});
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) {
-    lightbox.classList.remove('open');
-    lightbox.setAttribute('aria-hidden', 'true');
-    lightboxImage.src = '';
-  }
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && lightbox.classList.contains('open')) {
-    lightbox.classList.remove('open');
-    lightbox.setAttribute('aria-hidden', 'true');
-    lightboxImage.src = '';
-  }
-});
+}
 
-render(diagrams);
+renderFilters();
+render();
 </script>
 </body>
 </html>
