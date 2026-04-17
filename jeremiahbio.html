@@ -253,6 +253,145 @@ color: var(–ink-muted);
 font-size: 15px;
 }
 
+/* Appendix */
+.appendix {
+background: var(–surface);
+border: 1px solid var(–line);
+border-radius: 4px;
+padding: 40px 44px;
+margin: 56px 0;
+box-shadow: var(–shadow);
+}
+
+/* Repositories */
+.repos {
+background: var(–surface);
+border: 1px solid var(–line);
+border-radius: 4px;
+padding: 40px 44px;
+margin: 56px 0;
+box-shadow: var(–shadow);
+}
+.repos .chapter-num {
+color: var(–ink-muted);
+}
+.repos .chapter-num::before {
+background: var(–ink-muted);
+}
+.repo-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+margin: 28px 0 20px;
+}
+.repo-card {
+display: block;
+padding: 22px 24px;
+background: var(–bg);
+border: 1px solid var(–line);
+border-radius: 6px;
+text-decoration: none;
+color: inherit;
+transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+.repo-card:hover {
+border-color: var(–accent);
+transform: translateY(-1px);
+box-shadow: 0 4px 12px rgba(20,20,20,.06);
+}
+.repo-card-label {
+font-size: 11px;
+font-weight: 600;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(–accent);
+margin-bottom: 10px;
+}
+.repo-card-name {
+font-family: ‘Fraunces’, serif;
+font-weight: 500;
+font-size: 22px;
+letter-spacing: -0.015em;
+color: var(–ink);
+margin-bottom: 4px;
+}
+.repo-card-path {
+font-family: ui-monospace, ‘SF Mono’, Menlo, Monaco, monospace;
+font-size: 12px;
+color: var(–ink-muted);
+margin-bottom: 14px;
+word-break: break-all;
+}
+.repo-card-desc {
+font-size: 14px;
+line-height: 1.55;
+color: var(–ink-soft);
+}
+.repo-footnote {
+font-size: 13px;
+color: var(–ink-muted);
+font-style: italic;
+margin-top: 8px;
+}
+@media (max-width: 640px) {
+.repo-grid { grid-template-columns: 1fr; }
+.repos { padding: 28px 24px; }
+}
+.appendix .chapter-num {
+color: var(–ink-muted);
+}
+.appendix .chapter-num::before {
+background: var(–ink-muted);
+}
+.appendix-heading {
+font-family: ‘Fraunces’, serif;
+font-weight: 500;
+font-size: 19px;
+letter-spacing: -0.01em;
+color: var(–ink);
+margin: 36px 0 14px;
+padding-bottom: 8px;
+border-bottom: 1px solid var(–line);
+}
+.record-list {
+list-style: none;
+padding: 0;
+margin: 0 0 12px;
+}
+.record-list li {
+padding: 10px 0;
+font-size: 15px;
+line-height: 1.55;
+color: var(–ink-soft);
+border-bottom: 1px dotted var(–line);
+}
+.record-list li:last-child { border-bottom: none; }
+.record-list a {
+color: var(–accent);
+text-decoration: none;
+font-weight: 500;
+border-bottom: 1px solid transparent;
+transition: border-color 0.15s ease;
+}
+.record-list a:hover {
+border-bottom-color: var(–accent);
+}
+.record-meta {
+color: var(–ink-muted);
+font-size: 14px;
+}
+.appendix-note {
+margin-top: 36px;
+padding: 20px 24px;
+background: var(–accent-soft);
+border-radius: 3px;
+font-size: 14px;
+line-height: 1.6;
+color: var(–ink-soft);
+}
+.appendix-note p { margin: 0 0 10px; }
+.appendix-note p:last-child { margin-bottom: 0; }
+
 /* Responsive */
 @media (max-width: 640px) {
 body { font-size: 16px; line-height: 1.65; }
@@ -373,6 +512,131 @@ article { padding: 20px 20px 60px; }
 
   <section class="chapter">
     <div class="chapter-num">Chapter Seven</div>
+    <h2>The Uphill Battle of the Present Father</h2>
+    <p>Here is something the world rarely says out loud: the moment a father is formally removed from the primary residence of his children, the whole system — legal, cultural, logistical, social — subtly assumes he is now a visitor in his own children's lives. Every move he makes after that is uphill. Not metaphorically. Mechanically.</p>
+    <p>Showing up to a parent-teacher conference is uphill. Being included on medical decisions is uphill. Being the parent a school calls first is uphill. Maintaining a bedroom that feels like theirs, in a home they only live in part-time, is uphill. Being consulted on who they spend time with is uphill. Even the small things — knowing which friend just had a falling out, which song they can't stop playing, which tooth is loose — require a kind of deliberate, daily effort that the resident parent doesn't have to think about, because proximity does that work for them automatically.</p>
+    <p>A divorced father doesn't get proximity. He has to manufacture it. Every week. With less time, less information, and less institutional assumption that he belongs in the picture.</p>
+    <div class="callout">Just <em>remaining present</em> as a capable, engaged, loving father becomes a full-time second job — one nobody sees, nobody credits, and nobody pays for.</div>
+    <p>Jeremiah did that second job. Quietly. Consistently. For years.</p>
+  </section>
+
+  <!-- CHAPTER 8 -->
+
+  <section class="chapter">
+    <div class="chapter-num">Chapter Eight</div>
+    <h2>A Father of Daughters</h2>
+    <p>Something about the instinct to protect lives deeper in a man than any of his other instincts. It is older than language. A father looks at his family and his body sorts them, without asking permission, into an order of who needs guarding first. The most vulnerable go to the front of that list.</p>
+    <p>For Jeremiah, the front of that list was three daughters.</p>
+    <p>Raising daughters asks something of a father that raising sons does not, in quite the same way. A father of sons can lead largely by example — <em>watch me, do as I do.</em> A father of daughters has to be something more complicated. He has to be the provider and the protector, yes — the steady hand, the one who takes the call at 2 a.m., the one who fixes what breaks. But he also has to be gentle. He has to be soft enough for a daughter to bring him a real feeling and trust that it will be received, not corrected. He has to model for her, in his own person, what a safe, strong, loving man looks like — because that model becomes her lifelong reference for every other man she will ever meet.</p>
+    <p>That is a lot to carry. A father of daughters has to hold tenderness in one hand and armor in the other, and never confuse which one is needed in which moment.</p>
+    <p>Jeremiah took that seriously. When he lived in the house, the protection was everyday and unremarkable — the way a roof is unremarkable until it's gone. If their mother raised her voice in a way that was unkind to them, he stepped in. If the tone in the room turned verbally or emotionally rough, he intercepted it. Not loudly. Not performatively. Just — <em>there</em>. The way a father is supposed to be there. The wall between his daughters and anything that would hurt them, including, when necessary, the other adult in the house.</p>
+  </section>
+
+  <!-- CHAPTER 9 -->
+
+  <section class="chapter">
+    <div class="chapter-num">Chapter Nine</div>
+    <h2>What He Could No Longer Stand Between</h2>
+    <p>When he left, he did not leave his daughters. He left a household. But the household was the room his protection worked inside of. Once the door closed behind him, there were hours and days when the wall he had been for them simply wasn't there anymore — and there was no version of the custody arrangement that could put it back.</p>
+    <p>That is the part that broke him quietly, over and over again.</p>
+    <p>Because he began to see the evidence of it. Not in speeches. In small things. In the words that started coming out of his daughters' mouths — words no child should be carrying. Accusations about him, repeated back to him by the very children he had spent his whole adult life trying to build a better world for. Adult topics introduced into young minds with no filter, no developmental consideration, no apparent concern for what a child does with that kind of weight.</p>
+    <p>He remembers one of the first moments precisely. It was 2019. He had just moved into the apartment — his first home after the separation. The walls were barely furnished. He was still figuring out where a four-year-old's toothbrush went. Kassidy, four, maybe five years old, walked in for one of those early visits. And before she had even really settled in, she looked at him and said, flat, the way a child delivers a line she has rehearsed without knowing she rehearsed it:</p>
+    <div class="callout">"Mom says you ruined our family."</div>
+    <p>Read that again. A child barely old enough to tie her own shoes, standing in her father's new living room, handing him a sentence that did not belong in her mouth. She was not angry. She was not crying. She was <em>reporting</em> — the way a child reports something an adult has said often enough that the child now believes it is simply a fact about the world, like <em>the sky is blue</em>, like <em>Daddy ruined our family.</em></p>
+    <p>There is no preparation for that. A man can rehearse a thousand difficult conversations and none of them rehearse him for that one. Jeremiah did what a good father does in that moment — he did not argue with her, did not make her defend a sentence she didn't understand, did not turn a four-year-old into a courtroom. He just loved her, and made a mental note of the weather she was being raised in when he wasn't there.</p>
+    <p>That sentence was the first crack of light into what the next several years would look like.</p>
+    <p>The content of what came after is not the point of this chapter, and he is not going to dignify the wilder accusations by putting them on a page. What matters is the <em>pattern</em>, because the pattern is what his daughters need to learn to recognize — not just about their own childhood, but about every relationship they will ever be in.</p>
+    <p>The pattern looks like this: an adult, upset at another adult, uses a child as an audience. The adult repeats a claim often enough, with enough emotion, that the claim starts to feel like a fact to the child simply because they've heard it so many times. The child, who only wants the adult to be calm, learns to agree — or at least not to disagree. Over time, the child begins to repeat the claim themselves. Sometimes to the other parent's face. And when the child doesn't respond the way the adult wants, the adult's frustration turns, briefly, on the child.</p>
+    <p>This has a name. It is not love. It is not even anger. It is the use of a child as an emotional instrument. And it leaves marks.</p>
+    <div class="callout">There is almost nothing more painful for a father than watching his daughter repeat, in her own small voice, a wound that was put there on purpose by someone else.</div>
+  </section>
+
+  <!-- CHAPTER 9B -->
+
+  <section class="chapter">
+    <div class="chapter-num">Chapter Nine &mdash; Part II</div>
+    <h2>October 14, 2021: The Day It Stopped Being Words</h2>
+    <p>For a long time, it was just sentences. Sentences his daughters brought home. Sentences that didn't belong in their mouths. A father could tell himself that maybe he was being too sensitive. Maybe he was overreading. Maybe the noise in his own head was distorting it. Every divorced father has that voice — the one that says <em>you're the one with the problem, not them.</em></p>
+    <p>Then, on October 14, 2021, the sentences stopped being sentences. They became a recording.</p>
+    <p>Kinsley — his middle daughter — captured it on her phone, from the back seat. Kassidy was in the car too. All three girls, exposed. On the recording, their mother is screaming at Kelsie, his oldest. The content is adult, violent, threatening. It is the kind of tape a parent's lawyer plays in open court and the room goes very quiet. Jeremiah is not going to reproduce it here. His daughters don't need to read their own mother's words aimed at their sister laid out again in print.</p>
+    <p>What matters for this book is what happened <em>around</em> the recording.</p>
+    <p><strong>The next morning — October 15, 2021 —</strong> Kassidy's teacher emailed him. Unprompted. She didn't know about the night before. She wrote, in her own words, that <em>Kassidy didn't seem like herself that morning. She kept putting her head down and saying her stomach hurt.</em></p>
+    <p>That is what it looks like from the outside when a small child is carrying something she shouldn't have to carry. The teacher saw it in the classroom. Jeremiah had been seeing it for months at the door of his apartment. Now there was a third party, a professional, documenting the same thing in writing: something is wrong with this little girl, and it is coming from somewhere.</p>
+    <p>He filed a CPS report. He submitted the video. He named, by name, his safety concerns about the boyfriend she was taking the girls to stay with. He reported that the girls had been told, openly, that the boyfriend had cracked their mother's ribs — a claim she herself confirmed by text to Jeremiah on July 28 and July 29 of that same year, telling him she was still in pain, still having trouble breathing, still waiting on an x-ray.</p>
+    <div class="callout">The CPS caseworker brushed it off.</div>
+    <p>That is not a feeling. That is what happened. A father walked into the system with a dated audio recording of verbal abuse, a contemporaneous teacher's email, and texts from the mother herself corroborating domestic violence in the home where she was taking the children — and the system told him, functionally, <em>not enough.</em></p>
+    <p>This is the part of the story where a lot of fathers give up. They decide the system isn't going to help them and they stop documenting, stop reporting, stop showing up to court, because every time they do, they are met with the same shrug. Jeremiah did the opposite. He kept the records. He kept the texts. He kept the email from the teacher. He kept going.</p>
+    <p>Because one day these pages would need to exist, and a father without receipts has nothing but his word — and his daughters had already been taught not to trust his word.</p>
+  </section>
+
+  <!-- CHAPTER 9C -->
+
+  <section class="chapter">
+    <div class="chapter-num">Chapter Nine &mdash; Part III</div>
+    <h2>December 22, 2022: When the Public Record Caught Up</h2>
+    <p>Fourteen months after CPS brushed off the October 14 report, the system Jeremiah had been warning about put itself on the public docket — without any help from him.</p>
+    <p>On <strong>December 22, 2022,</strong> the mother's boyfriend, Stephen Dalton, was charged with <strong>Aggravated Kidnapping</strong> (a first-degree felony) and <strong>Aggravated Assault causing Serious Bodily Injury</strong> (a second-degree felony). Four days later, on <strong>December 26, 2022,</strong> he was charged with <strong>Assault Family Violence — Impeding Breath</strong> (a third-degree felony), along with two misdemeanor drug possession charges. All of it under Buda Police Department case number 2022-15246. All of it filed in Hays County, Texas. All of it a matter of public record that anyone — including, one day, his daughters — can pull up and read for themselves.</p>
+    <p>On <strong>January 10, 2023,</strong> the Department of Family and Protective Services opened its own case against Dalton and his then-wife in the 453rd District Court. Case No. 23-0078. <em>Petition for Orders in Aid of Investigation of a Report of Child Abuse or Neglect.</em></p>
+    <p>Everything Jeremiah had reported more than a year earlier — the domestic violence, the danger to the children, the environment they were being taken into — was now written down on state letterhead, by the same state that had previously dismissed him.</p>
+    <p>And here is the part that tells you everything about the uphill battle of the divorced father: when the custody modification hearing came around after all of this became public record, the argument against Jeremiah was that <em>he was trying to use the situation to his advantage.</em></p>
+    <p>Read that sentence again, slowly. He had reported the danger. The danger had been confirmed by law enforcement, by the district attorney's office, by CPS itself, on the public docket, in multiple felony charges. And the framing in family court was that the father reporting it first was somehow the one behaving badly.</p>
+    <div class="callout">A father can be right about the danger to his children, have it confirmed on the public docket by the State of Texas, and still walk into family court and be treated as the problem.</div>
+    <p>That is not an accusation against any one judge or any one courtroom. It is the shape of the system. It is what divorced fathers who are trying to protect their children run into every day, in every county, in every state. The assumption, baked in, is that a father agitating about the mother's household is doing it for leverage, not for love.</p>
+    <p>Jeremiah kept pushing anyway. In April 2023, representing himself — because paying more lawyer fees was money he would rather spend on his daughters — he wrote to the Williamson County court administrator requesting a continuance on the final hearing in Cause No. 18-2085-FC4 so he could properly present the evidence. His words, from that email: <em>"As a father of three daughters, I am seeking to obtain 50% time with my children and have been unjustly brought before the court with inaccurate claims made against me... I am deeply committed to ensuring the best interests of my children, and I believe that paying any more additional lawyer fees is not financially responsible for them."</em></p>
+    <p>That is the voice of a father doing the math nobody sees. Every dollar spent on lawyers is a dollar not spent on his daughters. And he still had to find a way to fight.</p>
+  </section>
+
+  <!-- CHAPTER 9D -->
+
+  <section class="chapter">
+    <div class="chapter-num">Chapter Nine &mdash; Part IV</div>
+    <h2>The Retaliation Schedule</h2>
+    <p>There is one more thing from this period his daughters need to understand, because it answers a question they may not even know they're carrying: <em>why did we suddenly see less of Dad around 2021?</em></p>
+    <p>For roughly <strong>eighteen months straight</strong> — every single week — Jeremiah had them Wednesdays, Fridays, Saturdays, and Sundays. Hand-offs at 4 to 5 p.m. The actual, lived schedule had him with his daughters more than 50% of the time. Not on paper. In reality. In bedrooms, at soccer games, at dinner tables, at bedtime.</p>
+    <p>The divorce decree said something different. The decree said every other weekend plus Wednesdays. The decree was paper. What they were actually doing was life.</p>
+    <p>Then Jeremiah raised a reasonable question. If he had them more than half the time, and she was still collecting <strong>$2,300 a month</strong> in child support out of his paycheck on top of what he paid for the children's insurance, maybe the decree should be modified to reflect reality. Maybe the money should follow the children.</p>
+    <p>The response was immediate. On <strong>August 12, 2021,</strong> in writing, she said: <em>"This is the final decree signed by the judge. I want to follow this."</em></p>
+    <p>Translated: the schedule everyone had been living by for eighteen months — the schedule the children themselves wanted, the schedule where, in Kinsley's own words, <em>"nobody wants"</em> it any other way — was now off the table. Because the money was at stake.</p>
+    <p>She went from <em>let's consider what the girls want</em> to <em>we will follow the rules exactly</em> in a matter of days. The girls' desires, which had set the schedule for a year and a half, stopped mattering the moment adjusting the schedule threatened her income.</p>
+    <p>Jeremiah laid it out plainly in a text from that August: <em>"u having them one more day than I in general and collecting $2300 a month from my paycheck after I pay insurance and u still have the audacity to ask for more money."</em></p>
+    <p>Her answer was to go back to the decree. To the letter.</p>
+    <div class="callout">Girls, if you ever wondered why the schedule suddenly changed in 2021 and you saw less of your father for a while — it wasn't because he stopped wanting you. It was because he asked whether the paperwork should reflect the life you were actually living. The paperwork answered back.</div>
+    <p>And in that same window, other things began. Pushing for the oldest to see a psychiatrist and start on mood stabilizers. A new "at risk for dyslexia" finding on Kassidy — one point below the average threshold, in the middle of a family crisis, with seven absences during the testing window, on a test requested before there was any data to support requesting it. A steady accumulation of diagnoses and labels that just happened to coincide with the period when the schedule and the money became contested.</p>
+    <p>Jeremiah is not a doctor, and he does not say any of this to dismiss any legitimate need any of his daughters has. If any of his girls genuinely needs support, he has been and will always be the first person writing the check and showing up to the appointment. What he is saying — what any father in this situation learns to see — is the <em>timing</em>. When every new label arrives during the exact months that a schedule change would have cost someone child support, the timing becomes part of the story, and his daughters deserve to have it told honestly.</p>
+  </section>
+
+  <!-- CHAPTER 10 -->
+
+  <section class="chapter">
+    <div class="chapter-num">Chapter Ten</div>
+    <h2>The Self-Blame, and the Truth About Why He Left</h2>
+    <p>Jeremiah blamed himself. Of course he did. Every protector does, when something gets past him.</p>
+    <p>He replayed it. <em>Should I have stayed? If I had just stayed in the house, I could have kept intercepting it. I could have kept being the wall. Maybe the marriage was worth the cost if it meant I was still there every night, standing between them and what they're hearing now.</em></p>
+    <p>He has to let that one go. His daughters, one day, have to understand why.</p>
+    <p>He did not leave because it was easy. He left because staying was teaching them a lie.</p>
+    <p>A marriage that survives by pretending is not a marriage — it is a performance, and children are the most perceptive audience in the world. They may not have the vocabulary for it, but they feel the difference between a real, warm, respectful home and a home where two people are performing one for their benefit. Staying would have handed his daughters a counterfeit as their model of love. They would have grown up, fallen for the same counterfeit in their own relationships, and wondered why it hurt.</p>
+    <p>He wanted to show them the real thing. A home with peace in it. A partnership, someday, built on respect instead of performance. A template for love that would actually hold up under weight, because the love he wanted his daughters to one day choose for themselves had to be <em>real</em>, not a facade.</p>
+    <p>Leaving was not abandonment. Leaving was the longest, most painful form of fatherhood available to him. He traded short-term proximity for long-term honesty. That is a trade only a certain kind of father is willing to make, and only because he loves his daughters more than he loves his own comfort.</p>
+  </section>
+
+  <!-- CHAPTER 11 -->
+
+  <section class="chapter">
+    <div class="chapter-num">Chapter Eleven</div>
+    <h2>The Gift He Is Trying to Leave Them</h2>
+    <p>Since he could no longer be the wall inside the house, Jeremiah decided to build something stronger than a wall. He decided to build it <em>inside</em> his daughters.</p>
+    <p>He is trying, every time he has them, to give them two things that will outlast any argument, any custody schedule, any bitter sentence ever spoken about him in a room he wasn't in:</p>
+    <p><strong>Emotional intelligence.</strong> The ability to notice what they're feeling, name it accurately, and separate their feelings from someone else's. The ability to recognize when an adult is venting at them versus parenting them. The ability to hold space for a feeling without being swept away by it.</p>
+    <p><strong>Critical thinking.</strong> The habit of asking, quietly, of every strong claim: <em>Who is telling me this? What do they gain if I believe it? Does this match what I have seen with my own eyes? Does this match how this person has actually treated me?</em> Not cynicism. Not suspicion. Just the small, steady discipline of checking a claim against reality before filing it as truth.</p>
+    <div class="callout">Girls, if you ever find yourself repeating a sentence about someone and you cannot remember which of your own experiences taught you that sentence — pause. That sentence was installed. It did not grow there.</div>
+    <p>This is the inheritance he most wants to leave them. More than money. More than the house. More than the career he built from nothing. He wants them to walk into adulthood with a mind that cannot be colonized by the loudest voice in the room — including, someday, their own inner voice on a bad day.</p>
+    <p>That is what a father of daughters, who has been forced to protect from a distance, learns to build. Not a wall around them. A mind inside them that knows a wall from a fence from a door from a lie.</p>
+  </section>
+
+  <!-- CHAPTER 12 -->
+
+  <section class="chapter">
+    <div class="chapter-num">Chapter Twelve</div>
     <h2>High Conflict, and the Long Game of Truth</h2>
     <p>A high-conflict, narcissistic co-parent is not a phrase Jeremiah threw around. It is a clinical reality he lived inside of. The pattern is predictable once you know how to see it: bitterness dressed up as concern, rewriting history out loud, recruiting the children as witnesses and then as weapons, speaking about him in his absence so that his image in his daughters' minds could be edited while he wasn't in the room to defend it.</p>
     <p><strong>To his daughters, if you are reading this, here is how you see through it.</strong></p>
@@ -391,10 +655,10 @@ article { padding: 20px 20px 60px; }
     <p>Whatever you have been told about him in rooms he wasn't in — hold it up against that list. If it does not survive the comparison, it is not the truth. It is noise.</p>
   </section>
 
-  <!-- CHAPTER 8 -->
+  <!-- CHAPTER 13 -->
 
   <section class="chapter">
-    <div class="chapter-num">Chapter Eight</div>
+    <div class="chapter-num">Chapter Thirteen</div>
     <h2>The Man He Became</h2>
     <p>The little boy who bounced between four schools before he finished fourth grade grew up to build a career, build a family, and build a life on his own strength — with no inherited map and no safety net.</p>
     <p>He was supposed to be a statistic. He became a mentor. He was supposed to be absent. He became the most present father he was legally, physically, and financially permitted to be — and then some. He was supposed to break. He paid $190,000 and counting, and he is still standing.</p>
@@ -415,6 +679,108 @@ article { padding: 20px 20px 60px; }
     <p>You will see a father who was given every reason to walk away and who chose, every single day, to stay.</p>
     <p>You will see him.</p>
     <p>And you will know.</p>
+  </section>
+
+  <div class="divider"><span></span><span></span><span></span></div>
+
+  <!-- REPOSITORIES -->
+
+  <section class="chapter repos">
+    <div class="chapter-num">Repositories</div>
+    <h2>The Work, Versioned</h2>
+    <p>Beyond the book, the broader archive &mdash; the tools, the analysis, the working documents, the timelines, the source material &mdash; lives in public, version-controlled repositories. Anyone can read, clone, or audit the work. Nothing is hidden.</p>
+    <div class="repo-grid">
+      <a class="repo-card" href="https://github.com/Jeremiah9980/JCx2" target="_blank" rel="noopener">
+        <div class="repo-card-label">Repository</div>
+        <div class="repo-card-name">JCx2</div>
+        <div class="repo-card-path">github.com/Jeremiah9980/JCx2</div>
+        <div class="repo-card-desc">The home of this biography and the personal record &mdash; resilience, fatherhood, and the long view.</div>
+      </a>
+      <a class="repo-card" href="https://github.com/Jeremiah9980/cargillcoparenting" target="_blank" rel="noopener">
+        <div class="repo-card-label">Repository</div>
+        <div class="repo-card-name">cargillcoparenting</div>
+        <div class="repo-card-path">github.com/Jeremiah9980/cargillcoparenting</div>
+        <div class="repo-card-desc">The co-parenting communication archive &mdash; structured message data, timelines, and analyses drawn from years of preserved correspondence.</div>
+      </a>
+    </div>
+    <p class="repo-footnote">Public repositories. No sign-in required. The commit history is itself a kind of evidence &mdash; it shows when each piece of the record was written, revised, and timestamped.</p>
+  </section>
+
+  <div class="divider"><span></span><span></span><span></span></div>
+
+  <!-- APPENDIX -->
+
+  <section class="chapter appendix">
+    <div class="chapter-num">Appendix</div>
+    <h2>The Record</h2>
+    <p>Everything in this book that sounds like an accusation is, in fact, a citation. What follows is a working index of the primary documents behind the claims in the preceding chapters &mdash; court filings, CPS reports, contemporaneous correspondence, and preserved co-parenting communications &mdash; organized by topic. The links point to files in the author's Google Drive archive and require sign-in.</p>
+    <p>This appendix exists for one reason: so that any reader, including his daughters one day, can go directly to the source and verify every material claim for themselves. Nothing in the chapters above rests on his word alone.</p>
+
+```
+<h3 class="appendix-heading">The October 14, 2021 Incident &amp; CPS Report on the Mother</h3>
+<ul class="record-list">
+  <li><a href="https://drive.google.com/file/d/18aXoG--BGPF-_brvCwNDTVukhW2kUQUf/view?usp=drivesdk" target="_blank" rel="noopener">CPS Report on Deanna Cargill &mdash; Kelsie (Texas Statewide Abuse, Neglect, and Exploitation Reporting System)</a><span class="record-meta"> &mdash; the filed report including narrative of the Oct 14, 2021 recording.</span></li>
+  <li><a href="https://drive.google.com/file/d/13o9Ux5GxqjNqPpNwNwaqGnh8xQ7uxQhb/view?usp=drivesdk" target="_blank" rel="noopener">My Reports on Negligence in Regards to Children's Safety While in Mother's Possession</a><span class="record-meta"> &mdash; consolidated reports filed by the father.</span></li>
+  <li><a href="https://drive.google.com/file/d/1OkvaDpj5B1MfMbdKuHOYlo1Uok8el_kN/view?usp=drivesdk" target="_blank" rel="noopener">Gmail: "Re: issues with the kids"</a><span class="record-meta"> &mdash; contemporaneous correspondence (Nov 2021).</span></li>
+  <li><a href="https://drive.google.com/file/d/1BpGYxmqBP_c6a7V9grY6yyOkyi33iVc8/view?usp=drivesdk" target="_blank" rel="noopener">Gmail: "Fwd: Kelsie Cargill"</a><span class="record-meta"> &mdash; preserved email chain (Dec 2021).</span></li>
+  <li><a href="https://drive.google.com/file/d/1jKYMzFDE5aG6OPgD-gwlOJf_1o1xKmXI/view?usp=drivesdk" target="_blank" rel="noopener">Jeremiah Cargill &mdash; Timeline (Dec 2021)</a><span class="record-meta"> &mdash; dated timeline compiled at the time.</span></li>
+</ul>
+
+<h3 class="appendix-heading">December 2022 &mdash; Stephen Dalton Felony &amp; Misdemeanor Charges (BPD 2022-15246)</h3>
+<ul class="record-list">
+  <li><a href="https://drive.google.com/file/d/1haNeO8zkkDgDIWUiz78F7GCSJ2R399UZ/view?usp=drivesdk" target="_blank" rel="noopener">Stephen Dalton &mdash; Felony Aggravated Kidnapping (BI-F1)</a><span class="record-meta"> &mdash; first-degree felony, offense date 12/22/2022.</span></li>
+  <li><a href="https://drive.google.com/file/d/1StSsZNDL91qcZCoqssUGU9FlBX8Gmmx2/view?usp=drivesdk" target="_blank" rel="noopener">Stephen Dalton &mdash; Felony Aggravated Assault, Serious Bodily Injury (SBI-F2)</a><span class="record-meta"> &mdash; second-degree felony, offense date 12/22/2022.</span></li>
+  <li><a href="https://drive.google.com/file/d/1bD3PhFKraqNTUGRi72G2QmXlHejZ1pW7/view?usp=drivesdk" target="_blank" rel="noopener">Stephen Dalton &mdash; Felony Assault Family Violence, Impeding Breath (F3)</a><span class="record-meta"> &mdash; third-degree felony, offense date 12/26/2022.</span></li>
+  <li><a href="https://drive.google.com/file/d/1xZgfVBPyxD-2suKNiucHFpz_sY8QxJZg/view?usp=drivesdk" target="_blank" rel="noopener">Stephen Dalton &mdash; Misdemeanor POCS-A</a></li>
+  <li><a href="https://drive.google.com/file/d/18kVz68-6VnhgdOE7USbpvx7z09Q5ZEcE/view?usp=drivesdk" target="_blank" rel="noopener">Stephen Dalton &mdash; Misdemeanor POCS-B</a></li>
+  <li><a href="https://drive.google.com/file/d/1fmGdh8MvHjGWJktkdhPCM4gVNHadCm35/view?usp=drivesdk" target="_blank" rel="noopener">CPS Case No. 23-0078 &mdash; Department of Family and Protective Services v. Alice Dalton and Stephen Dalton</a><span class="record-meta"> &mdash; 453rd District Court, filed 01/10/2023.</span></li>
+</ul>
+
+<h3 class="appendix-heading">Family Law Filings &mdash; Cause No. 18-2085-FC4 &amp; Related</h3>
+<ul class="record-list">
+  <li><a href="https://drive.google.com/file/d/1kMHARsin0sTHYzwKWpFlnRSLjArdVu3v/view?usp=drivesdk" target="_blank" rel="noopener">Motion for Enforcement of Agreed Final Decree of Divorce</a><span class="record-meta"> &mdash; filed 12/13/2021.</span></li>
+  <li><a href="https://drive.google.com/file/d/13KpfLZV41w0YruvutlWvdN3Ad5_f-QmX/view?usp=drivesdk" target="_blank" rel="noopener">Counterpetition to Modify Parent-Child Relationship</a><span class="record-meta"> &mdash; filed 01/12/2022.</span></li>
+  <li><a href="https://drive.google.com/file/d/1SpLh2_UayEJJ4w7dmeDpR6fWbEJjH4tj/view?usp=drivesdk" target="_blank" rel="noopener">Counterpetition to Modify Parent-Child Relationship (Final Service)</a><span class="record-meta"> &mdash; filed 01/25/2022.</span></li>
+  <li><a href="https://drive.google.com/file/d/1L-EPvqLtsN4UwcJhNxbH2k1S86IE1dOq/view?usp=drivesdk" target="_blank" rel="noopener">Williamson County Standing Order, Exhibit A</a><span class="record-meta"> &mdash; 01/25/2022.</span></li>
+  <li><a href="https://drive.google.com/file/d/1wxeZrB_X2erzZpeJSwFFuHJiF9-v__-C/view?usp=drivesdk" target="_blank" rel="noopener">Combined Required Disclosures Response (JC 000001&ndash;000101)</a><span class="record-meta"> &mdash; filed 02/24/2022.</span></li>
+  <li><a href="https://drive.google.com/file/d/13zukigqHK7T_PRcz3pYPAxx3WFwCGGI4/view?usp=drivesdk" target="_blank" rel="noopener">Opposing Counsel's Initial Disclosures Under Rule 194</a><span class="record-meta"> &mdash; filed 03/10/2022.</span></li>
+  <li><a href="https://drive.google.com/file/d/17UPKwMBhPS04T9qiEtZxSIPnDi0LMQF3/view?usp=drivesdk" target="_blank" rel="noopener">Order in Suit to Modify Parent-Child Relationship (revised)</a><span class="record-meta"> &mdash; 11/2025.</span></li>
+  <li><a href="https://drive.google.com/file/d/1jHG7EdcPQ0WeklLaGd0XgEuzqeIvxOF6/view?usp=drivesdk" target="_blank" rel="noopener">Emergency Motion for TRO</a><span class="record-meta"> &mdash; 11/2025.</span></li>
+  <li><a href="https://drive.google.com/file/d/16A4e2gE6Gpjlqwl681n-77FIL0gxPJ21/view?usp=drivesdk" target="_blank" rel="noopener">Affidavit of Jeremiah Cargill (TRO)</a><span class="record-meta"> &mdash; 11/2025.</span></li>
+  <li><a href="https://drive.google.com/file/d/1JR1KHpTz7nFCChceKn4atEVvGgz4CjH4/view?usp=drivesdk" target="_blank" rel="noopener">Affidavit of Jeremiah Cargill</a><span class="record-meta"> &mdash; 03/2026.</span></li>
+  <li><a href="https://drive.google.com/file/d/1GEJMm1yey-DSNdo2Nhta6_aDMIqoGN1n/view?usp=drivesdk" target="_blank" rel="noopener">Plaintiff's Original Petition &mdash; Jeremiah Cargill</a><span class="record-meta"> &mdash; 2025.</span></li>
+</ul>
+
+<h3 class="appendix-heading">Co-Parenting Communications &amp; Analysis</h3>
+<ul class="record-list">
+  <li><a href="https://drive.google.com/file/d/19Utb4I3iI4CrKI3-hrFoxN7386AJnlJU/view?usp=drivesdk" target="_blank" rel="noopener">AppClose Conversations Export (03/06/2026)</a></li>
+  <li><a href="https://drive.google.com/file/d/1FauUxf6ksaHAJN8kOlqORhIzhfUdxUyX/view?usp=drivesdk" target="_blank" rel="noopener">AppClose Conversations Export (03/26/2026)</a></li>
+  <li><a href="https://drive.google.com/file/d/1_dSW0-vJWnK_BPFxCC4PXTLIXh9AKz70/view?usp=drivesdk" target="_blank" rel="noopener">AppClose Structured Message Dataset (xlsx)</a></li>
+  <li><a href="https://drive.google.com/file/d/1TjAPRSd_oYbxJxqhbvltJjyZKO5VXRRW/view?usp=drivesdk" target="_blank" rel="noopener">AppClose Structured Message Dataset (csv)</a></li>
+  <li><a href="https://drive.google.com/file/d/1-hls2qX2PQiCO-lMTAiJvUqc74k09ZU8/view?usp=drivesdk" target="_blank" rel="noopener">Co-Parenting Communication Findings (analysis)</a></li>
+  <li><a href="https://drive.google.com/file/d/16B688RAiH4oemedagOEmRcPighprH4e6/view?usp=drivesdk" target="_blank" rel="noopener">Post-Remarriage AppClose &amp; Deanna/Jere Packet</a></li>
+</ul>
+
+<h3 class="appendix-heading">Medical, Sports &amp; Support Documentation</h3>
+<ul class="record-list">
+  <li><a href="https://drive.google.com/file/d/1UCYvuh7sFxuIczmoC5rbiWyxFTM3klbM/view?usp=drivesdk" target="_blank" rel="noopener">Medical/Sports Tracking (xlsx)</a></li>
+  <li><a href="https://drive.google.com/file/d/17lQmdZxpvsh1E34fTVEw69jcH-cgSiBU/view?usp=drivesdk" target="_blank" rel="noopener">Medical Claim Summary (csv)</a></li>
+  <li><a href="https://drive.google.com/file/d/1OKAKhXyc9VuSnbLlnOIxt4IBzEdJS9Uy/view?usp=drivesdk" target="_blank" rel="noopener">Vision Plan &mdash; Life Event Confirmation</a><span class="record-meta"> &mdash; 10/2025.</span></li>
+</ul>
+
+<h3 class="appendix-heading">Defense &amp; Case-Building Materials</h3>
+<ul class="record-list">
+  <li><a href="https://drive.google.com/file/d/1MhGRnEw-mOD9EWGt-vUD248_yhgq2laH/view?usp=drivesdk" target="_blank" rel="noopener">Master Defense Packet v2</a></li>
+  <li><a href="https://drive.google.com/file/d/1s_sCGx6D3dOpfNh2JJ-pQEOW7TmUIYOQ/view?usp=drivesdk" target="_blank" rel="noopener">Cargill Pre-Arraignment Legal Packet</a></li>
+  <li><a href="https://docs.google.com/document/d/18sTMq2ozo7zrWIYD1GGx3C9RNCD742RljM4hQdBTyV8/edit?usp=drivesdk" target="_blank" rel="noopener">Affidavit of Non-Prosecution and Acknowledgment of Restitution</a></li>
+</ul>
+
+<div class="appendix-note">
+  <p><strong>A note on access.</strong> These links point to files in a private Google Drive archive. Viewing requires sign-in with an account that has permission. Court records referenced above (felony charges, CPS case numbers) are also independently verifiable through Hays County, Texas and Williamson County, Texas public records portals under the case numbers cited.</p>
+  <p><strong>A note on completeness.</strong> This index is representative, not exhaustive. The full archive includes additional correspondence, school records, financial records, and timeline documents maintained since 2018.</p>
+</div>
+```
+
   </section>
 
   <div class="signature">
