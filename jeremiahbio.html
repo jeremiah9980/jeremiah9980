@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Long Road Home — The Story of Jeremiah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafaf7;
+    --surface: #ffffff;
+    --ink: #15171a;
+    --ink-soft: #3a3d42;
+    --ink-muted: #6b7078;
+    --line: #e6e5df;
+    --accent: #8a6a3b;
+    --accent-soft: #f3ece0;
+    --shadow: 0 1px 2px rgba(20,20,20,.04), 0 8px 32px rgba(20,20,20,.05);
+    --max: 720px;
+  }
+
+- { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+body {
+margin: 0;
+background: var(–bg);
+color: var(–ink);
+font-family: ‘Inter’, -apple-system, BlinkMacSystemFont, sans-serif;
+font-size: 17px;
+line-height: 1.7;
+font-weight: 400;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+/* Top nav bar */
+.topbar {
+position: sticky;
+top: 0;
+z-index: 10;
+background: rgba(250, 250, 247, 0.85);
+backdrop-filter: saturate(180%) blur(12px);
+-webkit-backdrop-filter: saturate(180%) blur(12px);
+border-bottom: 1px solid var(–line);
+}
+.topbar-inner {
+max-width: var(–max);
+margin: 0 auto;
+padding: 14px 24px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+font-size: 13px;
+color: var(–ink-muted);
+letter-spacing: 0.02em;
+}
+.topbar-title {
+font-family: ‘Fraunces’, serif;
+font-weight: 500;
+color: var(–ink);
+letter-spacing: -0.01em;
+}
+
+/* Hero */
+.hero {
+max-width: var(–max);
+margin: 0 auto;
+padding: 96px 24px 56px;
+text-align: left;
+}
+.eyebrow {
+font-size: 12px;
+font-weight: 600;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(–accent);
+margin-bottom: 28px;
+}
+h1.title {
+font-family: ‘Fraunces’, serif;
+font-weight: 400;
+font-size: clamp(40px, 6.5vw, 68px);
+line-height: 1.05;
+letter-spacing: -0.025em;
+margin: 0 0 20px;
+color: var(–ink);
+}
+h1.title em {
+font-style: italic;
+color: var(–accent);
+}
+.subtitle {
+font-size: 18px;
+color: var(–ink-muted);
+font-weight: 400;
+max-width: 560px;
+margin: 0 0 40px;
+}
+.byline {
+display: flex;
+align-items: center;
+gap: 12px;
+font-size: 14px;
+color: var(–ink-muted);
+padding-top: 28px;
+border-top: 1px solid var(–line);
+}
+.byline .dot {
+width: 4px; height: 4px; border-radius: 50%; background: var(–accent);
+}
+
+/* Article */
+article {
+max-width: var(–max);
+margin: 0 auto;
+padding: 32px 24px 80px;
+}
+
+/* Chapter */
+.chapter {
+margin: 80px 0;
+}
+.chapter:first-of-type { margin-top: 40px; }
+
+.chapter-num {
+font-family: ‘Fraunces’, serif;
+font-size: 13px;
+font-weight: 500;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+color: var(–accent);
+margin-bottom: 14px;
+display: flex;
+align-items: center;
+gap: 14px;
+}
+.chapter-num::before {
+content: “”;
+display: inline-block;
+width: 28px;
+height: 1px;
+background: var(–accent);
+}
+
+h2 {
+font-family: ‘Fraunces’, serif;
+font-weight: 500;
+font-size: clamp(28px, 4vw, 38px);
+line-height: 1.15;
+letter-spacing: -0.02em;
+margin: 0 0 28px;
+color: var(–ink);
+}
+
+p {
+margin: 0 0 22px;
+color: var(–ink-soft);
+}
+
+p strong {
+color: var(–ink);
+font-weight: 600;
+}
+
+p em {
+font-style: italic;
+color: var(–ink);
+}
+
+/* Prologue & Epilogue special styling */
+.prologue, .epilogue {
+background: var(–surface);
+border: 1px solid var(–line);
+border-radius: 4px;
+padding: 40px 44px;
+margin: 56px 0;
+box-shadow: var(–shadow);
+}
+.prologue .chapter-num, .epilogue .chapter-num {
+color: var(–ink-muted);
+}
+.prologue .chapter-num::before, .epilogue .chapter-num::before {
+background: var(–ink-muted);
+}
+
+/* Pull quote / callout */
+.callout {
+margin: 36px 0;
+padding: 24px 28px;
+background: var(–accent-soft);
+border-left: 3px solid var(–accent);
+border-radius: 2px;
+font-family: ‘Fraunces’, serif;
+font-size: 19px;
+line-height: 1.55;
+color: var(–ink);
+font-style: italic;
+}
+
+/* Facts list */
+.facts {
+list-style: none;
+padding: 0;
+margin: 28px 0;
+border-top: 1px solid var(–line);
+}
+.facts li {
+padding: 18px 0 18px 32px;
+border-bottom: 1px solid var(–line);
+position: relative;
+color: var(–ink-soft);
+}
+.facts li::before {
+content: “”;
+position: absolute;
+left: 0;
+top: 27px;
+width: 16px;
+height: 1px;
+background: var(–accent);
+}
+.facts li strong { color: var(–ink); }
+
+/* Divider */
+.divider {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 8px;
+margin: 64px 0;
+}
+.divider span {
+width: 4px;
+height: 4px;
+background: var(–ink-muted);
+border-radius: 50%;
+opacity: 0.4;
+}
+
+/* Footer signature */
+.signature {
+text-align: center;
+margin-top: 72px;
+padding-top: 40px;
+border-top: 1px solid var(–line);
+font-family: ‘Fraunces’, serif;
+font-style: italic;
+color: var(–ink-muted);
+font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+body { font-size: 16px; line-height: 1.65; }
+.hero { padding: 64px 20px 40px; }
+article { padding: 20px 20px 60px; }
+.chapter { margin: 60px 0; }
+.prologue, .epilogue { padding: 28px 24px; }
+.callout { padding: 20px 22px; font-size: 17px; }
+}
+
+/* Selection */
+::selection { background: var(–accent); color: white; }
+</style>
+
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-title">The Long Road Home</span>
+    <span>A Biography</span>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="eyebrow">A Biography</div>
+  <h1 class="title">The Long Road Home</h1>
+  <p class="subtitle">The Story of Jeremiah — a self-made man, a fighting father, and the quiet truth behind the noise.</p>
+  <div class="byline">
+    <span class="dot"></span>
+    <span>Written by someone who has watched him become the man he is.</span>
+  </div>
+</header>
+
+<article>
+
+  <!-- PROLOGUE -->
+
+  <section class="chapter prologue">
+    <div class="chapter-num">Prologue</div>
+    <h2>For His Daughters</h2>
+    <p>If you are reading this someday, and you have questions about who your father really is, I want you to know something first. Words are cheap. Stories are easy to tell. Bitterness has a loud voice, and that voice often gets louder the longer it goes unchallenged.</p>
+    <p>But the truth is quieter. The truth lives in receipts, in calendars, in sleepless nights, in bank statements, in the calluses on a man's hands, and in the tears he cried that you never saw — tears he cried <em>because of you</em>, not in spite of you.</p>
+    <p>This is the quiet truth about your father. Read it slowly.</p>
+  </section>
+
+  <!-- CHAPTER 1 -->
+
+  <section class="chapter">
+    <div class="chapter-num">Chapter One</div>
+    <h2>A Boy Nobody Owed Anything To</h2>
+    <p>Jeremiah was born to an eighteen-year-old girl who was barely more than a child herself. His father? A blank space. A missing name on a birth certificate. A question that would never get answered in any way that mattered.</p>
+    <p>By the time most kids were learning to tie their shoes, Jeremiah was being raised by his grandparents — the people who stepped into a gap no child should ever have to notice. Adoption at that age doesn't feel like rescue to a little boy. It feels like a quiet confusion he doesn't yet have the words for. <em>Why didn't she keep me? Who is he? Where do I belong?</em></p>
+    <p>First grade alone, he attended <strong>three different schools</strong>. Second grade, another new one. Third grade, he was in Dallas. Fourth grade, back to La Marque. Every time he started to learn a teacher's handwriting, he was packing a backpack again. Every time he started to trust a friend, he was the new kid all over again.</p>
+    <p>Statistically, a boy like that — poor, displaced, fatherless, a racial minority in the schools he landed in — is supposed to become a cautionary tale. The odds said streets. The odds said drugs. The odds said prison, or a body in a ditch, or a name on a news crawl.</p>
+    <div class="callout">The odds didn't know Jeremiah.</div>
+  </section>
+
+  <!-- CHAPTER 2 -->
+
+  <section class="chapter">
+    <div class="chapter-num">Chapter Two</div>
+    <h2>The Kid Who Refused the Script</h2>
+    <p>High school is where you first saw the shape of the man he would become. He didn't just survive — he <strong>thrived</strong>. In the classroom and on the field. Academically sharp. Athletically respected. A minority in his school by the numbers, but never a minority in effort, never a minority in ambition.</p>
+    <p>He didn't have a father telling him how to knot a tie for a job interview. He didn't have a trust fund. He didn't have connections. What he had was a refusal — a deep, bone-level refusal — to become the statistic the world had already written for him.</p>
+    <p>In <strong>2002</strong>, he started his career. No degree handed to him on a silver tray. No industry contacts. No head start. He taught himself. Everything he knows in his field, he built brick by brick, late night by late night, manual by manual, mistake by mistake.</p>
+    <p>He is <strong>self-made</strong> in the most literal, unglamorous, grinding sense of the word.</p>
+  </section>
+
+  <!-- CHAPTER 3 -->
+
+  <section class="chapter">
+    <div class="chapter-num">Chapter Three</div>
+    <h2>The Measure of a Man at Work</h2>
+    <p>Here is something his daughters should understand about who their father is <em>outside</em> the house — because the man at work and the man at home are the same man.</p>
+    <p>When Corey Marley reviewed him — the same Corey Marley that Jeremiah himself had brought in and later recommended for Vice President of Operations — Jeremiah was named as <strong>someone Corey admired</strong>. Someone Corey looked up to as a model of who he wanted to become.</p>
+    <p>Think about that for a moment. The man he mentored, advocated for, and elevated into leadership — that man looked <em>back</em> at Jeremiah and said: <em>this is the person I try to be like.</em></p>
+    <p>You don't earn that with charm. You don't earn that by accident. You earn it by showing up, by doing the hard thing, by being consistent, by keeping your word when it costs you something.</p>
+    <p>This is the man. This is the reputation. This is the public record.</p>
+  </section>
+
+  <!-- CHAPTER 4 -->
+
+  <section class="chapter">
+    <div class="chapter-num">Chapter Four</div>
+    <h2>Austin, Fatherhood, and the Three Who Changed Everything</h2>
+    <p>He moved to Austin. He built a family. <strong>Three daughters.</strong> Three small faces that, the moment they arrived, rewrote every priority he'd ever had.</p>
+    <p>Everything he had ever fought for — the schools, the moves, the career he taught himself, the hours nobody saw — all of it suddenly had a new purpose. It was never really about him. It was about making sure his girls would never have to start from where he started.</p>
+    <div class="callout">He was going to be the father he never had.</div>
+  </section>
+
+  <!-- CHAPTER 5 -->
+
+  <section class="chapter">
+    <div class="chapter-num">Chapter Five</div>
+    <h2>2018, and the Fire He Walked Through</h2>
+    <p>Divorce arrived in 2018.</p>
+    <p>There is no clean way to tell this part. Divorce is not a story with heroes and villains in neat rows — but it is a story with facts, and the facts in Jeremiah's case are these:</p>
+    <p>He has paid, to date, <strong>over $190,000 in child support.</strong> That number is not a slogan. It is a receipt. It is years of his labor, converted into food and shelter and clothing and birthdays and school supplies for his daughters. The career he built from nothing — the one he taught himself into — became, among other things, the engine that funded their lives.</p>
+    <p>And here is the part people don't say out loud: the more he earned, the more the system took. Success, for a divorced father, is not rewarded. It is <strong>priced in</strong>. The harder he worked, the higher the number climbed. He did not flinch. He paid it. He is still paying it.</p>
+    <p>Because they are his daughters.</p>
+  </section>
+
+  <!-- CHAPTER 6 -->
+
+  <section class="chapter">
+    <div class="chapter-num">Chapter Six</div>
+    <h2>The Nights Nobody Saw</h2>
+    <p>This is the chapter that costs the most to write.</p>
+    <p>There were nights — many of them — when Jeremiah sat alone and cried. Not out of self-pity. Out of helplessness. Because being a divorced father means you do not get to be there for every moment. You do not get to intercept every harm. You do not get to be the wall between your children and the things that hurt them.</p>
+    <p>He saw the emotional damage his daughters absorbed in his absence. He saw what was happening to them when he could not be in the room. And the hardest thing a protector can ever experience is being rendered <em>unable to protect</em>.</p>
+    <p>He fought. Tooth and nail. Through courts. Through mediators. Through paperwork. Through a system that is not built to hear a father's voice at equal volume. He fought to be present. He fought to be believed. He fought to keep his place in his daughters' lives not as a wallet, but as a dad.</p>
+    <p>And when he could not be there in person, he made sure there was a <em>there</em> waiting — a space with him, a home with him, a bed with him, a door that opened to him.</p>
+    <p>He built that on his own time, with his own hands, while the system stayed stacked against him and while the other side worked — openly and relentlessly — to turn his own children against him.</p>
+  </section>
+
+  <!-- CHAPTER 7 -->
+
+  <section class="chapter">
+    <div class="chapter-num">Chapter Seven</div>
+    <h2>High Conflict, and the Long Game of Truth</h2>
+    <p>A high-conflict, narcissistic co-parent is not a phrase Jeremiah threw around. It is a clinical reality he lived inside of. The pattern is predictable once you know how to see it: bitterness dressed up as concern, rewriting history out loud, recruiting the children as witnesses and then as weapons, speaking about him in his absence so that his image in his daughters' minds could be edited while he wasn't in the room to defend it.</p>
+    <p><strong>To his daughters, if you are reading this, here is how you see through it.</strong></p>
+    <p>Watch for a few things. Watch for who speaks about the other parent when that parent is not there to answer. Watch for who uses you as a messenger. Watch for who needs you to agree that the other one is bad, and who is just happy to see you happy. Watch for who pays, quietly, for years, without making you feel the weight of it. Watch for who shows up — not loudly, but <em>again, and again, and again.</em></p>
+    <div class="callout">Bitter words are loud but weightless. Facts are quiet but they do not move.</div>
+    <p>The facts about your father are these:</p>
+    <ul class="facts">
+      <li>He came from nothing and became someone his colleagues openly admire.</li>
+      <li>He taught himself his entire career.</li>
+      <li>He has paid, to date, over <strong>$190,000</strong> to make sure you were provided for — and he will keep paying, because that is what he does.</li>
+      <li>He built and maintained a home for you with him, on his own time, at real cost to himself.</li>
+      <li>He fought — through courts, through exhaustion, through heartbreak — to stay in your lives as a <em>father</em>, not a check.</li>
+      <li>He cried for you on nights you will never know about, because he could not reach you in moments you needed him.</li>
+      <li>He never stopped. Not once.</li>
+    </ul>
+    <p>Whatever you have been told about him in rooms he wasn't in — hold it up against that list. If it does not survive the comparison, it is not the truth. It is noise.</p>
+  </section>
+
+  <!-- CHAPTER 8 -->
+
+  <section class="chapter">
+    <div class="chapter-num">Chapter Eight</div>
+    <h2>The Man He Became</h2>
+    <p>The little boy who bounced between four schools before he finished fourth grade grew up to build a career, build a family, and build a life on his own strength — with no inherited map and no safety net.</p>
+    <p>He was supposed to be a statistic. He became a mentor. He was supposed to be absent. He became the most present father he was legally, physically, and financially permitted to be — and then some. He was supposed to break. He paid $190,000 and counting, and he is still standing.</p>
+    <p>Resilience is not a word he would use about himself. He is too busy living it to narrate it. But anyone who has watched his life — really watched it — knows exactly what it looks like.</p>
+    <div class="callout">It looks like him.</div>
+  </section>
+
+  <div class="divider"><span></span><span></span><span></span></div>
+
+  <!-- EPILOGUE -->
+
+  <section class="chapter epilogue">
+    <div class="chapter-num">Epilogue</div>
+    <h2>To the Three Girls This Was Really Written For</h2>
+    <p>Your father is not a perfect man. No honest biography pretends otherwise. But he is a real one — the kind who stays, who pays, who fights, who builds, who cries alone so that you don't have to, and who refuses, absolutely refuses, to become the absent father he himself grew up without.</p>
+    <p>One day, when the noise quiets and you are old enough to look at the full picture with your own eyes, you will see what the people around him have always seen.</p>
+    <p>You will see a self-made man who was handed nothing.</p>
+    <p>You will see a father who was given every reason to walk away and who chose, every single day, to stay.</p>
+    <p>You will see him.</p>
+    <p>And you will know.</p>
+  </section>
+
+  <div class="signature">
+    — Written with love and admiration, for Jeremiah and his daughters.
+  </div>
+
+</article>
+
+</body>
+</html>
