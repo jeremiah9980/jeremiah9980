@@ -11,7 +11,7 @@
     color: #0f172a;
   }
   .wrap {
-    max-width: 1700px;
+    max-width: 1880px;
     margin: 0 auto;
     padding: 24px;
   }
@@ -96,7 +96,7 @@
     box-shadow: 0 2px 8px rgba(15,23,42,0.08);
   }
   .host-card h3 { margin-top: 0; margin-bottom: 8px; font-size: 18px; }
-  @media (max-width: 1200px) {
+  @media (max-width: 1400px) {
     .cards { grid-template-columns: repeat(2, 1fr); }
     .host-grid { grid-template-columns: 1fr; }
   }
@@ -105,7 +105,7 @@
 <body>
 <div class="wrap">
   <h1>VMware / Cisco UCS / Dell VRTX infrastructure analysis</h1>
-  <p class="muted">Built from the uploaded AUS RVTools export, DR RVTools export, and UCS physical summary export.</p>
+  <p class="muted">Refreshed version with auto-wrapped cluster cards so the titles, host lists, and dvSwitch mappings stay inside each card.</p>
 
   <div class="cards">
     <div class="card">
@@ -147,361 +147,409 @@
 
   <div class="diagram">
     <h2>Comprehensive environment diagram</h2>
-    <svg xmlns="http://www.w3.org/2000/svg" width="2600" height="2300" viewBox="0 0 2600 2300">
+    <svg xmlns="http://www.w3.org/2000/svg" width="3400" height="2900" viewBox="0 0 3400 2900">
 
     <defs>
-      <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
-        <path d="M0,0 L12,6 L0,12 z" fill="#475569"></path>
+      <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+        <path d="M0,0 L14,7 L0,14 z" fill="#475569"></path>
       </marker>
       <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-        <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#94a3b8" flood-opacity="0.35"/>
+        <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#94a3b8" flood-opacity="0.32"/>
       </filter>
     </defs>
     
-<rect x="0" y="0" width="2600" height="2300" fill="#f8fafc"/>
-<text x="40" y="50" font-size="30" font-weight="bold" fill="#111827" font-family="Arial, Helvetica, sans-serif">
+<rect x="0" y="0" width="3400" height="2900" fill="#f8fafc"/>
+<text x="40" y="44" font-size="30" font-weight="bold" fill="#111827" font-family="Arial, Helvetica, sans-serif">
 <tspan x="40" dy="0">VMware / Cisco UCS / Dell VRTX Infrastructure Analysis</tspan>
 </text>
-<text x="40" y="88" font-size="16" font-weight="normal" fill="#334155" font-family="Arial, Helvetica, sans-serif">
-<tspan x="40" dy="0">Source files: AUS RVTools export, DR RVTools export, UCS physical summary export</tspan>
-<tspan x="40" dy="20">Scope: ESXi hosts, Cisco hardware domains, Dell hardware footprint, cluster/network/storage relationships</tspan>
+<text x="40" y="78" font-size="15" font-weight="normal" fill="#475569" font-family="Arial, Helvetica, sans-serif">
+<tspan x="40" dy="0">Updated layout: card text auto-wraps and card heights expand to fit content cleanly.</tspan>
+<tspan x="40" dy="19">Source files: AUS RVTools export, DR RVTools export, UCS physical summary export.</tspan>
 </text>
-<g filter="url(#shadow)"><rect x="40" y="120" width="600" height="128" rx="14" ry="14" fill="#e0f2fe" stroke="#1f2937" stroke-width="2"/>
-<text x="54" y="148" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<g filter="url(#shadow)">
+<rect x="40" y="110" width="800" height="119" rx="18" ry="18" fill="#dbeafe" stroke="#243041" stroke-width="2.2"/>
+<text x="54" y="138" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
 <tspan x="54" dy="0">AUS vCenter</tspan>
 </text>
-<text x="54" y="176" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
+<text x="54" y="164" font-size="13" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
 <tspan x="54" dy="0">Hosts: 40 | Total VMs: 838 | Powered on: 768</tspan>
-<tspan x="54" dy="17">Cores: 1,584 | Memory: 31.20 TiB</tspan>
-<tspan x="54" dy="17">Vendor mix: Cisco 32, Dell 8</tspan>
-</text></g>
-<g filter="url(#shadow)"><rect x="664" y="120" width="600" height="128" rx="14" ry="14" fill="#dcfce7" stroke="#1f2937" stroke-width="2"/>
-<text x="678" y="148" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="678" dy="0">DR vCenter</tspan>
+<tspan x="54" dy="16">Compute: 1,584 cores | 31.20 TiB RAM</tspan>
+<tspan x="54" dy="16">Vendor mix: Cisco 32, Dell 8</tspan>
 </text>
-<text x="678" y="176" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="678" dy="0">Hosts: 16 | Total VMs: 92 | Powered on: 77</tspan>
-<tspan x="678" dy="17">Cores: 456 | Memory: 9.35 TiB</tspan>
-<tspan x="678" dy="17">Vendor mix: Cisco 16</tspan>
-</text></g>
-<g filter="url(#shadow)"><rect x="1288" y="120" width="600" height="128" rx="14" ry="14" fill="#fef3c7" stroke="#1f2937" stroke-width="2"/>
-<text x="1302" y="148" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1302" dy="0">Cisco Physical Layer</tspan>
+</g>
+<g filter="url(#shadow)">
+<rect x="860" y="110" width="800" height="119" rx="18" ry="18" fill="#dcfce7" stroke="#243041" stroke-width="2.2"/>
+<text x="874" y="138" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="874" dy="0">DR vCenter</tspan>
 </text>
-<text x="1302" y="176" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1302" dy="0">C1-UCS-01: 32 UCSB-B200-M5 blades</tspan>
-<tspan x="1302" dy="17">c2-6454fi-sw1: 16 UCSB-B200-M5 blades</tspan>
-<tspan x="1302" dy="17">Standalone: 20 UCSC-C240-M5L Cohesity nodes</tspan>
-</text></g>
-<g filter="url(#shadow)"><rect x="1912" y="120" width="600" height="128" rx="14" ry="14" fill="#fee2e2" stroke="#1f2937" stroke-width="2"/>
-<text x="1926" y="148" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1926" dy="0">Notable Risk Signals</tspan>
+<text x="874" y="164" font-size="13" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="874" dy="0">Hosts: 16 | Total VMs: 92 | Powered on: 77</tspan>
+<tspan x="874" dy="16">Compute: 456 cores | 9.35 TiB RAM</tspan>
+<tspan x="874" dy="16">Vendor mix: Cisco 16</tspan>
 </text>
-<text x="1926" y="176" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1926" dy="0">AUS: all 40 host certs flagged expiring</tspan>
-<tspan x="1926" dy="17">DR: C2-Linux-Esxi-02 shows critical health in UCS export</tspan>
-<tspan x="1926" dy="17">Mixed ESXi 7/8 footprints remain in Telecom / VRTX areas</tspan>
-</text></g>
-<g filter="url(#shadow)"><rect x="40" y="290" width="1220" height="1500" rx="18" ry="18" fill="#eff6ff" stroke="#1e293b" stroke-width="2"/></g>
-<text x="60" y="324" font-size="24" font-weight="bold" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="60" dy="0">AUS / Production-side footprint</tspan>
+</g>
+<g filter="url(#shadow)">
+<rect x="1680" y="110" width="800" height="119" rx="18" ry="18" fill="#fef3c7" stroke="#243041" stroke-width="2.2"/>
+<text x="1694" y="138" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1694" dy="0">Cisco physical layer</tspan>
 </text>
-<g filter="url(#shadow)"><rect x="1340" y="290" width="1220" height="1500" rx="18" ry="18" fill="#f0fdf4" stroke="#1e293b" stroke-width="2"/></g>
-<text x="1360" y="324" font-size="24" font-weight="bold" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1360" dy="0">DR / Recovery-side footprint</tspan>
+<text x="1694" y="164" font-size="13" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1694" dy="0">C1-UCS-01: 32 UCSB-B200-M5 blades</tspan>
+<tspan x="1694" dy="16">c2-6454fi-sw1: 16 UCSB-B200-M5 blades</tspan>
+<tspan x="1694" dy="16">Standalone: 20 UCSC-C240-M5L Cohesity nodes</tspan>
 </text>
-<rect x="470" y="350" width="360" height="96" rx="14" ry="14" fill="#bfdbfe" stroke="#1f2937" stroke-width="2"/>
-<text x="484" y="378" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="484" dy="0">aus-vmprod310</tspan>
+</g>
+<g filter="url(#shadow)">
+<rect x="2500" y="110" width="800" height="119" rx="18" ry="18" fill="#fee2e2" stroke="#243041" stroke-width="2.2"/>
+<text x="2514" y="138" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="2514" dy="0">Notable risk signals</tspan>
 </text>
-<text x="484" y="406" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="484" dy="0">Datacenters: Corporate, DRO, HRO, LRO, Mueller</tspan>
-<tspan x="484" dy="17">838 VMs total | 768 powered on</tspan>
+<text x="2514" y="164" font-size="13" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="2514" dy="0">AUS: all 40 host certificates flagged expiring</tspan>
+<tspan x="2514" dy="16">DR: C2-Linux-Esxi-02 shows critical health in UCS export</tspan>
+<tspan x="2514" dy="16">Mixed ESXi 7/8 footprints remain in Telecom and VRTX areas</tspan>
 </text>
-<rect x="90" y="500" width="700" height="110" rx="14" ry="14" fill="#fde68a" stroke="#1f2937" stroke-width="2"/>
-<text x="104" y="528" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+</g>
+<g filter="url(#shadow)"><rect x="40" y="269" width="1640" height="2231" rx="22" ry="22" fill="#eef5ff" stroke="#1e293b" stroke-width="2.2"/></g>
+<text x="62" y="303" font-size="24" font-weight="bold" fill="#111827" font-family="Arial, Helvetica, sans-serif">
+<tspan x="62" dy="0">AUS / Production-side footprint</tspan>
+</text>
+<g filter="url(#shadow)"><rect x="1720" y="269" width="1640" height="2231" rx="22" ry="22" fill="#effdf4" stroke="#1e293b" stroke-width="2.2"/></g>
+<text x="1742" y="303" font-size="24" font-weight="bold" fill="#111827" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1742" dy="0">DR / Recovery-side footprint</tspan>
+</text>
+<g filter="url(#shadow)">
+<rect x="530" y="329" width="520" height="103" rx="18" ry="18" fill="#bfdbfe" stroke="#243041" stroke-width="2.2"/>
+<text x="544" y="357" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="544" dy="0">aus-vmprod310</tspan>
+</text>
+<text x="544" y="383" font-size="13" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="544" dy="0">Datacenters: Corporate, DRO, HRO, LRO, Mueller</tspan>
+<tspan x="544" dy="16">838 VMs total | 768 powered on</tspan>
+</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="90" y="459" width="980" height="103" rx="18" ry="18" fill="#fde68a" stroke="#243041" stroke-width="2.2"/>
+<text x="104" y="487" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
 <tspan x="104" dy="0">Cisco UCS domain: C1-UCS-01</tspan>
 </text>
-<text x="104" y="556" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
+<text x="104" y="513" font-size="13" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
 <tspan x="104" dy="0">32 x UCSB-B200-M5 blades | Bundle 4.2(3d) | Firmware 4.2(3c)</tspan>
-<tspan x="104" dy="17">Common blade archetype: Intel Xeon Gold 6248R, Cisco VIC networking, Fibre Channel storage paths</tspan>
+<tspan x="104" dy="16">Common blade archetype: Intel Xeon Gold 6248R, Cisco VIC networking, Fibre Channel storage paths</tspan>
 </text>
-<line x1="650" y1="446" x2="440" y2="500" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="830" y="500" width="380" height="110" rx="14" ry="14" fill="#fecaca" stroke="#1f2937" stroke-width="2"/>
-<text x="844" y="528" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="844" dy="0">Dell VRTX footprint</tspan>
+</g>
+<g filter="url(#shadow)">
+<rect x="1120" y="459" width="520" height="103" rx="18" ry="18" fill="#fecaca" stroke="#243041" stroke-width="2.2"/>
+<text x="1134" y="487" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1134" dy="0">Dell VRTX footprint</tspan>
 </text>
-<text x="844" y="556" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="844" dy="0">8 x PowerEdge M640 (VRTX) ESXi hosts</tspan>
-<tspan x="844" dy="17">Shared PERC 8 Mini storage | ntg3 / igbn networking</tspan>
+<text x="1134" y="513" font-size="13" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1134" dy="0">8 x PowerEdge M640 (VRTX) ESXi hosts</tspan>
+<tspan x="1134" dy="16">Shared PERC 8 Mini storage | ntg3 / igbn networking</tspan>
 </text>
-<line x1="650" y1="446" x2="1020" y2="500" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="90" y="650" width="330" height="150" rx="14" ry="14" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
-<text x="104" y="678" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+</g>
+<line x1="790" y1="432" x2="580" y2="459" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="860" y1="432" x2="1380" y2="459" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="90" y="596" width="470" height="218" rx="18" ry="18" fill="#ffffff" stroke="#243041" stroke-width="2.2"/>
+<text x="104" y="624" font-size="15" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
 <tspan x="104" dy="0">C1-Cluster_1</tspan>
 </text>
-<text x="104" y="706" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
+<text x="104" y="650" font-size="12" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
 <tspan x="104" dy="0">9 hosts | 357 running VMs | 432 cores</tspan>
-<tspan x="104" dy="17">Host memory: 10.11 TiB | vRAM assigned: 7.08 TiB</tspan>
-<tspan x="104" dy="17">ESXi: 8.0.3 build-24022510</tspan>
-<tspan x="104" dy="17">Hosts: c1-cluster1-esxi-01,</tspan>
-<tspan x="104" dy="17">c1-cluster1-esxi-02, c1-cluster1-esxi-03,</tspan>
-<tspan x="104" dy="17">c1-cluster1-esxi-04, c1-cluster1-esxi-05,</tspan>
-<tspan x="104" dy="17">dvSwitches: C1-Cluster-1_DVSwitch_DMZ,</tspan>
-<tspan x="104" dy="17">C1-Cluster-1_DVSwitch_MGMT,</tspan>
-<tspan x="104" dy="17">C1-Cluster-1_DVSwitch_VmData,</tspan>
+<tspan x="104" dy="15">Host memory: 10.11 TiB | vRAM assigned: 7.08 TiB</tspan>
+<tspan x="104" dy="15">ESXi: 8.0.3 build-24022510</tspan>
+<tspan x="104" dy="15">Hosts: c1-cluster1-esxi-01, c1-cluster1-esxi-02,</tspan>
+<tspan x="104" dy="15">c1-cluster1-esxi-03, c1-cluster1-esxi-04, c1-cluster1-esxi-05,</tspan>
+<tspan x="104" dy="15">c1-cluster1-esxi-06, c1-cluster1-esxi-07, c1-cluster1-esxi-08,</tspan>
+<tspan x="104" dy="15">c1-cluster1-esxi-09</tspan>
+<tspan x="104" dy="15">dvSwitches: C1-Cluster-1_DVSwitch_DMZ,</tspan>
+<tspan x="104" dy="15">C1-Cluster-1_DVSwitch_MGMT, C1-Cluster-1_DVSwitch_VmData,</tspan>
+<tspan x="104" dy="15">C1-Cluster-1_DVSwitch_vMotion</tspan>
 </text>
-<line x1="440" y1="610" x2="255.0" y2="650" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="440" y="650" width="330" height="150" rx="14" ry="14" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
-<text x="454" y="678" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="454" dy="0">C1-Linux-Cluster</tspan>
+</g>
+<line x1="580" y1="562" x2="325.0" y2="596" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="584" y="596" width="470" height="173" rx="18" ry="18" fill="#ffffff" stroke="#243041" stroke-width="2.2"/>
+<text x="598" y="624" font-size="15" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="598" dy="0">C1-Linux-Cluster</tspan>
 </text>
-<text x="454" y="706" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="454" dy="0">4 hosts | 128 running VMs | 192 cores</tspan>
-<tspan x="454" dy="17">Host memory: 4.49 TiB | vRAM assigned: 1.10 TiB</tspan>
-<tspan x="454" dy="17">ESXi: 8.0.3 build-24022510</tspan>
-<tspan x="454" dy="17">Hosts: c1-linux-esxi-01, c1-linux-esxi-02,</tspan>
-<tspan x="454" dy="17">c1-linux-esxi-03, c1-linux-esxi-04</tspan>
-<tspan x="454" dy="17">dvSwitches: C1-Linux_DVSwitch_MGMT,</tspan>
-<tspan x="454" dy="17">C1-Linux_DVSwitch_VmData,</tspan>
-<tspan x="454" dy="17">C1-Linux_DVSwitch_Vmotion</tspan>
+<text x="598" y="650" font-size="12" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="598" dy="0">4 hosts | 128 running VMs | 192 cores</tspan>
+<tspan x="598" dy="15">Host memory: 4.49 TiB | vRAM assigned: 1.10 TiB</tspan>
+<tspan x="598" dy="15">ESXi: 8.0.3 build-24022510</tspan>
+<tspan x="598" dy="15">Hosts: c1-linux-esxi-01, c1-linux-esxi-02, c1-linux-esxi-03,</tspan>
+<tspan x="598" dy="15">c1-linux-esxi-04</tspan>
+<tspan x="598" dy="15">dvSwitches: C1-Linux_DVSwitch_MGMT, C1-Linux_DVSwitch_VmData,</tspan>
+<tspan x="598" dy="15">C1-Linux_DVSwitch_Vmotion</tspan>
 </text>
-<line x1="440" y1="610" x2="605.0" y2="650" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="90" y="820" width="330" height="150" rx="14" ry="14" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
-<text x="104" y="848" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+</g>
+<line x1="580" y1="562" x2="819.0" y2="596" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="90" y="838" width="470" height="173" rx="18" ry="18" fill="#ffffff" stroke="#243041" stroke-width="2.2"/>
+<text x="104" y="866" font-size="15" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
 <tspan x="104" dy="0">C1-Telecom-Cluster</tspan>
 </text>
-<text x="104" y="876" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
+<text x="104" y="892" font-size="12" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
 <tspan x="104" dy="0">4 hosts | 20 running VMs | 192 cores</tspan>
-<tspan x="104" dy="17">Host memory: 4.49 TiB | vRAM assigned: 0.18 TiB</tspan>
-<tspan x="104" dy="17">ESXi: 7.0.3 build-24411414</tspan>
-<tspan x="104" dy="17">Hosts: c1-telecom-esxi-01,</tspan>
-<tspan x="104" dy="17">c1-telecom-esxi-02, c1-telecom-esxi-03,</tspan>
-<tspan x="104" dy="17">c1-telecom-esxi-04</tspan>
-<tspan x="104" dy="17">dvSwitches: C1-Telecom_DVSwitch_DMZ,</tspan>
-<tspan x="104" dy="17">C1-Telecom_DVSwitch_MGMT,</tspan>
-<tspan x="104" dy="17">C1-Telecom_DVSwitch_VMotion,</tspan>
+<tspan x="104" dy="15">Host memory: 4.49 TiB | vRAM assigned: 0.18 TiB</tspan>
+<tspan x="104" dy="15">ESXi: 7.0.3 build-24411414</tspan>
+<tspan x="104" dy="15">Hosts: c1-telecom-esxi-01, c1-telecom-esxi-02,</tspan>
+<tspan x="104" dy="15">c1-telecom-esxi-03, c1-telecom-esxi-04</tspan>
+<tspan x="104" dy="15">dvSwitches: C1-Telecom_DVSwitch_DMZ, C1-Telecom_DVSwitch_MGMT,</tspan>
+<tspan x="104" dy="15">C1-Telecom_DVSwitch_VMotion, C1-Telecom_DVSwitch_VmData</tspan>
 </text>
-<line x1="440" y1="610" x2="255.0" y2="820" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="440" y="820" width="330" height="150" rx="14" ry="14" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
-<text x="454" y="848" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="454" dy="0">C1-Websphere-Cluster</tspan>
+</g>
+<line x1="580" y1="562" x2="325.0" y2="838" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="584" y="838" width="470" height="173" rx="18" ry="18" fill="#ffffff" stroke="#243041" stroke-width="2.2"/>
+<text x="598" y="866" font-size="15" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="598" dy="0">C1-Websphere-Cluster</tspan>
 </text>
-<text x="454" y="876" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="454" dy="0">3 hosts | 66 running VMs | 72 cores</tspan>
-<tspan x="454" dy="17">Host memory: 2.25 TiB | vRAM assigned: 0.54 TiB</tspan>
-<tspan x="454" dy="17">ESXi: 8.0.3 build-24022510</tspan>
-<tspan x="454" dy="17">Hosts: c1-websphere-esxi-01,</tspan>
-<tspan x="454" dy="17">c1-websphere-esxi-02, c1-websphere-esxi-03</tspan>
-<tspan x="454" dy="17">dvSwitches: C1-Websphere_DvSwitch_MGMT,</tspan>
-<tspan x="454" dy="17">C1-Websphere_DvSwitch_VMData,</tspan>
-<tspan x="454" dy="17">C1-Websphere_DvSwitch_vMotion</tspan>
+<text x="598" y="892" font-size="12" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="598" dy="0">3 hosts | 66 running VMs | 72 cores</tspan>
+<tspan x="598" dy="15">Host memory: 2.25 TiB | vRAM assigned: 0.54 TiB</tspan>
+<tspan x="598" dy="15">ESXi: 8.0.3 build-24022510</tspan>
+<tspan x="598" dy="15">Hosts: c1-websphere-esxi-01, c1-websphere-esxi-02,</tspan>
+<tspan x="598" dy="15">c1-websphere-esxi-03</tspan>
+<tspan x="598" dy="15">dvSwitches: C1-Websphere_DvSwitch_MGMT,</tspan>
+<tspan x="598" dy="15">C1-Websphere_DvSwitch_VMData, C1-Websphere_DvSwitch_vMotion</tspan>
 </text>
-<line x1="440" y1="610" x2="605.0" y2="820" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="90" y="990" width="330" height="150" rx="14" ry="14" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
-<text x="104" y="1018" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+</g>
+<line x1="580" y1="562" x2="819.0" y2="838" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="90" y="1035" width="470" height="188" rx="18" ry="18" fill="#ffffff" stroke="#243041" stroke-width="2.2"/>
+<text x="104" y="1063" font-size="15" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
 <tspan x="104" dy="0">C1-Workstation-Cluster</tspan>
 </text>
-<text x="104" y="1046" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
+<text x="104" y="1089" font-size="12" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
 <tspan x="104" dy="0">5 hosts | 177 running VMs | 240 cores</tspan>
-<tspan x="104" dy="17">Host memory: 5.62 TiB | vRAM assigned: 3.17 TiB</tspan>
-<tspan x="104" dy="17">ESXi: 8.0.3 build-24022510</tspan>
-<tspan x="104" dy="17">Hosts: c1-workstation-esxi-01,</tspan>
-<tspan x="104" dy="17">c1-workstation-esxi-02,</tspan>
-<tspan x="104" dy="17">c1-workstation-esxi-03,</tspan>
-<tspan x="104" dy="17">dvSwitches: C1-Workstation_DvSwitch_MGMT,</tspan>
-<tspan x="104" dy="17">C1-Workstation_DvSwitch_VMData,</tspan>
-<tspan x="104" dy="17">C1-Workstation_DvSwitch_vMotion</tspan>
+<tspan x="104" dy="15">Host memory: 5.62 TiB | vRAM assigned: 3.17 TiB</tspan>
+<tspan x="104" dy="15">ESXi: 8.0.3 build-24022510</tspan>
+<tspan x="104" dy="15">Hosts: c1-workstation-esxi-01, c1-workstation-esxi-02,</tspan>
+<tspan x="104" dy="15">c1-workstation-esxi-03, c1-workstation-esxi-04,</tspan>
+<tspan x="104" dy="15">c1-workstation-esxi-05</tspan>
+<tspan x="104" dy="15">dvSwitches: C1-Workstation_DvSwitch_MGMT,</tspan>
+<tspan x="104" dy="15">C1-Workstation_DvSwitch_VMData, C1-Workstation_DvSwitch_vMotion</tspan>
 </text>
-<line x1="440" y1="610" x2="255.0" y2="990" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="440" y="990" width="330" height="150" rx="14" ry="14" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
-<text x="454" y="1018" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="454" dy="0">C1-Workstation2-Cluster</tspan>
+</g>
+<line x1="580" y1="562" x2="325.0" y2="1035" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="584" y="1035" width="470" height="203" rx="18" ry="18" fill="#ffffff" stroke="#243041" stroke-width="2.2"/>
+<text x="598" y="1063" font-size="15" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="598" dy="0">C1-Workstation2-Cluster</tspan>
 </text>
-<text x="454" y="1046" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="454" dy="0">6 hosts | 0 running VMs | 240 cores</tspan>
-<tspan x="454" dy="17">Host memory: 2.24 TiB | vRAM assigned: 0.00 TiB</tspan>
-<tspan x="454" dy="17">ESXi: 8.0.3 build-24022510</tspan>
-<tspan x="454" dy="17">Hosts: c1-workstation2-esxi-01,</tspan>
-<tspan x="454" dy="17">c1-workstation2-esxi-02,</tspan>
-<tspan x="454" dy="17">c1-workstation2-esxi-03,</tspan>
-<tspan x="454" dy="17">dvSwitches: C1-Workstation2_DvSwitch_MGMT,</tspan>
-<tspan x="454" dy="17">C1-Workstation2_DvSwitch_VMData,</tspan>
-<tspan x="454" dy="17">C1-Workstation2_DvSwitch_vMotion</tspan>
+<text x="598" y="1089" font-size="12" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="598" dy="0">6 hosts | 0 running VMs | 240 cores</tspan>
+<tspan x="598" dy="15">Host memory: 2.24 TiB | vRAM assigned: 0.00 TiB</tspan>
+<tspan x="598" dy="15">ESXi: 8.0.3 build-24022510</tspan>
+<tspan x="598" dy="15">Hosts: c1-workstation2-esxi-01, c1-workstation2-esxi-02,</tspan>
+<tspan x="598" dy="15">c1-workstation2-esxi-03, c1-workstation2-esxi-04,</tspan>
+<tspan x="598" dy="15">c1-workstation2-esxi-05, c1-workstation2-esxi-06</tspan>
+<tspan x="598" dy="15">dvSwitches: C1-Workstation2_DvSwitch_MGMT,</tspan>
+<tspan x="598" dy="15">C1-Workstation2_DvSwitch_VMData,</tspan>
+<tspan x="598" dy="15">C1-Workstation2_DvSwitch_vMotion</tspan>
 </text>
-<line x1="440" y1="610" x2="605.0" y2="990" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="90" y="1160" width="330" height="150" rx="14" ry="14" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
-<text x="104" y="1188" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+</g>
+<line x1="580" y1="562" x2="819.0" y2="1035" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="90" y="1262" width="470" height="158" rx="18" ry="18" fill="#ffffff" stroke="#243041" stroke-width="2.2"/>
+<text x="104" y="1290" font-size="15" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
 <tspan x="104" dy="0">Standalone</tspan>
 </text>
-<text x="104" y="1216" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
+<text x="104" y="1316" font-size="12" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
 <tspan x="104" dy="0">1 hosts | 0 running VMs | 24 cores</tspan>
-<tspan x="104" dy="17">Host memory: 0.75 TiB | vRAM assigned: 0.00 TiB</tspan>
-<tspan x="104" dy="17">ESXi: 8.0.3 build-24022510</tspan>
-<tspan x="104" dy="17">Hosts: c1-websphere-esxi-04</tspan>
-<tspan x="104" dy="17">dvSwitches: C1-Websphere_DvSwitch_MGMT,</tspan>
-<tspan x="104" dy="17">C1-Websphere_DvSwitch_VMData,</tspan>
-<tspan x="104" dy="17">C1-Websphere_DvSwitch_vMotion</tspan>
+<tspan x="104" dy="15">Host memory: 0.75 TiB | vRAM assigned: 0.00 TiB</tspan>
+<tspan x="104" dy="15">ESXi: 8.0.3 build-24022510</tspan>
+<tspan x="104" dy="15">Hosts: c1-websphere-esxi-04</tspan>
+<tspan x="104" dy="15">dvSwitches: C1-Websphere_DvSwitch_MGMT,</tspan>
+<tspan x="104" dy="15">C1-Websphere_DvSwitch_VMData, C1-Websphere_DvSwitch_vMotion</tspan>
 </text>
-<line x1="440" y1="610" x2="255.0" y2="1160" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="845" y="650" width="350" height="138" rx="14" ry="14" fill="#fff7ed" stroke="#1f2937" stroke-width="2"/>
-<text x="859" y="678" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="859" dy="0">DRO_CLUSTER_01</tspan>
+</g>
+<line x1="580" y1="562" x2="325.0" y2="1262" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="1120" y="596" width="520" height="143" rx="18" ry="18" fill="#fff7ed" stroke="#243041" stroke-width="2.2"/>
+<text x="1134" y="624" font-size="15" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1134" dy="0">DRO_CLUSTER_01</tspan>
 </text>
-<text x="859" y="706" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="859" dy="0">2 hosts | 6 running VMs | 48 cores</tspan>
-<tspan x="859" dy="17">Host memory: 0.25 TiB | ESXi: 8.0.3 build-24022510</tspan>
-<tspan x="859" dy="17">Hosts: dro-vrtx1-001,</tspan>
-<tspan x="859" dy="17">dro-vrtx1-002</tspan>
+<text x="1134" y="650" font-size="12" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1134" dy="0">2 hosts | 6 running VMs | 48 cores</tspan>
+<tspan x="1134" dy="15">Host memory: 0.25 TiB | vRAM assigned: 0.04 TiB</tspan>
+<tspan x="1134" dy="15">ESXi: 8.0.3 build-24022510</tspan>
+<tspan x="1134" dy="15">Hosts: dro-vrtx1-001, dro-vrtx1-002</tspan>
+<tspan x="1134" dy="15">dvSwitches: DRO-VRTX1-dvSwitch, vSwitchiDRACvusb</tspan>
 </text>
-<line x1="1020" y1="610" x2="1020" y2="650" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="845" y="816" width="350" height="138" rx="14" ry="14" fill="#fff7ed" stroke="#1f2937" stroke-width="2"/>
-<text x="859" y="844" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="859" dy="0">HRO_CLUSTER_01</tspan>
+</g>
+<line x1="1380.0" y1="562" x2="1380.0" y2="596" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="1120" y="759" width="520" height="143" rx="18" ry="18" fill="#fff7ed" stroke="#243041" stroke-width="2.2"/>
+<text x="1134" y="787" font-size="15" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1134" dy="0">HRO_CLUSTER_01</tspan>
 </text>
-<text x="859" y="872" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="859" dy="0">2 hosts | 5 running VMs | 48 cores</tspan>
-<tspan x="859" dy="17">Host memory: 0.25 TiB | ESXi: 8.0.3 build-24022510</tspan>
-<tspan x="859" dy="17">Hosts: hro-vrtx1-001,</tspan>
-<tspan x="859" dy="17">hro-vrtx1-002</tspan>
+<text x="1134" y="813" font-size="12" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1134" dy="0">2 hosts | 5 running VMs | 48 cores</tspan>
+<tspan x="1134" dy="15">Host memory: 0.25 TiB | vRAM assigned: 0.04 TiB</tspan>
+<tspan x="1134" dy="15">ESXi: 8.0.3 build-24022510</tspan>
+<tspan x="1134" dy="15">Hosts: hro-vrtx1-001, hro-vrtx1-002</tspan>
+<tspan x="1134" dy="15">dvSwitches: HRO-VRTX1-DvSwitch, vSwitchiDRACvusb</tspan>
 </text>
-<line x1="1020" y1="610" x2="1020" y2="816" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="845" y="982" width="350" height="138" rx="14" ry="14" fill="#fff7ed" stroke="#1f2937" stroke-width="2"/>
-<text x="859" y="1010" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="859" dy="0">LRO_CLUSTER_01</tspan>
+</g>
+<line x1="1380.0" y1="562" x2="1380.0" y2="759" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="1120" y="922" width="520" height="143" rx="18" ry="18" fill="#fff7ed" stroke="#243041" stroke-width="2.2"/>
+<text x="1134" y="950" font-size="15" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1134" dy="0">LRO_CLUSTER_01</tspan>
 </text>
-<text x="859" y="1038" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="859" dy="0">2 hosts | 6 running VMs | 48 cores</tspan>
-<tspan x="859" dy="17">Host memory: 0.25 TiB | ESXi: 8.0.3 build-24022510</tspan>
-<tspan x="859" dy="17">Hosts: lro-vrtx1-001,</tspan>
-<tspan x="859" dy="17">lro-vrtx1-002</tspan>
+<text x="1134" y="976" font-size="12" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1134" dy="0">2 hosts | 6 running VMs | 48 cores</tspan>
+<tspan x="1134" dy="15">Host memory: 0.25 TiB | vRAM assigned: 0.07 TiB</tspan>
+<tspan x="1134" dy="15">ESXi: 8.0.3 build-24022510</tspan>
+<tspan x="1134" dy="15">Hosts: lro-vrtx1-001, lro-vrtx1-002</tspan>
+<tspan x="1134" dy="15">dvSwitches: LRO-VRTX1-dvSwitch, vSwitchBMC, vSwitchiDRACvusb</tspan>
 </text>
-<line x1="1020" y1="610" x2="1020" y2="982" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="845" y="1148" width="350" height="138" rx="14" ry="14" fill="#fff7ed" stroke="#1f2937" stroke-width="2"/>
-<text x="859" y="1176" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="859" dy="0">MUELLER-VRTX1_CLUSTER_01</tspan>
+</g>
+<line x1="1380.0" y1="562" x2="1380.0" y2="922" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="1120" y="1085" width="520" height="143" rx="18" ry="18" fill="#fff7ed" stroke="#243041" stroke-width="2.2"/>
+<text x="1134" y="1113" font-size="15" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1134" dy="0">MUELLER-VRTX1_CLUSTER_01</tspan>
 </text>
-<text x="859" y="1204" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="859" dy="0">2 hosts | 3 running VMs | 48 cores</tspan>
-<tspan x="859" dy="17">Host memory: 0.50 TiB | ESXi: 7.0.3 build-24585291</tspan>
-<tspan x="859" dy="17">Hosts: corp-vrtx1-001,</tspan>
-<tspan x="859" dy="17">corp-vrtx1-002</tspan>
+<text x="1134" y="1139" font-size="12" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1134" dy="0">2 hosts | 3 running VMs | 48 cores</tspan>
+<tspan x="1134" dy="15">Host memory: 0.50 TiB | vRAM assigned: 0.03 TiB</tspan>
+<tspan x="1134" dy="15">ESXi: 7.0.3 build-24585291</tspan>
+<tspan x="1134" dy="15">Hosts: corp-vrtx1-001, corp-vrtx1-002</tspan>
+<tspan x="1134" dy="15">dvSwitches: DSwitch1</tspan>
 </text>
-<line x1="1020" y1="610" x2="1020" y2="1148" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="90" y="1430" width="1120" height="310" rx="14" ry="14" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
-<text x="104" y="1458" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+</g>
+<line x1="1380.0" y1="562" x2="1380.0" y2="1085" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="90" y="1464" width="1550" height="183" rx="18" ry="18" fill="#ffffff" stroke="#243041" stroke-width="2.2"/>
+<text x="104" y="1492" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
 <tspan x="104" dy="0">AUS findings and design patterns</tspan>
 </text>
-<text x="104" y="1486" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
+<text x="104" y="1518" font-size="13" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
 <tspan x="104" dy="0">• Cisco cluster network pattern repeats as MGMT / VMData / vMotion, with DMZ dvSwitches on Cluster_1 and Telecom.</tspan>
-<tspan x="104" dy="17">• Cisco hosts are mostly 40 Gb on vmnic uplinks; C1-Workstation2 hosts show 20 Gb uplinks.</tspan>
-<tspan x="104" dy="17">• Cisco HBAs are primarily Cisco UCS VIC Fnic Controllers (Fibre Channel) plus AHCI boot devices.</tspan>
-<tspan x="104" dy="17">• Dell VRTX hosts rely on Shared PERC 8 Mini storage instead of FC SAN presentation.</tspan>
-<tspan x="104" dy="17">• AUS anomalies from RVTools: c1-cluster1-esxi-02, c1-telecom-esxi-04, c1-websphere-esxi-04 flagged yellow config.</tspan>
-<tspan x="104" dy="17">• AUS maintenance mode hosts seen in export: c1-linux-esxi-04, c1-websphere-esxi-02, c1-websphere-esxi-04.</tspan>
-<tspan x="104" dy="17">• AUS vHealth shows 40 certificate-expiry alerts across the host fleet and additional zombie/snapshot/storage findings.</tspan>
+<tspan x="104" dy="16">• Cisco hosts are mostly 40 Gb on vmnic uplinks; C1-Workstation2 hosts show 20 Gb uplinks.</tspan>
+<tspan x="104" dy="16">• Cisco HBAs are primarily Cisco UCS VIC Fnic Controllers plus AHCI boot devices.</tspan>
+<tspan x="104" dy="16">• Dell VRTX hosts rely on Shared PERC 8 Mini storage instead of FC SAN presentation.</tspan>
+<tspan x="104" dy="16">• AUS anomalies from RVTools include yellow-config findings on c1-cluster1-esxi-02, c1-telecom-esxi-04, and c1-websphere-esxi-04.</tspan>
+<tspan x="104" dy="16">• AUS maintenance mode hosts seen in export: c1-linux-esxi-04, c1-websphere-esxi-02, c1-websphere-esxi-04.</tspan>
+<tspan x="104" dy="16">• AUS vHealth shows 40 certificate-expiry alerts across the host fleet plus zombie, snapshot, and storage findings.</tspan>
 </text>
-<rect x="1770" y="350" width="360" height="96" rx="14" ry="14" fill="#bbf7d0" stroke="#1f2937" stroke-width="2"/>
-<text x="1784" y="378" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1784" dy="0">dr-vmprod310</tspan>
+</g>
+<g filter="url(#shadow)">
+<rect x="2240" y="329" width="520" height="103" rx="18" ry="18" fill="#bbf7d0" stroke="#243041" stroke-width="2.2"/>
+<text x="2254" y="357" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="2254" dy="0">dr-vmprod310</tspan>
 </text>
-<text x="1784" y="406" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1784" dy="0">Datacenter: WESTLAND</tspan>
-<tspan x="1784" dy="17">92 VMs total | 77 powered on</tspan>
+<text x="2254" y="383" font-size="13" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="2254" dy="0">Datacenter: WESTLAND</tspan>
+<tspan x="2254" dy="16">92 VMs total | 77 powered on</tspan>
 </text>
-<rect x="1450" y="500" width="920" height="110" rx="14" ry="14" fill="#d9f99d" stroke="#1f2937" stroke-width="2"/>
-<text x="1464" y="528" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1464" dy="0">Cisco UCS domain: c2-6454fi-sw1</tspan>
+</g>
+<g filter="url(#shadow)">
+<rect x="1930" y="459" width="1140" height="103" rx="18" ry="18" fill="#d9f99d" stroke="#243041" stroke-width="2.2"/>
+<text x="1944" y="487" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1944" dy="0">Cisco UCS domain: c2-6454fi-sw1</tspan>
 </text>
-<text x="1464" y="556" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1464" dy="0">16 x UCSB-B200-M5 blades | Bundle 4.2(3d) | Firmware 4.2(3c)</tspan>
-<tspan x="1464" dy="17">Common blade archetype: Intel Xeon Gold 6248R, Cisco VIC networking, Fibre Channel storage paths</tspan>
+<text x="1944" y="513" font-size="13" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1944" dy="0">16 x UCSB-B200-M5 blades | Bundle 4.2(3d) | Firmware 4.2(3c)</tspan>
+<tspan x="1944" dy="16">Common blade archetype: Intel Xeon Gold 6248R, Cisco VIC networking, Fibre Channel storage paths</tspan>
 </text>
-<line x1="1950" y1="446" x2="1910" y2="500" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="1450" y="670" width="430" height="170" rx="14" ry="14" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
-<text x="1464" y="698" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1464" dy="0">C2-Cluster-1_Cluster</tspan>
+</g>
+<line x1="2500" y1="432" x2="2500" y2="459" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="1930" y="596" width="540" height="188" rx="18" ry="18" fill="#ffffff" stroke="#243041" stroke-width="2.2"/>
+<text x="1944" y="624" font-size="15" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1944" dy="0">C2-Cluster-1_Cluster</tspan>
 </text>
-<text x="1464" y="726" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1464" dy="0">7 hosts | 49 running VMs | 168 cores</tspan>
-<tspan x="1464" dy="17">Host memory: 2.62 TiB | vRAM assigned: 0.77 TiB</tspan>
-<tspan x="1464" dy="17">ESXi: 8.0.3 build-24022510</tspan>
-<tspan x="1464" dy="17">Hosts: c2-cluster-1-esxi-01, c2-cluster-1-esxi-02,</tspan>
-<tspan x="1464" dy="17">c2-cluster-1-esxi-03, c2-cluster-1-esxi-04,</tspan>
-<tspan x="1464" dy="17">c2-cluster-1-esxi-05, c2-cluster-1-esxi-06,</tspan>
-<tspan x="1464" dy="17">dvSwitches: C2-Cluster-1_DVSwitch_DMZ,</tspan>
-<tspan x="1464" dy="17">C2-Cluster-1_DVSwitch_MGMT,</tspan>
-<tspan x="1464" dy="17">C2-Cluster-1_DVSwitch_VmData,</tspan>
+<text x="1944" y="650" font-size="12" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1944" dy="0">7 hosts | 49 running VMs | 168 cores</tspan>
+<tspan x="1944" dy="15">Host memory: 2.62 TiB | vRAM assigned: 0.77 TiB</tspan>
+<tspan x="1944" dy="15">ESXi: 8.0.3 build-24022510</tspan>
+<tspan x="1944" dy="15">Hosts: c2-cluster-1-esxi-01, c2-cluster-1-esxi-02, c2-cluster-1-esxi-03,</tspan>
+<tspan x="1944" dy="15">c2-cluster-1-esxi-04, c2-cluster-1-esxi-05, c2-cluster-1-esxi-06,</tspan>
+<tspan x="1944" dy="15">c2-cluster-1-esxi-07</tspan>
+<tspan x="1944" dy="15">dvSwitches: C2-Cluster-1_DVSwitch_DMZ, C2-Cluster-1_DVSwitch_MGMT,</tspan>
+<tspan x="1944" dy="15">C2-Cluster-1_DVSwitch_VmData, C2-Cluster-1_DVSwitch_vMotion</tspan>
 </text>
-<line x1="1910" y1="610" x2="1665.0" y2="670" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="1904" y="670" width="430" height="170" rx="14" ry="14" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
-<text x="1918" y="698" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1918" dy="0">C2-Linux-Cluster</tspan>
+</g>
+<line x1="2500" y1="562" x2="2200.0" y2="596" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="2502" y="596" width="540" height="158" rx="18" ry="18" fill="#ffffff" stroke="#243041" stroke-width="2.2"/>
+<text x="2516" y="624" font-size="15" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="2516" dy="0">C2-Linux-Cluster</tspan>
 </text>
-<text x="1918" y="726" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1918" dy="0">3 hosts | 9 running VMs | 72 cores</tspan>
-<tspan x="1918" dy="17">Host memory: 1.12 TiB | vRAM assigned: 0.13 TiB</tspan>
-<tspan x="1918" dy="17">ESXi: 8.0.3 build-24022510</tspan>
-<tspan x="1918" dy="17">Hosts: c2-linux-esxi-01, c2-linux-esxi-02,</tspan>
-<tspan x="1918" dy="17">c2-linux-esxi-03</tspan>
-<tspan x="1918" dy="17">dvSwitches: C2-Linux_DVSwitch_MGMT,</tspan>
-<tspan x="1918" dy="17">C2-Linux_DVSwitch_VmData, C2-Linux_DVSwitch_vMotion</tspan>
+<text x="2516" y="650" font-size="12" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="2516" dy="0">3 hosts | 9 running VMs | 72 cores</tspan>
+<tspan x="2516" dy="15">Host memory: 1.12 TiB | vRAM assigned: 0.13 TiB</tspan>
+<tspan x="2516" dy="15">ESXi: 8.0.3 build-24022510</tspan>
+<tspan x="2516" dy="15">Hosts: c2-linux-esxi-01, c2-linux-esxi-02, c2-linux-esxi-03</tspan>
+<tspan x="2516" dy="15">dvSwitches: C2-Linux_DVSwitch_MGMT, C2-Linux_DVSwitch_VmData,</tspan>
+<tspan x="2516" dy="15">C2-Linux_DVSwitch_vMotion</tspan>
 </text>
-<line x1="1910" y1="610" x2="2119.0" y2="670" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="1450" y="864" width="430" height="170" rx="14" ry="14" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
-<text x="1464" y="892" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1464" dy="0">C2-Telecom-Cluster</tspan>
+</g>
+<line x1="2500" y1="562" x2="2772.0" y2="596" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="1930" y="808" width="540" height="158" rx="18" ry="18" fill="#ffffff" stroke="#243041" stroke-width="2.2"/>
+<text x="1944" y="836" font-size="15" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1944" dy="0">C2-Telecom-Cluster</tspan>
 </text>
-<text x="1464" y="920" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1464" dy="0">3 hosts | 16 running VMs | 144 cores</tspan>
-<tspan x="1464" dy="17">Host memory: 3.37 TiB | vRAM assigned: 0.07 TiB</tspan>
-<tspan x="1464" dy="17">ESXi: 7.0.3 build-24784741</tspan>
-<tspan x="1464" dy="17">Hosts: c2-telecom-esxi-01, c2-telecom-esxi-02,</tspan>
-<tspan x="1464" dy="17">c2-telecom-esxi-03</tspan>
-<tspan x="1464" dy="17">dvSwitches: C2-Telecom_DVSwitch_DMZ,</tspan>
-<tspan x="1464" dy="17">C2-Telecom_DVSwitch_MGMT, C2-Telecom_DVSwitch_VmData,</tspan>
-<tspan x="1464" dy="17">C2-Telecom_DVSwitch_vMotion</tspan>
+<text x="1944" y="862" font-size="12" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1944" dy="0">3 hosts | 16 running VMs | 144 cores</tspan>
+<tspan x="1944" dy="15">Host memory: 3.37 TiB | vRAM assigned: 0.07 TiB</tspan>
+<tspan x="1944" dy="15">ESXi: 7.0.3 build-24784741</tspan>
+<tspan x="1944" dy="15">Hosts: c2-telecom-esxi-01, c2-telecom-esxi-02, c2-telecom-esxi-03</tspan>
+<tspan x="1944" dy="15">dvSwitches: C2-Telecom_DVSwitch_DMZ, C2-Telecom_DVSwitch_MGMT,</tspan>
+<tspan x="1944" dy="15">C2-Telecom_DVSwitch_VmData, C2-Telecom_DVSwitch_vMotion</tspan>
 </text>
-<line x1="1910" y1="610" x2="1665.0" y2="864" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="1904" y="864" width="430" height="170" rx="14" ry="14" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
-<text x="1918" y="892" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1918" dy="0">C2-WebSphere-Cluster</tspan>
+</g>
+<line x1="2500" y1="562" x2="2200.0" y2="808" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="2502" y="808" width="540" height="158" rx="18" ry="18" fill="#ffffff" stroke="#243041" stroke-width="2.2"/>
+<text x="2516" y="836" font-size="15" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="2516" dy="0">C2-WebSphere-Cluster</tspan>
 </text>
-<text x="1918" y="920" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1918" dy="0">3 hosts | 3 running VMs | 72 cores</tspan>
-<tspan x="1918" dy="17">Host memory: 2.25 TiB | vRAM assigned: 0.00 TiB</tspan>
-<tspan x="1918" dy="17">ESXi: 8.0.3 build-24022510</tspan>
-<tspan x="1918" dy="17">Hosts: c2-websphere-esxi-01, c2-websphere-esxi-02,</tspan>
-<tspan x="1918" dy="17">c2-websphere-esxi-03</tspan>
-<tspan x="1918" dy="17">dvSwitches: C2-WebSphere_DVSwitch_MGMT,</tspan>
-<tspan x="1918" dy="17">C2-WebSphere_DVSwitch_VmData,</tspan>
-<tspan x="1918" dy="17">C2-WebSphere_DVSwitch_vMotion</tspan>
+<text x="2516" y="862" font-size="12" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="2516" dy="0">3 hosts | 3 running VMs | 72 cores</tspan>
+<tspan x="2516" dy="15">Host memory: 2.25 TiB | vRAM assigned: 0.00 TiB</tspan>
+<tspan x="2516" dy="15">ESXi: 8.0.3 build-24022510</tspan>
+<tspan x="2516" dy="15">Hosts: c2-websphere-esxi-01, c2-websphere-esxi-02, c2-websphere-esxi-03</tspan>
+<tspan x="2516" dy="15">dvSwitches: C2-WebSphere_DVSwitch_MGMT, C2-WebSphere_DVSwitch_VmData,</tspan>
+<tspan x="2516" dy="15">C2-WebSphere_DVSwitch_vMotion</tspan>
 </text>
-<line x1="1910" y1="610" x2="2119.0" y2="864" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="1500" y="1150" width="820" height="170" rx="14" ry="14" fill="#fffbeb" stroke="#1f2937" stroke-width="2"/>
-<text x="1514" y="1178" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1514" dy="0">Standalone Cisco physical systems (outside current ESXi host lists)</tspan>
+</g>
+<line x1="2500" y1="562" x2="2772.0" y2="808" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)">
+<rect x="1930" y="1006" width="1140" height="118" rx="18" ry="18" fill="#fffbeb" stroke="#243041" stroke-width="2.2"/>
+<text x="1944" y="1034" font-size="17" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1944" dy="0">Standalone Cisco physical systems (outside current ESXi host lists)</tspan>
 </text>
-<text x="1514" y="1206" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1514" dy="0">20 x UCSC-C240-M5L nodes | Organization: default, Cohesity | Management mode: Standalone</tspan>
-<tspan x="1514" dy="17">All 20 appear healthy in the UCS export. These are visible in the UCS physical summary but not represented as ESXi hosts in the RVTools host lists.</tspan>
-<tspan x="1514" dy="17">This likely indicates an adjacent appliance/storage/secondary platform footprint rather than vSphere hypervisor members.</tspan>
+<text x="1944" y="1060" font-size="13" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1944" dy="0">20 x UCSC-C240-M5L nodes | Organization: default, Cohesity | Management mode: Standalone</tspan>
+<tspan x="1944" dy="16">All 20 appear healthy in the UCS export. These are visible in the UCS physical summary but not represented as ESXi hosts in the RVTools host lists.</tspan>
+<tspan x="1944" dy="16">This likely indicates an adjacent appliance, storage, or secondary platform footprint rather than active vSphere hypervisor members.</tspan>
 </text>
-<rect x="1450" y="1370" width="1040" height="370" rx="14" ry="14" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
-<text x="1464" y="1398" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1464" dy="0">DR findings and design patterns</tspan>
+</g>
+<g filter="url(#shadow)">
+<rect x="1930" y="1146" width="1140" height="183" rx="18" ry="18" fill="#ffffff" stroke="#243041" stroke-width="2.2"/>
+<text x="1944" y="1174" font-size="18" font-weight="bold" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1944" dy="0">DR findings and design patterns</tspan>
 </text>
-<text x="1464" y="1426" font-size="14" font-weight="normal" fill="#111827" font-family="Arial, Helvetica, sans-serif">
-<tspan x="1464" dy="0">• DR Cisco cluster network pattern also repeats as MGMT / VMData / vMotion, with DMZ dvSwitches on Cluster-1 and Telecom.</tspan>
-<tspan x="1464" dy="17">• DR RVTools anomalies: c2-telecom-esxi-01, c2-telecom-esxi-02, c2-websphere-esxi-02, c2-websphere-esxi-03 flagged yellow config.</tspan>
-<tspan x="1464" dy="17">• UCS physical export shows c2-6454fi-sw1-2-1 / C2-Linux-Esxi-02 as Critical even though the host appears green in RVTools; this deserves direct UCS Manager validation.</tspan>
-<tspan x="1464" dy="17">• DR vHealth includes storage path warnings against c2-linux-esxi-02 and c2-websphere boot/storage devices.</tspan>
-<tspan x="1464" dy="17">• DR certificates were reported good in the vHost export, unlike AUS where every host certificate was already flagged expiring.</tspan>
-<tspan x="1464" dy="17">• Telecom and WebSphere remain on ESXi 7.0.3 while most other Cisco DR hosts are already on ESXi 8.0.3.</tspan>
+<text x="1944" y="1200" font-size="13" font-weight="normal" fill="#1f2937" font-family="Arial, Helvetica, sans-serif">
+<tspan x="1944" dy="0">• DR Cisco cluster network pattern also repeats as MGMT / VMData / vMotion, with DMZ dvSwitches on Cluster-1 and Telecom.</tspan>
+<tspan x="1944" dy="16">• DR RVTools anomalies include yellow-config findings on c2-telecom-esxi-01, c2-telecom-esxi-02, c2-websphere-esxi-02, and c2-websphere-esxi-03.</tspan>
+<tspan x="1944" dy="16">• UCS physical export shows c2-6454fi-sw1-2-1 / C2-Linux-Esxi-02 as Critical even though the host appears green in RVTools; validate directly in</tspan>
+<tspan x="1944" dy="16">UCS Manager.</tspan>
+<tspan x="1944" dy="16">• DR vHealth includes storage path warnings against c2-linux-esxi-02 and c2-websphere boot or storage devices.</tspan>
+<tspan x="1944" dy="16">• DR certificates are reported good in the host export, unlike AUS where every host certificate is already flagged expiring.</tspan>
+<tspan x="1944" dy="16">• Telecom and WebSphere remain on ESXi 7.0.3 while most other Cisco DR hosts are already on ESXi 8.0.3.</tspan>
 </text>
-<text x="40" y="1860" font-size="15" font-weight="normal" fill="#475569" font-family="Arial, Helvetica, sans-serif">
-<tspan x="40" dy="0">Legend: top = management layer (vCenter), middle = physical compute domain, lower = vSphere clusters and host membership, notes = inferred network/storage design</tspan>
-<tspan x="40" dy="18">This diagram is derived directly from the uploaded RVTools and UCS exports; relationships were inferred from host names, cluster membership, dvSwitch membership, NIC/HBA models, and physical inventory rows.</tspan>
+</g>
+<text x="40" y="2845" font-size="15" font-weight="normal" fill="#475569" font-family="Arial, Helvetica, sans-serif">
+<tspan x="40" dy="0">Legend: top = management layer (vCenter), middle = physical compute domain, lower = cluster and host membership, notes = inferred network/storage design.</tspan>
+<tspan x="40" dy="19">This version expands card heights automatically so long host lists and dvSwitch mappings fit fully inside each card.</tspan>
 </text>
 </svg>
   </div>
@@ -529,7 +577,6 @@
 
   <h2>AUS cluster membership and dvSwitch mapping</h2><div class='host-grid'><div class='host-card'><h3>C1-Cluster_1</h3><p><strong>Hosts:</strong> c1-cluster1-esxi-01.company.pvt, c1-cluster1-esxi-02.company.pvt, c1-cluster1-esxi-03.company.pvt, c1-cluster1-esxi-04.company.pvt, c1-cluster1-esxi-05.company.pvt, c1-cluster1-esxi-06.company.pvt, c1-cluster1-esxi-07.company.pvt, c1-cluster1-esxi-08.company.pvt, c1-cluster1-esxi-09.company.pvt</p><p><strong>dvSwitches:</strong> C1-Cluster-1_DVSwitch_DMZ, C1-Cluster-1_DVSwitch_MGMT, C1-Cluster-1_DVSwitch_VmData, C1-Cluster-1_DVSwitch_vMotion</p></div><div class='host-card'><h3>C1-Linux-Cluster</h3><p><strong>Hosts:</strong> c1-linux-esxi-01.company.pvt, c1-linux-esxi-02.company.pvt, c1-linux-esxi-03.company.pvt, c1-linux-esxi-04.company.pvt</p><p><strong>dvSwitches:</strong> C1-Linux_DVSwitch_MGMT, C1-Linux_DVSwitch_VmData, C1-Linux_DVSwitch_Vmotion</p></div><div class='host-card'><h3>C1-Telecom-Cluster</h3><p><strong>Hosts:</strong> c1-telecom-esxi-01.company.pvt, c1-telecom-esxi-02.company.pvt, c1-telecom-esxi-03.company.pvt, c1-telecom-esxi-04.company.pvt</p><p><strong>dvSwitches:</strong> C1-Telecom_DVSwitch_DMZ, C1-Telecom_DVSwitch_MGMT, C1-Telecom_DVSwitch_VMotion, C1-Telecom_DVSwitch_VmData</p></div><div class='host-card'><h3>C1-Websphere-Cluster</h3><p><strong>Hosts:</strong> c1-websphere-esxi-01.company.pvt, c1-websphere-esxi-02.company.pvt, c1-websphere-esxi-03.company.pvt</p><p><strong>dvSwitches:</strong> C1-Websphere_DvSwitch_MGMT, C1-Websphere_DvSwitch_VMData, C1-Websphere_DvSwitch_vMotion</p></div><div class='host-card'><h3>Standalone</h3><p><strong>Hosts:</strong> c1-websphere-esxi-04.company.pvt</p><p><strong>dvSwitches:</strong> C1-Websphere_DvSwitch_MGMT, C1-Websphere_DvSwitch_VMData, C1-Websphere_DvSwitch_vMotion</p></div><div class='host-card'><h3>C1-Workstation2-Cluster</h3><p><strong>Hosts:</strong> c1-workstation2-esxi-01.company.pvt, c1-workstation2-esxi-02.company.pvt, c1-workstation2-esxi-03.company.pvt, c1-workstation2-esxi-04.company.pvt, c1-workstation2-esxi-05.company.pvt, c1-workstation2-esxi-06.company.pvt</p><p><strong>dvSwitches:</strong> C1-Workstation2_DvSwitch_MGMT, C1-Workstation2_DvSwitch_VMData, C1-Workstation2_DvSwitch_vMotion</p></div><div class='host-card'><h3>C1-Workstation-Cluster</h3><p><strong>Hosts:</strong> c1-workstation-esxi-01.company.pvt, c1-workstation-esxi-02.company.pvt, c1-workstation-esxi-03.company.pvt, c1-workstation-esxi-04.company.pvt, c1-workstation-esxi-05.company.pvt</p><p><strong>dvSwitches:</strong> C1-Workstation_DvSwitch_MGMT, C1-Workstation_DvSwitch_VMData, C1-Workstation_DvSwitch_vMotion</p></div><div class='host-card'><h3>MUELLER-VRTX1_CLUSTER_01</h3><p><strong>Hosts:</strong> corp-vrtx1-001.company.pvt, corp-vrtx1-002.company.pvt</p><p><strong>dvSwitches:</strong> DSwitch1</p></div><div class='host-card'><h3>DRO_CLUSTER_01</h3><p><strong>Hosts:</strong> dro-vrtx1-001.company.pvt, dro-vrtx1-002.company.pvt</p><p><strong>dvSwitches:</strong> DRO-VRTX1-dvSwitch, vSwitchiDRACvusb</p></div><div class='host-card'><h3>HRO_CLUSTER_01</h3><p><strong>Hosts:</strong> hro-vrtx1-001.company.pvt, hro-vrtx1-002.company.pvt</p><p><strong>dvSwitches:</strong> HRO-VRTX1-DvSwitch, vSwitchiDRACvusb</p></div><div class='host-card'><h3>LRO_CLUSTER_01</h3><p><strong>Hosts:</strong> lro-vrtx1-001.company.pvt, lro-vrtx1-002.company.pvt</p><p><strong>dvSwitches:</strong> LRO-VRTX1-dvSwitch, vSwitchBMC, vSwitchiDRACvusb</p></div></div>
   <h2>DR cluster membership and dvSwitch mapping</h2><div class='host-grid'><div class='host-card'><h3>C2-Cluster-1_Cluster</h3><p><strong>Hosts:</strong> c2-cluster-1-esxi-01.company.pvt, c2-cluster-1-esxi-02.company.pvt, c2-cluster-1-esxi-03.company.pvt, c2-cluster-1-esxi-04.company.pvt, c2-cluster-1-esxi-05.company.pvt, c2-cluster-1-esxi-06.company.pvt, c2-cluster-1-esxi-07.company.pvt</p><p><strong>dvSwitches:</strong> C2-Cluster-1_DVSwitch_DMZ, C2-Cluster-1_DVSwitch_MGMT, C2-Cluster-1_DVSwitch_VmData, C2-Cluster-1_DVSwitch_vMotion</p></div><div class='host-card'><h3>C2-Linux-Cluster</h3><p><strong>Hosts:</strong> c2-linux-esxi-01.company.pvt, c2-linux-esxi-02.company.pvt, c2-linux-esxi-03.company.pvt</p><p><strong>dvSwitches:</strong> C2-Linux_DVSwitch_MGMT, C2-Linux_DVSwitch_VmData, C2-Linux_DVSwitch_vMotion</p></div><div class='host-card'><h3>C2-Telecom-Cluster</h3><p><strong>Hosts:</strong> c2-telecom-esxi-01.company.pvt, c2-telecom-esxi-02.company.pvt, c2-telecom-esxi-03.company.pvt</p><p><strong>dvSwitches:</strong> C2-Telecom_DVSwitch_DMZ, C2-Telecom_DVSwitch_MGMT, C2-Telecom_DVSwitch_VmData, C2-Telecom_DVSwitch_vMotion</p></div><div class='host-card'><h3>C2-WebSphere-Cluster</h3><p><strong>Hosts:</strong> c2-websphere-esxi-01.company.pvt, c2-websphere-esxi-02.company.pvt, c2-websphere-esxi-03.company.pvt</p><p><strong>dvSwitches:</strong> C2-WebSphere_DVSwitch_MGMT, C2-WebSphere_DVSwitch_VmData, C2-WebSphere_DVSwitch_vMotion</p></div></div>
-
 </div>
 </body>
 </html>
