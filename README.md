@@ -27,5 +27,22 @@ This portfolio contains **sanitized, production-inspired reference implementatio
 - Enable teams with **Kubernetes platform foundations** (ingress, certs, observability)
 - Drive measurable outcomes via **SRE practices** (SLIs/SLOs, error budgets, postmortems)
 
+## Run Locally
+
+This is a **static HTML site** — no build step or backend required.
+
+```bash
+# From the repo root
+python -m http.server 8000
+```
+
+Then open your browser to **http://localhost:8000**
+
+Alternatively, you can use Node's `serve`:
+
+```bash
+npx serve .
+```
+
 ---
 > _All public artifacts are reference-only and intentionally generic._
