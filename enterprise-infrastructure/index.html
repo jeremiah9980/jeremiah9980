@@ -17,8 +17,10 @@
       --shadow: 0 10px 30px rgba(0,0,0,.28);
       --maxw: 1220px;
     }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
@@ -26,9 +28,15 @@
       color: var(--text);
       line-height: 1.55;
     }
+
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .wrap { width: min(var(--maxw), calc(100% - 32px)); margin: 0 auto; }
+
+    .wrap {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
     header.hero {
       padding: 72px 0 42px;
       border-bottom: 1px solid rgba(255,255,255,.06);
@@ -36,6 +44,7 @@
         radial-gradient(circle at top right, rgba(96,165,250,.18), transparent 30%),
         radial-gradient(circle at left center, rgba(34,197,94,.10), transparent 28%);
     }
+
     .eyebrow {
       display: inline-block;
       padding: 6px 12px;
@@ -47,24 +56,32 @@
       letter-spacing: .03em;
       margin-bottom: 14px;
     }
+
     h1 {
       font-size: clamp(2.2rem, 4vw, 4.3rem);
       line-height: 1.05;
       margin: 0 0 16px;
       max-width: 900px;
     }
+
     .lead {
-      max-width: 880px;
+      max-width: 900px;
       color: var(--muted);
       font-size: 1.08rem;
       margin-bottom: 24px;
     }
+
     .hero-links {
-      display: flex; flex-wrap: wrap; gap: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
       margin-top: 18px;
     }
+
     .btn {
-      display: inline-flex; align-items: center; gap: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 12px 16px;
       border-radius: 12px;
       border: 1px solid var(--border);
@@ -72,86 +89,127 @@
       color: var(--text);
       box-shadow: var(--shadow);
     }
+
     .btn.primary {
       background: linear-gradient(180deg, #1d4ed8, #1e40af);
       border-color: rgba(255,255,255,.08);
     }
-    main section { padding: 34px 0; }
+
+    main section {
+      padding: 34px 0;
+    }
+
     .section-title {
       font-size: 1.7rem;
       margin: 0 0 10px;
     }
+
     .section-copy {
       color: var(--muted);
-      max-width: 900px;
+      max-width: 920px;
       margin-bottom: 24px;
     }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       gap: 18px;
+      align-items: stretch;
     }
+
     .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
       background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
       border: 1px solid var(--border);
       border-radius: 18px;
       overflow: hidden;
       box-shadow: var(--shadow);
     }
-    .card-body { padding: 18px; }
+
+    .card-body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
     .span-4 { grid-column: span 4; }
     .span-6 { grid-column: span 6; }
     .span-8 { grid-column: span 8; }
     .span-12 { grid-column: span 12; }
+
     .meta {
       display: inline-block;
+      width: fit-content;
       font-size: 12px;
       color: #93c5fd;
       background: rgba(96,165,250,.08);
       border: 1px solid rgba(96,165,250,.22);
       padding: 5px 10px;
       border-radius: 999px;
-      margin-bottom: 10px;
+      margin-bottom: 2px;
     }
+
     h2, h3 { letter-spacing: -.02em; }
-    h3 { margin: 0 0 10px; font-size: 1.2rem; }
-    p { margin: 0 0 12px; }
+    h3 { margin: 0; font-size: 1.2rem; }
+    p { margin: 0; }
+
     ul {
-      margin: 10px 0 0 18px;
+      margin: 4px 0 0 18px;
       color: var(--muted);
       padding: 0;
     }
+
     li { margin: 6px 0; }
+
     .img-shell {
       padding: 14px;
       background: rgba(255,255,255,.02);
       border-bottom: 1px solid var(--border);
     }
+
     .img-shell img {
       width: 100%;
+      height: 320px;
       display: block;
       border-radius: 12px;
       background: #fff;
       object-fit: contain;
     }
+
+    .img-tall img {
+      height: 430px;
+    }
+
     .stats {
       display: grid;
       grid-template-columns: repeat(4, minmax(0,1fr));
       gap: 14px;
       margin-top: 12px;
     }
+
     .stat {
       padding: 16px;
       border-radius: 16px;
       border: 1px solid var(--border);
       background: var(--panel);
     }
+
     .stat strong {
       display: block;
       font-size: 1.4rem;
       margin-bottom: 4px;
     }
-    .pill-row { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     .pill {
       padding: 8px 12px;
       border-radius: 999px;
@@ -160,20 +218,49 @@
       border: 1px solid rgba(34,197,94,.2);
       font-size: 13px;
     }
+
+    .role-callout {
+      border: 1px solid rgba(96,165,250,.24);
+      background: linear-gradient(180deg, rgba(96,165,250,.08), rgba(96,165,250,.03));
+    }
+
     footer {
       padding: 38px 0 60px;
       color: var(--muted);
       border-top: 1px solid rgba(255,255,255,.06);
       margin-top: 24px;
     }
+
     @media (max-width: 980px) {
-      .span-4, .span-6, .span-8 { grid-column: span 12; }
-      .stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .span-4,
+      .span-6,
+      .span-8 {
+        grid-column: span 12;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+
+      .img-shell img,
+      .img-tall img {
+        height: 280px;
+      }
     }
+
     @media (max-width: 640px) {
       .stats { grid-template-columns: 1fr; }
-      .wrap { width: min(var(--maxw), calc(100% - 22px)); }
+
+      .wrap {
+        width: min(var(--maxw), calc(100% - 22px));
+      }
+
       header.hero { padding-top: 52px; }
+
+      .img-shell img,
+      .img-tall img {
+        height: 220px;
+      }
     }
   </style>
 </head>
@@ -184,9 +271,9 @@
       <h1>Enterprise Infrastructure & Network Architecture</h1>
       <p class="lead">
         A showcase of multi-site datacenter environments, healthcare clinic rollouts, virtualization platforms,
-        print and manufacturing automation, and hybrid infrastructure designs I architected, implemented, and documented.
-        These diagrams reflect real-world environments spanning site-to-site connectivity, virtualized workloads,
-        workflow orchestration, access control, and operational support models.
+        print and manufacturing automation, hybrid support models, and enterprise platform designs I architected,
+        implemented, and documented. These diagrams reflect real-world environments spanning site-to-site connectivity,
+        virtualized workloads, workflow orchestration, access control, storage, and operational support models.
       </p>
       <div class="hero-links">
         <a class="btn primary" href="#environments">View environments</a>
@@ -202,14 +289,38 @@
         <h2 class="section-title">What this page highlights</h2>
         <p class="section-copy">
           These environments demonstrate the kind of architecture work I have led across enterprise and operational
-          technology settings: core routing and firewall design, virtual infrastructure, storage expansion, workflow-driven
-          production systems, standardized clinic site builds, and migration-ready hybrid support models.
+          technology settings: core routing and firewall design, virtualization and storage, workflow-driven production systems,
+          clinic site standards, and migration-ready hybrid support models.
         </p>
         <div class="stats">
           <div class="stat"><strong>Multi-site</strong><span>Datacenter and branch-connected environments</span></div>
           <div class="stat"><strong>Virtualized</strong><span>Server, storage, and application platforms</span></div>
           <div class="stat"><strong>Workflow-driven</strong><span>Automation pipelines for manufacturing and print</span></div>
           <div class="stat"><strong>Documented</strong><span>Operational diagrams built for support and scale</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="card role-callout span-12">
+          <div class="card-body">
+            <div class="meta">Current Role</div>
+            <h3>Texas Mutual Insurance — Senior Systems Engineer</h3>
+            <p>
+              My current work includes enterprise infrastructure engineering, VMware platform support, Cisco UCS and datacenter
+              architecture analysis, storage and compute mapping, and documenting production-ready topology views for support,
+              recovery, and modernization efforts.
+            </p>
+            <div class="pill-row" style="margin-top: 8px;">
+              <span class="pill">VMware</span>
+              <span class="pill">Cisco UCS</span>
+              <span class="pill">Enterprise Storage</span>
+              <span class="pill">Recovery Architecture</span>
+              <span class="pill">Platform Engineering</span>
+              <span class="pill">Operational Documentation</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -242,26 +353,12 @@
 
           <article class="card span-4">
             <div class="img-shell">
-              <img src="../assets/infra/cmm-support-cloud.png" alt="Support and hybrid cloud migration infrastructure diagram" />
-            </div>
-            <div class="card-body">
-              <div class="meta">Hybrid Support / Migration</div>
-              <h3>Support & Migration Reference</h3>
-              <p>Environment mapping across on-prem, virtual environments, backup flows, and cloud gateway patterns.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-          <article class="card span-4">
-            <div class="img-shell">
               <img src="../assets/infra/cmtx-multisite.png" alt="CMTX multisite enterprise and datacenter overview diagram" />
             </div>
             <div class="card-body">
               <div class="meta">Multi-Site Enterprise</div>
               <h3>TX / CA / LAX Site Architecture</h3>
-              <p>Connected site model showing regional sites, datacenters, and retail/branch presence.</p>
+              <p>Connected site model showing regional sites, datacenters, and retail or branch presence.</p>
             </div>
           </article>
 
@@ -292,6 +389,57 @@
 
     <section>
       <div class="wrap">
+        <h2 class="section-title">Texas Mutual enterprise infrastructure views</h2>
+        <p class="section-copy">
+          These diagrams represent enterprise platform documentation aligned to my current work as a Senior Systems Engineer
+          at Texas Mutual Insurance, including UCS compute layout, fabric interconnects, switching, and storage relationships
+          across the environment.
+        </p>
+
+        <div class="grid">
+          <article class="card span-6">
+            <div class="img-shell img-tall">
+              <img src="../assets/infra/ucs-rack-layout.jpg" alt="Physical rack-style UCS layout showing UCS domains, chassis, blade slots, and ESXi host mapping" />
+            </div>
+            <div class="card-body">
+              <div class="meta">Texas Mutual / Cisco UCS</div>
+              <h3>Physical Rack-Style UCS Layout</h3>
+              <p>
+                Rack-elevation style view of Cisco UCS domains showing chassis layout, blade slot population,
+                ESXi host placement, and health status across production and recovery-side infrastructure.
+              </p>
+              <ul>
+                <li>Maps blades to UCS chassis and slots</li>
+                <li>Shows production and DR domain layout side by side</li>
+                <li>Useful for platform support, recovery planning, and lifecycle visibility</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card span-6">
+            <div class="img-shell img-tall">
+              <img src="../assets/infra/ucs-topology-overview.jpg" alt="Cisco UCS DR topology overview including switches, fabric interconnects, chassis, storage, and backup" />
+            </div>
+            <div class="card-body">
+              <div class="meta">Texas Mutual / Topology & Storage</div>
+              <h3>Cisco UCS Topology Overview</h3>
+              <p>
+                Topology view of the DR-side Cisco UCS environment including top-of-rack switching, fabric interconnects,
+                chassis connectivity, enterprise storage, and backup or secondary storage integration.
+              </p>
+              <ul>
+                <li>Shows network, compute, storage, and backup relationships</li>
+                <li>Documents fabric redundancy and SAN connectivity</li>
+                <li>Supports operational understanding and architecture communication</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
         <h2 class="section-title">Architecture themes across these environments</h2>
         <div class="grid">
           <div class="card span-8">
@@ -306,6 +454,8 @@
                 <span class="pill">Device and endpoint standardization</span>
                 <span class="pill">Production / OT integration</span>
                 <span class="pill">Migration readiness</span>
+                <span class="pill">Cisco UCS architecture</span>
+                <span class="pill">Recovery topology</span>
               </div>
               <p style="margin-top:16px; color: var(--muted);">
                 The common thread across these projects is translating complex operational requirements into stable,
@@ -314,6 +464,7 @@
               </p>
             </div>
           </div>
+
           <div class="card span-4">
             <div class="card-body">
               <h3>Best-fit roles</h3>
@@ -334,9 +485,12 @@
       <div class="wrap">
         <h2 class="section-title">Detailed environment gallery</h2>
         <p class="section-copy">A larger visual gallery for architecture review, portfolio sharing, and interview walkthroughs.</p>
+
         <div class="grid">
           <article class="card span-12">
-            <div class="img-shell"><img src="../assets/infra/ec-workflow.png" alt="EC cross-site workflow architecture diagram" /></div>
+            <div class="img-shell">
+              <img src="../assets/infra/ec-workflow.png" alt="EC cross-site workflow architecture diagram" />
+            </div>
             <div class="card-body">
               <div class="meta">Cross-Site Workflow Architecture</div>
               <h3>TX + CA Production Workflow Design</h3>
@@ -348,7 +502,9 @@
           </article>
 
           <article class="card span-6">
-            <div class="img-shell"><img src="../assets/infra/harbor-clinic-standard.png" alt="Harbor Health clinic standard device and network diagram" /></div>
+            <div class="img-shell">
+              <img src="../assets/infra/harbor-clinic-standard.png" alt="Harbor Health clinic standard device and network diagram" />
+            </div>
             <div class="card-body">
               <div class="meta">Clinic Standardization</div>
               <h3>Clinic Blueprint: Network, Printers, Phones, Medical Devices</h3>
@@ -357,7 +513,8 @@
               </p>
             </div>
           </article>
-    <article class="card span-6">
+
+          <article class="card span-6">
             <div class="img-shell">
               <img src="../assets/infra/mfa-print-workflow.png" alt="MFA print environment workflow and Onyx VPS pipeline diagram" />
             </div>
@@ -374,8 +531,11 @@
               </ul>
             </div>
           </article>
+
           <article class="card span-6">
-            <div class="img-shell"><img src="../assets/infra/access-control.png" alt="Access control and entry controller board layout diagram" /></div>
+            <div class="img-shell">
+              <img src="../assets/infra/access-control.png" alt="Access control and entry controller board layout diagram" />
+            </div>
             <div class="card-body">
               <div class="meta">Physical Security / Access Control</div>
               <h3>Facility Access Control Layout</h3>
