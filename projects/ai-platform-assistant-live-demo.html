@@ -26,9 +26,14 @@
     .prompt-grid{display:flex;flex-wrap:wrap;gap:10px}.prompt{padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--panel2);color:var(--text);cursor:pointer}
     .chat-shell{display:flex;flex-direction:column;gap:12px;min-height:520px}
     .chat-window{background:#0a1324;border:1px solid var(--line);border-radius:16px;padding:16px;min-height:380px;display:flex;flex-direction:column;gap:12px;overflow:auto}
-    .msg{max-width:82%;padding:12px 14px;border-radius:16px}.msg.user{align-self:flex-end;background:#163252}.msg.bot{align-self:flex-start;background:#111c31}.msg .role{display:block;font-size:11px;color:#93c5fd;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em}
+    .msg{max-width:92%;padding:12px 14px;border-radius:16px}.msg.user{align-self:flex-end;background:#163252}.msg.bot{align-self:flex-start;background:#111c31}.msg.system{align-self:center;background:#13213a;color:#bfdbfe;font-size:13px}
+    .msg .role{display:block;font-size:11px;color:#93c5fd;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em}
     .chat-input{display:flex;gap:10px}.chat-input input{flex:1;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#0a1324;color:var(--text)}
     .cap-list{margin:0;padding-left:18px;color:var(--muted)} .cap-list li{margin:7px 0}
+    .memory-board{display:grid;gap:10px;margin-top:10px}
+    .memory-item{background:#0a1324;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+    .memory-label{display:block;color:#93c5fd;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+    .typing{opacity:.8;font-style:italic;color:#bfdbfe}
     footer{padding:28px 0 44px;border-top:1px solid rgba(255,255,255,.06);color:var(--muted);margin-top:18px}
     @media (max-width:980px){.span-7,.span-5,.span-4{grid-column:span 12}}
   </style>
@@ -53,12 +58,12 @@
     <div class="wrap">
       <div class="eyebrow">AI Agent / Live Demonstration</div>
       <h1>A modern AI Agent experience visitors can actually interact with.</h1>
-      <p class="lead">This page is designed to showcase how an AI assistant can help with architecture conversations, recruiter interactions, certification planning, technical summaries, and workflow guidance. It is a polished front-end demonstration that invites visitors to engage, ask questions, and explore use cases.</p>
+      <p class="lead">This page is designed to showcase how an AI assistant can help with architecture conversations, recruiter interactions, certification planning, technical summaries, and workflow guidance. It now includes a client-side agent engine with intent detection, memory, and contextual playbooks.</p>
       <div class="pillrow">
         <span class="pill">Interactive Demo</span>
         <span class="pill">Promptable Experience</span>
-        <span class="pill">Architecture Use Cases</span>
-        <span class="pill">Visitor Engagement</span>
+        <span class="pill">Intent Detection</span>
+        <span class="pill">Session Memory</span>
       </div>
     </div>
   </header>
@@ -70,6 +75,7 @@
           <div class="meta">Live Demo</div>
           <div class="chat-window" id="chatWindow">
             <div class="msg bot"><span class="role">AI Agent</span>Hi — I’m the AI Agent demo. Ask me about certifications, architecture strategy, recruiter replies, resume selection, or enterprise modernization ideas.</div>
+            <div class="msg system">Tip: type <strong>/reset</strong> to clear conversation memory.</div>
           </div>
           <div class="prompt-grid">
             <button class="prompt" data-prompt="What are the top 3 certifications I should pursue next?">Top 3 certifications</button>
@@ -87,21 +93,20 @@
 
       <article class="card span-5">
         <div class="card-body">
-          <div class="meta">What this demonstrates</div>
-          <h3>More than a chatbot</h3>
+          <div class="meta">Agent state</div>
+          <h3>Session memory</h3>
+          <p style="color:var(--muted)">This in-browser agent tracks the current topic, last action, and user goals to produce context-aware responses.</p>
+          <div class="memory-board">
+            <div class="memory-item"><span class="memory-label">Current topic</span><span id="memoryTopic">General guidance</span></div>
+            <div class="memory-item"><span class="memory-label">Last intent</span><span id="memoryIntent">none</span></div>
+            <div class="memory-item"><span class="memory-label">Conversation turns</span><span id="memoryTurns">0</span></div>
+          </div>
+          <h3 style="margin-top:18px;">What this demonstrates</h3>
           <ul class="cap-list">
-            <li>Prompt-driven visitor engagement with architecture-relevant examples</li>
-            <li>Use-case oriented responses around identity, infrastructure, cloud, and automation</li>
-            <li>Front-end agent experience suitable for portfolio and product-style demonstrations</li>
-            <li>Extensible pattern that can later connect to a secure real backend or hosted AI workflow</li>
-          </ul>
-          <h3 style="margin-top:18px;">Example use cases</h3>
-          <ul class="cap-list">
-            <li>Certification recommendations and study planning</li>
-            <li>Recruiter email drafting and response coaching</li>
-            <li>Resume selection guidance based on role type</li>
-            <li>Enterprise infrastructure or identity architecture Q&A</li>
-            <li>Modernization and automation ideation</li>
+            <li>Lightweight intent routing without a backend dependency</li>
+            <li>Structured playbooks for recruiter, certification, resume, and modernization prompts</li>
+            <li>Memory-aware responses that reference prior conversation context</li>
+            <li>Safe default handling for open-ended visitor questions</li>
           </ul>
         </div>
       </article>
@@ -109,22 +114,22 @@
       <article class="card span-4">
         <div class="card-body">
           <div class="meta">Architecture Pattern</div>
-          <h3>Phase 1: Interactive demo UI</h3>
-          <p style="color:var(--muted)">This version runs fully in the browser to create a live-feeling AI experience without exposing secrets or requiring backend hosting.</p>
+          <h3>Phase 1: Browser-native agent</h3>
+          <p style="color:var(--muted)">Runs 100% client-side so the demo works in GitHub Pages without secrets, API keys, or backend hosting.</p>
         </div>
       </article>
       <article class="card span-4">
         <div class="card-body">
           <div class="meta">Future Upgrade</div>
-          <h3>Phase 2: Real hosted agent</h3>
-          <p style="color:var(--muted)">Later, this same interface can connect to a hosted API or workflow engine to provide real-time responses, memory, and lead capture.</p>
+          <h3>Phase 2: Hosted LLM + workflows</h3>
+          <p style="color:var(--muted)">Keep the same UI, but replace the local agent engine with a secure API endpoint for richer retrieval, lead capture, and analytics.</p>
         </div>
       </article>
       <article class="card span-4">
         <div class="card-body">
           <div class="meta">Portfolio Value</div>
           <h3>Shows product thinking</h3>
-          <p style="color:var(--muted)">This kind of page signals architecture, UX judgment, workflow thinking, and the ability to package technical capability into a usable experience.</p>
+          <p style="color:var(--muted)">This implementation demonstrates design, architecture communication, and practical agent logic rather than static canned-only replies.</p>
         </div>
       </article>
     </div>
@@ -135,39 +140,159 @@
   </footer>
 
   <script>
-    const responses = {
-      'What are the top 3 certifications I should pursue next?': 'Based on your current positioning, the strongest next three are Okta, SC-300, and Terraform. That sequence sharpens your Global Identity Architect story first, then strengthens Azure identity credibility, then formalizes your infrastructure automation depth.',
-      'Draft a recruiter reply for a Global Identity Architect role.': 'Hi Michael, thanks for reaching out. This role aligns well with my background in enterprise architecture, Okta-centered identity strategy, workflow automation, Azure-aligned identity, and scripting-driven operational improvement. I would be open to discussing it further. You can reach me at 512-676-0060. Thanks, Jeremiah.',
-      'Which resume version should I send for an Okta architect role?': 'Use the Global Identity Architect / Okta SME version. It is the cleanest match because it emphasizes Okta, SSO, MFA, lifecycle automation, Azure identity alignment, and enterprise access design.',
-      'Summarize my infrastructure architecture background.': 'You bring 20+ years of enterprise infrastructure experience across networking, VMware, hybrid environments, disaster recovery, cloud-connected platforms, automation, and technical leadership. Your value is not just deep engineering skill, but the ability to translate architecture into systems teams can actually run.',
-      'How would you modernize a VMware-heavy environment?': 'Start by assessing platform health, lifecycle status, storage and networking dependencies, and operational pain points. Then standardize host and cluster configurations, improve backup and recovery alignment, automate repetitive provisioning and reporting tasks, modernize monitoring, and define a roadmap for hybrid integration where it makes business sense.'
+    const agentState = {
+      turns: 0,
+      topic: 'General guidance',
+      lastIntent: 'none',
+      history: []
     };
+
+    const profile = {
+      strengths: 'enterprise architecture, identity strategy, infrastructure modernization, automation, and cross-functional delivery',
+      phone: '512-676-0060',
+      resumes: {
+        okta: 'Global Identity Architect / Okta SME',
+        cloud: 'Cloud Platform / DevOps Architect',
+        infrastructure: 'Enterprise Infrastructure Architect'
+      }
+    };
+
+    const intentRules = [
+      { intent: 'certifications', keywords: ['certification', 'certifications', 'sc-300', 'okta', 'terraform', 'study'] },
+      { intent: 'recruiter_reply', keywords: ['recruiter', 'reply', 'email', 'message', 'response', 'job'] },
+      { intent: 'resume_advice', keywords: ['resume', 'cv', 'version', 'send', 'role'] },
+      { intent: 'background_summary', keywords: ['summarize', 'summary', 'background', 'experience', 'bio'] },
+      { intent: 'modernization', keywords: ['modernize', 'vmware', 'migration', 'hybrid', 'infrastructure'] },
+      { intent: 'roadmap', keywords: ['plan', 'roadmap', 'next step', 'priorities', 'quarter'] }
+    ];
+
     const chatWindow = document.getElementById('chatWindow');
     const chatInput = document.getElementById('chatInput');
     const sendBtn = document.getElementById('sendBtn');
+    const memoryTopic = document.getElementById('memoryTopic');
+    const memoryIntent = document.getElementById('memoryIntent');
+    const memoryTurns = document.getElementById('memoryTurns');
 
-    function addMsg(role, text) {
+    function escapeHtml(str) {
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function addMsg(role, text, isHtml = false) {
       const el = document.createElement('div');
-      el.className = 'msg ' + role;
-      el.innerHTML = '<span class="role">' + (role === 'user' ? 'Visitor' : 'AI Agent') + '</span>' + text;
+      el.className = `msg ${role}`;
+      const safeText = isHtml ? text : escapeHtml(text);
+      const roleLabel = role === 'user' ? 'Visitor' : role === 'bot' ? 'AI Agent' : 'System';
+      el.innerHTML = `<span class="role">${roleLabel}</span>${safeText}`;
       chatWindow.appendChild(el);
       chatWindow.scrollTop = chatWindow.scrollHeight;
     }
 
-    function handlePrompt(text) {
-      if (!text.trim()) return;
+    function detectIntent(input) {
+      const text = input.toLowerCase();
+      let best = { intent: 'general', score: 0 };
+
+      for (const rule of intentRules) {
+        const score = rule.keywords.reduce((count, keyword) => count + (text.includes(keyword) ? 1 : 0), 0);
+        if (score > best.score) {
+          best = { intent: rule.intent, score };
+        }
+      }
+
+      return best.intent;
+    }
+
+    function updateMemory(intent, input) {
+      agentState.turns += 1;
+      agentState.lastIntent = intent;
+      agentState.topic = input.length > 58 ? `${input.slice(0, 58)}…` : input;
+      agentState.history.push({ intent, input, at: new Date().toISOString() });
+      if (agentState.history.length > 8) {
+        agentState.history.shift();
+      }
+
+      memoryTopic.textContent = agentState.topic;
+      memoryIntent.textContent = intent;
+      memoryTurns.textContent = String(agentState.turns);
+    }
+
+    function generateResponse(intent, input) {
+      const priorIntent = agentState.history.length ? agentState.history[agentState.history.length - 1].intent : null;
+
+      switch (intent) {
+        case 'certifications':
+          return `Top 3 certifications I recommend next:\n1) Okta Professional / Administrator\n2) Microsoft SC-300\n3) HashiCorp Terraform Associate\n\nSuggested sequence: identity first, cloud identity second, infrastructure automation third. If helpful, I can build a 90-day study plan.`;
+        case 'recruiter_reply':
+          return `Draft recruiter response:\n\nHi [Recruiter Name],\nThanks for reaching out. The role aligns strongly with my background in ${profile.strengths}. I’m open to a conversation to compare scope, architecture expectations, and delivery outcomes. You can reach me at ${profile.phone}.\n\nBest,\nJeremiah`;
+        case 'resume_advice': {
+          const lower = input.toLowerCase();
+          const recommendation = lower.includes('okta') ? profile.resumes.okta : lower.includes('cloud') || lower.includes('devops') ? profile.resumes.cloud : profile.resumes.infrastructure;
+          return `Recommended resume: ${recommendation}.\n\nReason: it most directly maps to the role signal in your prompt. If you want, I can also provide 5 bullet customizations for that target role.`;
+        }
+        case 'background_summary':
+          return `You bring 20+ years of enterprise infrastructure and architecture delivery across identity, virtualization, networking, and platform operations. Your differentiator is combining deep engineering credibility with execution-focused architecture that teams can implement.`;
+        case 'modernization':
+          return `VMware modernization pattern:\n1) Baseline health, lifecycle, cost, and risk.\n2) Standardize clusters, templates, and policy guardrails.\n3) Automate provisioning, compliance checks, and reporting.\n4) Add observability + DR validation cadence.\n5) Define hybrid transition candidates with measurable business outcomes.`;
+        case 'roadmap':
+          return `Execution roadmap (next 2 quarters):\n• Q1: Identity hardening and MFA/SSO lifecycle optimization\n• Q1: Infra standards + automation quick wins\n• Q2: Platform modernization pilots and KPI tracking\n• Q2: Documentation, runbooks, and handoff maturity`;
+        default:
+          if (priorIntent && priorIntent !== 'general') {
+            return `I can keep going on ${priorIntent.replace('_', ' ')}. Ask for a template, a plan, or a role-specific version and I will tailor it.`;
+          }
+          return `Great question. This demo agent can handle certifications, recruiter communication, resume targeting, architecture summaries, and modernization planning. Try asking for a “90-day study plan” or a “role-specific recruiter reply”.`;
+      }
+    }
+
+    function showTypingAndRespond(reply) {
+      const typing = document.createElement('div');
+      typing.className = 'msg bot typing';
+      typing.textContent = 'AI Agent is thinking…';
+      chatWindow.appendChild(typing);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+
+      setTimeout(() => {
+        typing.remove();
+        addMsg('bot', reply);
+      }, 350);
+    }
+
+    function handlePrompt(rawText) {
+      const text = rawText.trim();
+      if (!text) return;
+
+      if (text === '/reset') {
+        agentState.turns = 0;
+        agentState.lastIntent = 'none';
+        agentState.topic = 'General guidance';
+        agentState.history = [];
+        memoryTopic.textContent = agentState.topic;
+        memoryIntent.textContent = agentState.lastIntent;
+        memoryTurns.textContent = '0';
+        addMsg('system', 'Conversation memory reset.');
+        return;
+      }
+
       addMsg('user', text);
-      const reply = responses[text] || 'That is a great prompt. In a fully hosted version, this AI Agent could respond live using a secure backend, company-specific workflows, and deeper context handling.';
-      setTimeout(() => addMsg('bot', reply), 500);
+      const intent = detectIntent(text);
+      updateMemory(intent, text);
+      const reply = generateResponse(intent, text);
+      showTypingAndRespond(reply);
     }
 
     document.querySelectorAll('.prompt').forEach(btn => {
       btn.addEventListener('click', () => handlePrompt(btn.dataset.prompt));
     });
+
     sendBtn.addEventListener('click', () => {
       handlePrompt(chatInput.value);
       chatInput.value = '';
+      chatInput.focus();
     });
+
     chatInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         handlePrompt(chatInput.value);
