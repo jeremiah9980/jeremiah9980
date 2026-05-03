@@ -2,19 +2,43 @@
   const body = document.body;
   const themeBtn = document.getElementById('themeToggle');
 
-  const saved = localStorage.getItem('theme') || 'light';
+  // Resolve saved theme; default to dark
+  const saved = localStorage.getItem('theme') || 'dark';
   body.dataset.theme = saved;
-  if (themeBtn) themeBtn.textContent = saved === 'dark' ? 'Dark mode' : 'Light mode';
+
+  function updateThemeLabel(theme) {
+    if (!themeBtn) return;
+    themeBtn.textContent = theme === 'dark' ? '☀ Light' : '◑ Dark';
+  }
+  updateThemeLabel(saved);
 
   if (themeBtn) {
     themeBtn.addEventListener('click', () => {
       const next = body.dataset.theme === 'dark' ? 'light' : 'dark';
       body.dataset.theme = next;
       localStorage.setItem('theme', next);
-      themeBtn.textContent = next === 'dark' ? 'Dark mode' : 'Light mode';
+      updateThemeLabel(next);
     });
   }
 
+  // ── Fade-in via IntersectionObserver ──
+  const fadeEls = document.querySelectorAll('.fade-in');
+  if (fadeEls.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    fadeEls.forEach((el) => observer.observe(el));
+  }
+
+  // ── Image preview fallback ──
   function armPreview(img) {
     if (!img) return;
     img.addEventListener('error', () => {
@@ -32,6 +56,7 @@
   }
   document.querySelectorAll('img.svg-preview').forEach(armPreview);
 
+  // ── Legend overlay ──
   document.querySelectorAll('.legend-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
       const id = btn.getAttribute('data-legend');
@@ -51,6 +76,7 @@
     });
   });
 
+  // ── Featured strip (dynamic) ──
   const strip = document.getElementById('featuredStrip');
   const cards = Array.from(document.querySelectorAll('.project[data-featured="true"]'));
   if (strip && cards.length) {
