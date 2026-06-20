@@ -16,6 +16,7 @@
     .brand strong{display:block}.brand span{color:var(--muted);font-size:14px}.nav-links{display:flex;gap:12px;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--text);cursor:pointer}
     .btn.primary{background:linear-gradient(135deg,#38bdf8,#0ea5e9);border:none;color:#fff}
+    .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
     header{padding:64px 0 28px;border-bottom:1px solid rgba(255,255,255,.06)}
     .eyebrow{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(96,165,250,.08);border:1px solid rgba(96,165,250,.24);color:#bfdbfe;font-size:13px;margin-bottom:14px}
     h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.06;margin:0 0 12px}.lead{max-width:900px;color:var(--muted);font-size:1.05rem}
@@ -24,11 +25,13 @@
     .meta{display:inline-block;font-size:12px;padding:5px 10px;border-radius:999px;background:rgba(96,165,250,.08);border:1px solid rgba(96,165,250,.24);color:#bfdbfe;margin-bottom:10px}
     .pillrow{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 0}.pill{padding:6px 10px;border-radius:999px;background:rgba(96,165,250,.08);border:1px solid rgba(96,165,250,.22);color:#bfdbfe;font-size:12px}
     .prompt-grid{display:flex;flex-wrap:wrap;gap:10px}.prompt{padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--panel2);color:var(--text);cursor:pointer}
+    .prompt:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
     .chat-shell{display:flex;flex-direction:column;gap:12px;min-height:520px}
     .chat-window{background:#0a1324;border:1px solid var(--line);border-radius:16px;padding:16px;min-height:380px;display:flex;flex-direction:column;gap:12px;overflow:auto}
     .msg{max-width:92%;padding:12px 14px;border-radius:16px}.msg.user{align-self:flex-end;background:#163252}.msg.bot{align-self:flex-start;background:#111c31}.msg.system{align-self:center;background:#13213a;color:#bfdbfe;font-size:13px}
     .msg .role{display:block;font-size:11px;color:#93c5fd;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em}
     .chat-input{display:flex;gap:10px}.chat-input input{flex:1;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#0a1324;color:var(--text)}
+    .chat-input input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .cap-list{margin:0;padding-left:18px;color:var(--muted)} .cap-list li{margin:7px 0}
     .memory-board{display:grid;gap:10px;margin-top:10px}
     .memory-item{background:#0a1324;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
@@ -95,7 +98,7 @@
         <div class="card-body">
           <div class="meta">Agent state</div>
           <h3>Session memory</h3>
-          <p style="color:var(--muted)">This in-browser agent tracks the current topic, last action, and user goals to produce context-aware responses.</p>
+          <p style="color:var(--muted)">This in-browser agent tracks the current topic, last action, and user goals to produce context-aware responses. Memory persists across page reloads via <code>sessionStorage</code> until you close the tab or type <strong>/reset</strong>.</p>
           <div class="memory-board">
             <div class="memory-item"><span class="memory-label">Current topic</span><span id="memoryTopic">General guidance</span></div>
             <div class="memory-item"><span class="memory-label">Last intent</span><span id="memoryIntent">none</span></div>
@@ -106,6 +109,7 @@
             <li>Lightweight intent routing without a backend dependency</li>
             <li>Structured playbooks for recruiter, certification, resume, and modernization prompts</li>
             <li>Memory-aware responses that reference prior conversation context</li>
+            <li>Session memory persisted with <code>sessionStorage</code> so reloads don't lose context</li>
             <li>Safe default handling for open-ended visitor questions</li>
           </ul>
         </div>
@@ -140,12 +144,17 @@
   </footer>
 
   <script>
-    const agentState = {
+    const STORAGE_KEY = 'aiAgentDemo.sessionMemory.v1';
+
+    const defaultAgentState = {
       turns: 0,
       topic: 'General guidance',
       lastIntent: 'none',
       history: []
     };
+
+    // Mutable copy used by the running demo. Restored from sessionStorage when available.
+    const agentState = Object.assign({}, defaultAgentState, { history: [] });
 
     const profile = {
       strengths: 'enterprise architecture, identity strategy, infrastructure modernization, automation, and cross-functional delivery',
@@ -163,15 +172,62 @@
       { intent: 'resume_advice', keywords: ['resume', 'cv', 'version', 'send', 'role'] },
       { intent: 'background_summary', keywords: ['summarize', 'summary', 'background', 'experience', 'bio'] },
       { intent: 'modernization', keywords: ['modernize', 'vmware', 'migration', 'hybrid', 'infrastructure'] },
-      { intent: 'roadmap', keywords: ['plan', 'roadmap', 'next step', 'priorities', 'quarter'] }
+      { intent: 'roadmap', keywords: ['plan', 'roadmap', 'next step', 'priorities', 'quarter'] },
+      { intent: 'observability', keywords: ['observability', 'monitoring', 'alerting', 'sre', 'reliability', 'incident'] },
+      { intent: 'iac_automation', keywords: ['terraform', 'iac', 'automation', 'pipeline', 'provisioning', 'ci/cd', 'cicd'] },
+      { intent: 'kubernetes_platform', keywords: ['kubernetes', 'k8s', 'container', 'containers', 'cluster', 'platform engineering'] }
     ];
 
-    const chatWindow = document.getElementById('chatWindow');
-    const chatInput = document.getElementById('chatInput');
-    const sendBtn = document.getElementById('sendBtn');
-    const memoryTopic = document.getElementById('memoryTopic');
-    const memoryIntent = document.getElementById('memoryIntent');
-    const memoryTurns = document.getElementById('memoryTurns');
+    const examplePromptsByIntent = {
+      certifications: 'What are the top 3 certifications I should pursue next?',
+      recruiter_reply: 'Draft a recruiter reply for a Global Identity Architect role.',
+      resume_advice: 'Which resume version should I send for an Okta architect role?',
+      background_summary: 'Summarize my infrastructure architecture background.',
+      modernization: 'How would you modernize a VMware-heavy environment?',
+      roadmap: 'What should the next 2 quarters of roadmap priorities look like?',
+      observability: 'How would you set up observability and alerting for a new platform?',
+      iac_automation: 'How would you design a Terraform-based CI/CD pipeline?',
+      kubernetes_platform: 'What does a solid Kubernetes platform foundation look like?'
+    };
+
+    // ── sessionStorage persistence ──
+    function loadPersistedState() {
+      if (typeof sessionStorage === 'undefined') return null;
+      try {
+        const raw = sessionStorage.getItem(STORAGE_KEY);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        if (!parsed || typeof parsed !== 'object') return null;
+        return parsed;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function persistState() {
+      if (typeof sessionStorage === 'undefined') return;
+      try {
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(agentState));
+      } catch (e) {
+        // Storage may be unavailable (private mode, quota, etc.) — fail silently.
+      }
+    }
+
+    function clearPersistedState() {
+      if (typeof sessionStorage === 'undefined') return;
+      try {
+        sessionStorage.removeItem(STORAGE_KEY);
+      } catch (e) {
+        // ignore
+      }
+    }
+
+    const chatWindow = typeof document !== 'undefined' ? document.getElementById('chatWindow') : null;
+    const chatInput = typeof document !== 'undefined' ? document.getElementById('chatInput') : null;
+    const sendBtn = typeof document !== 'undefined' ? document.getElementById('sendBtn') : null;
+    const memoryTopic = typeof document !== 'undefined' ? document.getElementById('memoryTopic') : null;
+    const memoryIntent = typeof document !== 'undefined' ? document.getElementById('memoryIntent') : null;
+    const memoryTurns = typeof document !== 'undefined' ? document.getElementById('memoryTurns') : null;
 
     function escapeHtml(str) {
       return str
@@ -183,6 +239,7 @@
     }
 
     function addMsg(role, text, isHtml = false) {
+      if (!chatWindow) return;
       const el = document.createElement('div');
       el.className = `msg ${role}`;
       const safeText = isHtml ? text : escapeHtml(text);
@@ -193,7 +250,7 @@
     }
 
     function detectIntent(input) {
-      const text = input.toLowerCase();
+      const text = String(input).toLowerCase();
       let best = { intent: 'general', score: 0 };
 
       for (const rule of intentRules) {
@@ -206,6 +263,13 @@
       return best.intent;
     }
 
+    function refreshMemoryUI() {
+      if (!memoryTopic || !memoryIntent || !memoryTurns) return;
+      memoryTopic.textContent = agentState.topic;
+      memoryIntent.textContent = agentState.lastIntent;
+      memoryTurns.textContent = String(agentState.turns);
+    }
+
     function updateMemory(intent, input) {
       agentState.turns += 1;
       agentState.lastIntent = intent;
@@ -215,9 +279,19 @@
         agentState.history.shift();
       }
 
-      memoryTopic.textContent = agentState.topic;
-      memoryIntent.textContent = intent;
-      memoryTurns.textContent = String(agentState.turns);
+      refreshMemoryUI();
+      persistState();
+    }
+
+    function buildFallbackSuggestions() {
+      const intents = Object.keys(examplePromptsByIntent);
+      const picks = [];
+      // Pick 3 example prompts, preferring ones not most-recently used.
+      for (let i = 0; i < intents.length && picks.length < 3; i++) {
+        const candidate = examplePromptsByIntent[intents[i]];
+        if (candidate) picks.push(candidate);
+      }
+      return picks;
     }
 
     function generateResponse(intent, input) {
@@ -239,15 +313,28 @@
           return `VMware modernization pattern:\n1) Baseline health, lifecycle, cost, and risk.\n2) Standardize clusters, templates, and policy guardrails.\n3) Automate provisioning, compliance checks, and reporting.\n4) Add observability + DR validation cadence.\n5) Define hybrid transition candidates with measurable business outcomes.`;
         case 'roadmap':
           return `Execution roadmap (next 2 quarters):\n• Q1: Identity hardening and MFA/SSO lifecycle optimization\n• Q1: Infra standards + automation quick wins\n• Q2: Platform modernization pilots and KPI tracking\n• Q2: Documentation, runbooks, and handoff maturity`;
-        default:
+        case 'observability':
+          return `Observability & reliability approach:\n1) Instrument golden signals (latency, traffic, errors, saturation).\n2) Centralize logs/metrics/traces with consistent tagging.\n3) Define SLOs and alert on symptoms, not noise.\n4) Build runbooks tied directly to each alert.\n5) Run regular incident retros to close the loop.`;
+        case 'iac_automation':
+          return `Terraform/CI-CD pipeline pattern:\n1) Modular Terraform with remote state + locking.\n2) Plan/apply gated through CI with policy checks (OPA/Sentinel).\n3) Environment promotion via pull request workflows.\n4) Drift detection and scheduled compliance scans.\n5) Secrets pulled from a vault, never hardcoded.`;
+        case 'kubernetes_platform':
+          return `Kubernetes platform foundation:\n1) Standardized cluster provisioning (managed or self-hosted) with golden-path templates.\n2) GitOps-based deployment consistency.\n3) Namespace, RBAC, and network policy guardrails.\n4) Built-in observability and autoscaling defaults.\n5) Paved-road CI/CD so teams ship without reinventing platform plumbing.`;
+        default: {
+          const suggestions = buildFallbackSuggestions();
+          const suggestionLines = suggestions.map((s, i) => `${i + 1}) "${s}"`).join('\n');
           if (priorIntent && priorIntent !== 'general') {
-            return `I can keep going on ${priorIntent.replace('_', ' ')}. Ask for a template, a plan, or a role-specific version and I will tailor it.`;
+            return `I can keep going on ${priorIntent.replace('_', ' ')}, or try one of these:\n${suggestionLines}\n\nType /reset anytime to clear conversation memory and start fresh.`;
           }
-          return `Great question. This demo agent can handle certifications, recruiter communication, resume targeting, architecture summaries, and modernization planning. Try asking for a “90-day study plan” or a “role-specific recruiter reply”.`;
+          return `I didn't quite catch an intent there. This demo agent can handle certifications, recruiter communication, resume targeting, architecture summaries, modernization planning, observability, automation/IaC, and Kubernetes platform questions. Try one of these:\n${suggestionLines}\n\nType /reset anytime to clear conversation memory and start fresh.`;
+        }
       }
     }
 
     function showTypingAndRespond(reply) {
+      if (!chatWindow) {
+        addMsg('bot', reply);
+        return;
+      }
       const typing = document.createElement('div');
       typing.className = 'msg bot typing';
       typing.textContent = 'AI Agent is thinking…';
@@ -269,9 +356,8 @@
         agentState.lastIntent = 'none';
         agentState.topic = 'General guidance';
         agentState.history = [];
-        memoryTopic.textContent = agentState.topic;
-        memoryIntent.textContent = agentState.lastIntent;
-        memoryTurns.textContent = '0';
+        refreshMemoryUI();
+        clearPersistedState();
         addMsg('system', 'Conversation memory reset.');
         return;
       }
@@ -283,22 +369,47 @@
       showTypingAndRespond(reply);
     }
 
-    document.querySelectorAll('.prompt').forEach(btn => {
-      btn.addEventListener('click', () => handlePrompt(btn.dataset.prompt));
-    });
+    // ── Browser-only wiring (DOM lookups, sessionStorage restore, event listeners) ──
+    // Guarded so this file can also be loaded headlessly in Node (see
+    // projects/ai-agent-intent.test.js) to unit-test detectIntent() without a DOM.
+    if (typeof document !== 'undefined' && chatWindow && chatInput && sendBtn) {
+      // Restore prior session (if any) before wiring up events.
+      (function restoreSession() {
+        const persisted = loadPersistedState();
+        if (persisted) {
+          agentState.turns = typeof persisted.turns === 'number' ? persisted.turns : 0;
+          agentState.topic = persisted.topic || defaultAgentState.topic;
+          agentState.lastIntent = persisted.lastIntent || defaultAgentState.lastIntent;
+          agentState.history = Array.isArray(persisted.history) ? persisted.history : [];
+          refreshMemoryUI();
+          if (agentState.turns > 0) {
+            addMsg('system', 'Restored your previous conversation memory from this browser session.');
+          }
+        }
+      })();
 
-    sendBtn.addEventListener('click', () => {
-      handlePrompt(chatInput.value);
-      chatInput.value = '';
-      chatInput.focus();
-    });
+      document.querySelectorAll('.prompt').forEach(btn => {
+        btn.addEventListener('click', () => handlePrompt(btn.dataset.prompt));
+      });
 
-    chatInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
+      sendBtn.addEventListener('click', () => {
         handlePrompt(chatInput.value);
         chatInput.value = '';
-      }
-    });
+        chatInput.focus();
+      });
+
+      chatInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          handlePrompt(chatInput.value);
+          chatInput.value = '';
+        }
+      });
+    }
+
+    // Exportable for Node-based tests (no effect in the browser).
+    if (typeof module !== 'undefined' && module.exports) {
+      module.exports = { detectIntent, intentRules, generateResponse, updateMemory };
+    }
   </script>
 </body>
 </html>
