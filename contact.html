@@ -26,13 +26,16 @@
       <strong>Jeremiah Cargill</strong>
       <span>Senior Infrastructure & Platform Engineer</span>
     </div>
-    <div class="nav-links">
+    <button class="btn nav-toggle" type="button" data-nav-toggle aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNavLinks">
+      <span class="bar"></span>
+    </button>
+    <div class="nav-links" id="primaryNavLinks">
       <a class="btn" href="index.html">Home</a>
       <a class="btn" href="projects.html">Projects</a>
       <a class="btn" href="resume.html">Resume</a>
       <a class="btn" href="about.html">About</a>
       <a class="btn" href="contact.html">Contact</a>
-      <button id="themeToggle" class="btn" type="button">Light mode</button>
+      <button id="themeToggle" class="btn" type="button" aria-label="Toggle dark/light theme" aria-pressed="false">Light mode</button>
     </div>
   </div>
 </div>

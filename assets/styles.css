@@ -496,3 +496,86 @@ body[data-theme="light"] .footer{
   .hero{padding:48px 0 28px}
   .actions{flex-direction:column;align-items:flex-start}
 }
+
+/* ─── Accessibility: focus-visible states ───────────────────────────────────── */
+a:focus-visible,
+.btn:focus-visible,
+.nav-links a:focus-visible,
+#themeToggle:focus-visible,
+.nav-toggle:focus-visible,
+.legend-btn:focus-visible,
+.strip-item:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+  border-radius:var(--radius-sm);
+}
+
+/* ─── Mobile nav toggle (hamburger) ──────────────────────────────────────────── */
+.nav-toggle{
+  display:none;
+  align-items:center;
+  justify-content:center;
+  width:38px;
+  height:38px;
+  padding:0;
+  background:var(--btn);
+  border:1px solid var(--border2);
+  border-radius:var(--radius-sm);
+  color:var(--fg);
+  cursor:pointer;
+  flex:0 0 auto;
+}
+.nav-toggle .bar{
+  position:relative;
+  display:block;
+  width:18px;
+  height:2px;
+  background:currentColor;
+}
+.nav-toggle .bar::before,
+.nav-toggle .bar::after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:18px;
+  height:2px;
+  background:currentColor;
+}
+.nav-toggle .bar::before{top:-6px}
+.nav-toggle .bar::after{top:6px}
+
+@media (max-width:640px){
+  .nav-toggle{display:flex}
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    width:100%;
+    overflow:visible;
+  }
+  .nav-links.open{display:flex}
+  .nav-inner{flex-wrap:wrap}
+  .nav-links .btn{width:100%}
+}
+
+/* ─── Reduced motion support ─────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce){
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+    scroll-behavior:auto !important;
+  }
+  .btn.primary{animation:none}
+  .card:hover{transform:none}
+  .btn:hover{transform:none}
+  .strip-item:hover{transform:none}
+  .fade-in{
+    opacity:1;
+    transform:none;
+    transition:none;
+  }
+  .hero-image-wrap img{animation:none}
+}

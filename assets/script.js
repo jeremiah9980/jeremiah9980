@@ -8,7 +8,10 @@
 
   function updateThemeLabel(theme) {
     if (!themeBtn) return;
-    themeBtn.textContent = theme === 'dark' ? '☀ Light' : '◑ Dark';
+    const isDark = theme === 'dark';
+    themeBtn.textContent = isDark ? '☀ Light' : '◑ Dark';
+    themeBtn.setAttribute('aria-label', 'Toggle dark/light theme');
+    themeBtn.setAttribute('aria-pressed', String(!isDark));
   }
   updateThemeLabel(saved);
 
@@ -21,21 +24,54 @@
     });
   }
 
+  // ── Mobile nav toggle (hamburger) ──
+  // Reusable across every page: looks for a [data-nav-toggle] button paired
+  // with a .nav-links element inside the same .nav container.
+  function initNavToggle() {
+    document.querySelectorAll('.nav').forEach((nav) => {
+      const toggle = nav.querySelector('[data-nav-toggle]');
+      const links = nav.querySelector('.nav-links');
+      if (!toggle || !links) return;
+
+      toggle.setAttribute('aria-expanded', 'false');
+
+      toggle.addEventListener('click', () => {
+        const isOpen = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      // Collapse the menu again once a nav link is activated (mobile UX).
+      links.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          links.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    });
+  }
+  initNavToggle();
+
   // ── Fade-in via IntersectionObserver ──
   const fadeEls = document.querySelectorAll('.fade-in');
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (fadeEls.length) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-    fadeEls.forEach((el) => observer.observe(el));
+    if (prefersReducedMotion) {
+      // Skip the animation entirely; just reveal the content.
+      fadeEls.forEach((el) => el.classList.add('visible'));
+    } else {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      fadeEls.forEach((el) => observer.observe(el));
+    }
   }
 
   // ── Image preview fallback ──
